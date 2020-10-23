@@ -82,11 +82,11 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   User.associate = (models) => {
-    // User.hasOne(models.Role, {
-    //   through: 'RoleUsers',
-    //   as: 'role',
-    //   foreignKey: 'userId'
-    // });
+    User.hasOne(models.Role, {
+      through: 'roleUsers',
+      as: 'role',
+      foreignKey: 'userId'
+    });
   };
   return User;
 };

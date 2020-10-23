@@ -1,7 +1,7 @@
 {
-  "name": "whoisinjail-backend",
+  "name": "procurement-backend",
   "version": "1.0.0",
-  "description": "This is a public directory for Nigerian Prisons",
+  "description": "This is a backend application for ab-inbev procurement project",
   "main": "index.js",
   "scripts": {
     "lint": "eslint",
@@ -19,20 +19,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pseudogarden/whoisinjail-backend.git"
+    "url": "git+https://github.com/Tueloper/Procurement-Backend.git"
   },
   "keywords": [
-    "whoisinjail",
+    "procurement",
     "Backend",
-    "Nigerian",
-    "Prison"
+    "ab-inbev"
   ],
-  "author": "whoisinjail team",
+  "author": "Tochuwu Ozurumba",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pseudogarden/whoisinjail-backend/issues"
+    "url": "https://github.com/Tueloper/Procurement-Backend/issues"
   },
-  "homepage": "https://github.com/pseudogarden/whoisinjail-backend#readme",
+  "homepage": "https://github.com/Tueloper/Procurement-Backend#readme",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@hapi/joi": "^15.1.1",
@@ -58,6 +57,7 @@
     "moment": "^2.27.0",
     "morgan": "^1.9.1",
     "multer": "^1.4.2",
+    "mysql2": "^2.2.5",
     "paystack": "^2.0.1",
     "paystack-node": "^0.2.4",
     "pg": "^7.12.1",

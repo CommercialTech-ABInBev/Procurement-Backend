@@ -20,8 +20,8 @@
     }
   },
   "formation": {},
-  "name": "whoisinjail-backend",
-  "repository": "https://github.com/pseudogarden/whoisinjail-backend.git",
+  "name": "procurement-backend",
+  "repository": "https://github.com/Tueloper/Procurement-Backend.git",
   "scripts": {},
   "stack": "heroku-18"
 }

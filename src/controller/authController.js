@@ -23,7 +23,8 @@ const {
 } = GeneralService;
 const {
   User,
-  RoleUser
+  RoleUser,
+  Role
 } = database;
 // const {
 //   ADMIN_KEY,
@@ -42,33 +43,29 @@ const AuthController = {
   async signup(req, res) {
     try {
       const body = {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        userName: req.body.userName,
         email: req.body.email,
         password: hashPassword(req.body.password),
         supplier: req.body.supplier,
-        companyTheme: req.body.companyTheme
       };
       const user = await addEntity(User, { ...body });
       let role;
-      if (req.body.supplier) role = await addEntity(RoleUser, { userId: user.id, roleId: 3 });
-      else role = await addEntity(RoleUser, { userId: user.id, roleId: 4 });
+      let roleUser;
+      if (req.body.supplier) {
+        role = await findByKey(Role, { role: 'supplier' });
+        roleUser = await addEntity(RoleUser, { userId: user.id, roleId: role.id });
+      } else {
+        role = await findByKey(Role, { role: 'staff' });
+        roleUser = await addEntity(RoleUser, { userId: user.id, roleId: role.id });
+      }
 
       user.token = createToken({
         email: user.email,
         id: user.id,
-        userName: user.userName,
-        roleId: role.roleId,
-        firstName: user.firstName,
+        roleId: roleUser.roleId,
         verified: user.verified
       });
-      // TODO: uncomment for production
-      // const emailSent = await sendVerificationEmail(req, user);
-      // TODO: delete bottom line for production
-      // const emailSent = true;
       res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
-      return successResponse(res, { user, role }, 201);
+      return successResponse(res, { user, roleUser }, 201);
     } catch (error) {
       errorResponse(res, {});
     }

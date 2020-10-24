@@ -37,13 +37,13 @@ const AuthMiddleware = {
       if (req.path === '/signup/check') {
         validateEmail(req.body);
         user = await findByKey(User, { email });
-        if (user) return successResponse(res, { message: 'User with exist' });
+        if (user) return successResponse(res, { message: 'User Exist' });
         return errorResponse(res, { code: 409, message: 'Sorry, that email address seems to be invalid, kindly review the address' });
       }
       validateSignup(req.body);
       user = await findByKey(User, { email });
       // const userNameUnique = await findByKey(User, { userName });
-      // if (user) return errorResponse(res, { code: 409, message: 'Sorry, that email address seems to be invalid, kindly review the address' });
+      if (user) return errorResponse(res, { code: 409, message: 'Sorry, that email address seems to be invalid, kindly review the address' });
       // if (userNameUnique) return errorResponse(res, { code: 409, message: `User with userName "${userName}" already exists` });
       next();
     } catch (error) {

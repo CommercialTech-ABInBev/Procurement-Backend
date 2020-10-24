@@ -82,7 +82,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   User.associate = (models) => {
-    User.hasOne(models.Role, {
+    User.belongsToMany(models.Role, {
       through: 'roleUsers',
       as: 'role',
       foreignKey: 'userId'

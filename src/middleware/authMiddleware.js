@@ -1,4 +1,4 @@
-import { AuthValidation } from '../validation';
+import { AuthValidation, GeneralValidation } from '../validation';
 import { Toolbox } from '../util';
 import { superAdminSchema, rolesSchema } from '../validation/adminValidation';
 import { changePasswordSchema, passwordResetEmailSchema } from '../validation/passwordValidation';
@@ -9,8 +9,11 @@ const {
   errorResponse, checkToken, verifyToken, validate, successResponse
 } = Toolbox;
 const {
-  validateSignup, validateLogin, validateUsername,
+  validateSignup, validateLogin,
 } = AuthValidation;
+const {
+  validateEmail
+} = GeneralValidation;
 const {
   findByKey
 } = GeneralService;
@@ -29,39 +32,20 @@ const AuthMiddleware = {
    */
   async verifySignup(req, res, next) {
     try {
-      validateSignup(req.body);
-      const { email, userName } = req.body;
-      const user = await findByKey(User, { email });
-      const userNameUnique = await findByKey(User, { userName });
-      if (user) return errorResponse(res, { code: 409, message: `User with email "${email}" already exists` });
-      if (userNameUnique) return errorResponse(res, { code: 409, message: `User with userName "${userName}" already exists` });
-      next();
-    } catch (error) {
-      errorResponse(res, { code: 400, message: error });
-    }
-  },
-
-  /**
-   * middleware for username check
-   * @async
-   * @param {object} req - the api request
-   * @param {object} res - api response returned by method
-   * @param {object} next - returned values going into next function
-   * @returns {object} - returns error or response object
-   * @memberof AuthMiddleware
-   */
-  async checkUsername(req, res, next) {
-    try {
-      const { id } = req.tokenData;
-      validateUsername(req.query);
-      const { userName, change } = req.query;
-      const user = await findByKey(User, { userName });
-      if (!user) {
-        if (change === 'true') return next();
-        return successResponse(res, { message: `username: ${userName} is free` });
+      let user;
+      const { email } = req.body;
+      if (req.path === '/signup/check') {
+        validateEmail(req.body);
+        user = await findByKey(User, { email });
+        if (user) return successResponse(res, { message: 'User with exist' });
+        return errorResponse(res, { code: 409, message: 'Sorry, that email address seems to be invalid, kindly review the address' });
       }
-      if (user.id !== id) return errorResponse(res, { code: 409, message: 'username has already been taken' });
-      if (user.id === id) return errorResponse(res, { code: 400, message: 'usernamr entered is the same as before' });
+      validateSignup(req.body);
+      user = await findByKey(User, { email });
+      // const userNameUnique = await findByKey(User, { userName });
+      // if (user) return errorResponse(res, { code: 409, message: 'Sorry, that email address seems to be invalid, kindly review the address' });
+      // if (userNameUnique) return errorResponse(res, { code: 409, message: `User with userName "${userName}" already exists` });
+      next();
     } catch (error) {
       errorResponse(res, { code: 400, message: error });
     }

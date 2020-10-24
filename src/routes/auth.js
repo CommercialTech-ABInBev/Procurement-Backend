@@ -13,6 +13,7 @@ const {
 // const {
 // } = Permissions;
 
+router.post('/signup/check', verifySignup);
 router.post('/signup', verifySignup, signup);
 
 export default router;

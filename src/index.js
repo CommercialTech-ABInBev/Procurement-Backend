@@ -31,7 +31,7 @@ if (!production) {
 }
 
 // connect app to routes
-// app.use('/v1.0/api', routes);
+app.use('/v1.0/api', routes);
 
 // / catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -55,7 +55,7 @@ if (!production) {
 }
 
 // routes
-app.use(routes);
+// app.use(routes);/
 app.get('/', (req, res) => res.status(200).send({
   message: 'Welcome to WhoisinJail',
 }));

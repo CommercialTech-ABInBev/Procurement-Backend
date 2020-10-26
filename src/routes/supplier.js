@@ -1,19 +1,18 @@
 import { Router } from 'express';
-import {
-  Bouncers,
-} from '../middleware';
-// import { ProductController, UserController, OrderController } from '../controllers';
+import { Bouncers, SupplierMiddleware } from '../middleware';
+import { SupplierController } from '../controller';
 
 const router = Router();
 const {
   supplierBouncers,
 } = Bouncers;
-// const {
-//   addOrUpdateSupplierAccount,
-//   getSupplierAccount,
-//   searchSupplier
-// } = UserController;
+const {
+  verifySupplierProfileUpdate
+} = SupplierMiddleware;
+const {
+  updateProfile
+} = SupplierController;
 
-router.post('/profile', supplierBouncers);
+router.post('/profile', verifySupplierProfileUpdate, updateProfile);
 
 export default router;

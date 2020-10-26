@@ -17,14 +17,14 @@ const {
 //   RoleUser,
 // } = database;
 
-const UserMiddleware = {
+const SupplierMiddleware = {
   /**
    * verify profile update
    * @param {object} req
    * @param {object} res
    * @param {object} next
    * @returns {object} - return and object {error or response}
-   * @memberof UserMiddleware
+   * @memberof SupplierMiddleware
    */
   async verifySupplierProfileUpdate(req, res, next) {
     try {
@@ -36,4 +36,4 @@ const UserMiddleware = {
   },
 };
 
-export default UserMiddleware;
+export default SupplierMiddleware;

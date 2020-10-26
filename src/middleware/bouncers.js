@@ -11,7 +11,7 @@ const {
 const Bouncers = {
   userBouncers: [authenticate, verifyRoles(user)],
   adminBouncers: [authenticate, verifyUser, verifyRoles(admins)],
-  supplierBouncers: [authenticate, verifyUser, verifyRoles(suppliers)]
+  supplierBouncers: [authenticate, verifyRoles(suppliers)]
 };
 
 export default Bouncers;

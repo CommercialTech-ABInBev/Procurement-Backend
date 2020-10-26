@@ -70,6 +70,36 @@ const AuthController = {
       errorResponse(res, {});
     }
   },
+
+  /**
+   * user login
+   * @async
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async login(req, res) {
+    try {
+      const { password } = req.body;
+      const user = req.userData;
+      const { roleId } = await findByKey(RoleUser, { userId: user.id });
+      if (!comparePassword(password, user.password)) return errorResponse(res, { code: 401, message: 'incorrect password or email' });
+      user.token = createToken({
+        email: user.email,
+        id: user.id,
+        roleId,
+        vendorId: user.vendorId,
+        name: user.name,
+        companyName: user.companyName,
+        verified: user.verified
+      });
+      res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
+      return successResponse(res, { message: 'Login Successful', token: user.token });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
 };
 
 export default AuthController;

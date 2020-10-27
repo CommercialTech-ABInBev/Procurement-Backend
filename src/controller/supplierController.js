@@ -30,8 +30,13 @@ const SupplierController = {
   async updateProfile(req, res) {
     try {
       const { id } = req.tokenData;
-      const user = await updateByKey(User, req.body, { id });
-      successResponse(res, { message: 'Profile update was successful', user });
+      if (req.body.mediaPictures) {
+        const mediaUrls = JSON.stringify(req.body.mediaPictures);
+        await delete req.body.mediaPictures;
+        await updateByKey(User, req.body, { id });
+        await updateByKey(User, { mediaUrls }, { id });
+      } else await updateByKey(User, req.body, { id });
+      successResponse(res, { message: 'Profile update was successful' });
     } catch (error) {
       errorResponse(res, {});
     }

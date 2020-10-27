@@ -72,6 +72,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true
       },
+      mediaUrls: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
       companyEmail: {
         type: DataTypes.STRING,
         isEmail: true,

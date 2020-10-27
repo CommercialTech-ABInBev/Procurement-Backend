@@ -100,6 +100,23 @@ const AuthController = {
       errorResponse(res, {});
     }
   },
+
+  /**
+   * get user profile
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - A jsom response with user details
+   * @memberof UserController
+   */
+  async getProfile(req, res) {
+    try {
+      const { id } = req.tokenData;
+      const user = await findByKey(User, { id });
+      successResponse(res, { user });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
 };
 
 export default AuthController;

@@ -65,11 +65,11 @@ const GeneralService = {
    */
   async updateByKey(model, updateData, keys) {
     try {
-      const [rowaffected, [entity]] = await model.update(
+      const x = await model.update(
         updateData, { returning: true, where: keys }
       );
-      if (!rowaffected) throw new ApiError(404, 'Not Found');
-      return entity.dataValues;
+      // if (!rowaffected) throw new ApiError(404, 'Not Found');
+      return x;
     } catch (error) {
       throw new Error(error);
     }

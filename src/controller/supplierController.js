@@ -35,8 +35,7 @@ const SupplierController = {
         await delete req.body.mediaPictures;
         await updateByKey(User, req.body, { id });
         await updateByKey(User, { mediaUrls }, { id });
-      }
-      await updateByKey(User, req.body, { id });
+      } else await updateByKey(User, req.body, { id });
       successResponse(res, { message: 'Profile update was successful' });
     } catch (error) {
       errorResponse(res, {});

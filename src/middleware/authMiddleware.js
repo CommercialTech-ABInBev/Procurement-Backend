@@ -9,16 +9,16 @@ const {
   errorResponse, checkToken, verifyToken, validate, successResponse
 } = Toolbox;
 const {
-  validateSignup, validateLogin,
+  validateSignup, validateLogin, validateSupplierSignup
 } = AuthValidation;
 const {
-  validateEmail
+  validateEmail, validateVendorId
 } = GeneralValidation;
 const {
   findByKey
 } = GeneralService;
 const {
-  User, RoleUser
+  User, RoleUser, Vendor
 } = database;
 const AuthMiddleware = {
   /**
@@ -42,9 +42,39 @@ const AuthMiddleware = {
       }
       validateSignup(req.body);
       user = await findByKey(User, { email });
-      // const userNameUnique = await findByKey(User, { userName });
       if (user) return errorResponse(res, { code: 409, message: 'Sorry, that email address seems to be invalid, kindly review the address' });
-      // if (userNameUnique) return errorResponse(res, { code: 409, message: `User with userName "${userName}" already exists` });
+      next();
+    } catch (error) {
+      errorResponse(res, { code: 400, message: error });
+    }
+  },
+
+  /**
+   * middleware for supplier signup
+   * @async
+   * @param {object} req - the api request
+   * @param {object} res - api response returned by method
+   * @param {object} next - returned values going into next function
+   * @returns {object} - returns error or response object
+   * @memberof AuthMiddleware
+   */
+  async verifySupplierSignup(req, res, next) {
+    try {
+      let user;
+      const { vendorId } = req.body;
+      if (req.path === '/signup/supplier/check') {
+        validateVendorId(req.body);
+        const vendor = await findByKey(Vendor, { vendorId });
+        if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, the vendor id seems to be invalid, kindly review the ID' });
+        user = await findByKey(User, { vendorId });
+        if (user) return errorResponse(res, { code: 409, message: 'Sorry, the vendor id seems to be invalid, kindly review the ID' });
+        return successResponse(res, { message: 'Vendor Id Valid for signup' });
+      }
+      validateSupplierSignup(req.body);
+      const vendor = await findByKey(Vendor, { vendorId });
+      if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, the vendor id seems to be invalid, kindly review the ID' });
+      user = await findByKey(User, { vendorId });
+      if (user) return errorResponse(res, { code: 409, message: 'Sorry, the vendor id seems to be invalid, kindly review the ID' });
       next();
     } catch (error) {
       errorResponse(res, { code: 400, message: error });

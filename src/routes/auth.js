@@ -5,6 +5,7 @@ import { AuthController } from '../controller';
 const router = Router();
 const {
   verifySignup,
+  verifySupplierSignup,
   verifyLogin
 } = AuthMiddleware;
 const {
@@ -18,6 +19,8 @@ const {
 
 router.post('/signup/check', verifySignup);
 router.post('/signup', verifySignup, signup);
+router.post('/signup/supplier/check', verifySupplierSignup);
+router.post('/signup/supplier', verifySupplierSignup, signup);
 router.post('/login', verifyLogin, login);
 router.get('/profile', userBouncers, getProfile);
 

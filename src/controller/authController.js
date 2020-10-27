@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 import { GeneralService } from '../services';
 import { Toolbox } from '../util';
@@ -42,19 +43,26 @@ const AuthController = {
    */
   async signup(req, res) {
     try {
-      const body = {
-        email: req.body.email,
-        password: hashPassword(req.body.password),
-        supplier: req.body.supplier,
-      };
-      const user = await addEntity(User, { ...body });
+      let body;
       let role;
       let roleUser;
+      let user;
       if (req.body.supplier) {
+        body = {
+          vendorId: req.body.vendorId,
+          password: hashPassword(req.body.password),
+          supplier: req.body.supplier,
+        };
+        user = await addEntity(User, { ...body });
         role = await findByKey(Role, { role: 'supplier' });
         roleUser = await addEntity(RoleUser, { userId: user.id, roleId: role.id });
       } else {
-        role = await findByKey(Role, { role: 'staff' });
+        body = {
+          email: req.body.email,
+          password: hashPassword(req.body.password),
+        };
+        user = await addEntity(User, { ...body });
+        req.body.admin ? role = await findByKey(Role, { role: 'admin' }) : role = await findByKey(Role, { role: 'staff' });
         roleUser = await addEntity(RoleUser, { userId: user.id, roleId: role.id });
       }
 

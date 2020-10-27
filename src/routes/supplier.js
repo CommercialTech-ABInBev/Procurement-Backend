@@ -4,7 +4,7 @@ import { SupplierController } from '../controller';
 
 const router = Router();
 const {
-  supplierBouncers,
+  supplierBouncers, userBouncers
 } = Bouncers;
 const {
   verifySupplierProfileUpdate
@@ -13,6 +13,6 @@ const {
   updateProfile
 } = SupplierController;
 
-router.post('/profile', verifySupplierProfileUpdate, updateProfile);
+router.patch('/profile', userBouncers, verifySupplierProfileUpdate, updateProfile);
 
 export default router;

@@ -155,6 +155,8 @@ const GeneralValidation = {
       companyEmail: joi.string().email()
         .label('Please enter a valid email address'),
       companyTheme: joi.string().regex(/^#[A-Fa-f0-9]{6}$/).label('colour nust be a Hex in format #ffffff'),
+      mediaPictures: joi.array().items(joi.string().uri())
+        .label('Please upload urls of media images in the right format'),
       // eslint-disable-next-line no-useless-escape
       companyPhoneNumber: joi.string().regex(/^[0-9+\(\)#\.\s\/ext-]+$/).label('Please input a valid phone number'),
     };

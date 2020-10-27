@@ -20,7 +20,7 @@ const {
 router.post('/signup/check', verifySignup);
 router.post('/signup', verifySignup, signup);
 router.post('/signup/supplier/check', verifySupplierSignup);
-router.post('/signup/supplier', verifySignup, signup);
+router.post('/signup/supplier', verifySupplierSignup, signup);
 router.post('/login', verifyLogin, login);
 router.get('/profile', userBouncers, getProfile);
 

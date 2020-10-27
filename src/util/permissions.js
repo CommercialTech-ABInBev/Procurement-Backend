@@ -1,5 +1,5 @@
 export default {
-  admins: [11],
-  suppliers: [11, 21],
-  user: [11, 21, 31],
+  admins: [1],
+  suppliers: [1, 11],
+  user: [1, 11, 21],
 };

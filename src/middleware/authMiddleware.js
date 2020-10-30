@@ -18,7 +18,7 @@ const {
   findByKey
 } = GeneralService;
 const {
-  User, RoleUser, Vendor
+  User, Vendor
 } = database;
 const AuthMiddleware = {
   /**
@@ -159,8 +159,7 @@ const AuthMiddleware = {
         const { id } = req.tokenData;
         const user = await findByKey(User, { id });
         if (!user) return errorResponse(res, { code: 404, message: 'user in token does not exist' });
-        const { roleId } = await findByKey(RoleUser, { userId: id });
-        const permitted = permissions.includes(roleId);
+        const permitted = permissions.includes(user.role);
         if (!permitted) return errorResponse(res, { code: 403, message: 'Halt! You\'re not authorised' });
         next();
       } catch (error) {

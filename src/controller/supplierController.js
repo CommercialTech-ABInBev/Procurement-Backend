@@ -13,6 +13,7 @@ const {
 } = GeneralService;
 const {
   User,
+  VendorDetail
 } = database;
 // const {
 //   ADMIN_KEY,
@@ -33,9 +34,9 @@ const SupplierController = {
       if (req.body.mediaPictures) {
         const mediaUrls = JSON.stringify(req.body.mediaPictures);
         await delete req.body.mediaPictures;
-        await updateByKey(User, req.body, { id });
-        await updateByKey(User, { mediaUrls }, { id });
-      } else await updateByKey(User, req.body, { id });
+        await updateByKey(VendorDetail,{ ...req.body }, { userId: id });
+        await updateByKey(VendorDetail, { mediaUrls }, { userId: id });
+      } else await updateByKey(VendorDetail, { ...req.body }, { userId: id });
       successResponse(res, { message: 'Profile update was successful' });
     } catch (error) {
       errorResponse(res, {});

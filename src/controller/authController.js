@@ -24,7 +24,7 @@ const {
 } = GeneralService;
 const {
   User,
-  RoleUser,
+  VendorDetail,
   Role
 } = database;
 // const {
@@ -44,37 +44,36 @@ const AuthController = {
   async signup(req, res) {
     try {
       let body;
-      let role;
-      let roleUser;
       let user;
-      if (req.body.supplier) {
+      let vendorDetails;
+      if (req.body.vendorId) {
         body = {
           vendorId: req.body.vendorId,
           password: hashPassword(req.body.password),
-          supplier: req.body.supplier,
+          role: 'supplier'
         };
         user = await addEntity(User, { ...body });
-        role = await findByKey(Role, { role: 'supplier' });
-        roleUser = await addEntity(RoleUser, { userId: user.id, roleId: role.id });
+        vendorDetails = await addEntity(VendorDetail, { userId: user.id, vendorId: req.body.vendorId });
       } else {
         body = {
           email: req.body.email,
           password: hashPassword(req.body.password),
+          role: req.body.admin ? 'admin' : 'staff'
         };
         user = await addEntity(User, { ...body });
-        req.body.admin ? role = await findByKey(Role, { role: 'admin' }) : role = await findByKey(Role, { role: 'staff' });
-        roleUser = await addEntity(RoleUser, { userId: user.id, roleId: role.id });
       }
-
+ 
       user.token = createToken({
         email: user.email,
         id: user.id,
-        roleId: roleUser.roleId,
-        verified: user.verified
+        role: user.role,
+        supplierApproval: vendorDetails !== undefined ? vendorDetails.approvalStatus : null,
+        vendorId: vendorDetails !== undefined ? vendorDetails.vendorId : null
       });
       res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
-      return successResponse(res, { user, roleUser }, 201);
+      return successResponse(res, { user, vendorDetails }, 201);
     } catch (error) {
+      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -91,16 +90,14 @@ const AuthController = {
     try {
       const { password } = req.body;
       const user = req.userData;
-      const { roleId } = await findByKey(RoleUser, { userId: user.id });
       if (!comparePassword(password, user.password)) return errorResponse(res, { code: 401, message: 'incorrect password or email' });
+      const vendorDetails = await findByKey(VendorDetail, { userId: user.id });
       user.token = createToken({
         email: user.email,
         id: user.id,
-        roleId,
-        vendorId: user.vendorId,
-        name: user.name,
-        companyName: user.companyName,
-        verified: user.verified
+        role: user.role,
+        supplierApproval: vendorDetails !== null ? vendorDetails.approvalStatus : null,
+        vendorId: vendorDetails !== null ? vendorDetails.vendorId : null
       });
       res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
       return successResponse(res, { message: 'Login Successful', token: user.token });
@@ -121,6 +118,24 @@ const AuthController = {
       const { id } = req.tokenData;
       const user = await findByKey(User, { id });
       successResponse(res, { user });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+  
+  /**
+   * logs user out
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async logoutUser(req, res) {
+    try {
+      const token = '';
+      res.cookie('token', token, { maxAge: 0, httpOnly: true });
+      return successResponse(res, { message: 'Logout Successful', token });
     } catch (error) {
       errorResponse(res, {});
     }

@@ -46,7 +46,6 @@ const AuthValidation = {
         .label('Please enter a valid vendor id'),
       password: new passwordComplexity(complexityOptions).required()
         .label('Password is required. \n It should be more than 8 characters, and should include at least a capital letter, and a number'),
-      supplier: joi.bool().required(),
     };
     const { error } = joi.validate({ ...payload }, schema);
     if (error) throw error.details[0].context.label;

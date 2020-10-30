@@ -31,6 +31,7 @@ const SupplierMiddleware = {
       validateProfile(req.body);
       next();
     } catch (error) {
+      console.error(error);
       errorResponse(res, { code: 400, message: error });
     }
   },

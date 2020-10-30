@@ -37,7 +37,7 @@ const GeneralValidation = {
       tags: joi.array().items(joi.string())
         .label('Please upload product tags in the right string format'),
       available: joi.bool().label('parameter must be a boolean - True or false'),
-      approved: joi.bool().label('parameter must be a boolean - True or false'),
+      approvalStatus: joi.string().valid('pending', 'approved', 'rejected').label('parameter must be approved/rejected'),
       discount: joi.number().label('Please add the product discount'),
       minPrice: joi.number().label('Please add the product price as a number'),
       maxPrice: joi.number().label('Please add the product price as a number'),
@@ -159,6 +159,8 @@ const GeneralValidation = {
       email: joi.string().email().label('Please enter a valid email address'),
       companyName: joi.string().min(3).max(50)
         .label('company name has a limit of 50 characters'),
+      approvalStatus: joi.string().valid('pending', 'approved', 'rejected').label('parameter must be approved/rejected'),
+      discount: joi.number().label('Please add the product discount'),
       companyAddress: joi.string().min(3).max(120)
         .label('company address has a limit of 120 characters'),
       companyDescription: joi.string().min(3).max(300)
@@ -173,6 +175,8 @@ const GeneralValidation = {
       companyTheme: joi.string().regex(/^#[A-Fa-f0-9]{6}$/).label('colour nust be a Hex in format #ffffff'),
       mediaPictures: joi.array().items(joi.string().uri())
         .label('Please upload urls of media images in the right format'),
+      companyLocation: joi.array().items(joi.string().uri())
+        .label('Please company location should be in a array format'),
       // eslint-disable-next-line no-useless-escape
       companyPhoneNumber: joi.string().regex(/^[0-9+\(\)#\.\s\/ext-]+$/).label('Please input a valid phone number'),
     };

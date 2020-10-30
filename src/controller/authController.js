@@ -24,7 +24,7 @@ const {
 } = GeneralService;
 const {
   User,
-  RoleUser,
+  vendorDetail,
   Role
 } = database;
 // const {
@@ -44,36 +44,33 @@ const AuthController = {
   async signup(req, res) {
     try {
       let body;
-      let role;
-      let roleUser;
       let user;
-      if (req.body.supplier) {
+      let vendorDetails;
+      if (req.body.vendorId) {
         body = {
           vendorId: req.body.vendorId,
           password: hashPassword(req.body.password),
-          supplier: req.body.supplier,
+          role: 'supplier'
         };
         user = await addEntity(User, { ...body });
-        role = await findByKey(Role, { role: 'supplier' });
-        roleUser = await addEntity(RoleUser, { userId: user.id, roleId: role.id });
+        vendorDetails = await addEntity(vendorDetail, { userId: user.id })
       } else {
         body = {
           email: req.body.email,
           password: hashPassword(req.body.password),
+          role: req.body.admin ? 'admin' : 'staff'
         };
         user = await addEntity(User, { ...body });
-        req.body.admin ? role = await findByKey(Role, { role: 'admin' }) : role = await findByKey(Role, { role: 'staff' });
-        roleUser = await addEntity(RoleUser, { userId: user.id, roleId: role.id });
       }
 
       user.token = createToken({
         email: user.email,
         id: user.id,
-        roleId: roleUser.roleId,
-        verified: user.verified
+        role: user.role,
+        supplierApproval: vendorDetails !== null ? vendorDetails.approvalStatus : 'not a supplier'
       });
       res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
-      return successResponse(res, { user, roleUser }, 201);
+      return successResponse(res, { user, vendorDetails }, 201);
     } catch (error) {
       errorResponse(res, {});
     }

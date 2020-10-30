@@ -24,7 +24,7 @@ const {
 } = GeneralService;
 const {
   User,
-  vendorDetail,
+  VendorDetail,
   Role
 } = database;
 // const {
@@ -53,7 +53,7 @@ const AuthController = {
           role: 'supplier'
         };
         user = await addEntity(User, { ...body });
-        vendorDetails = await addEntity(vendorDetail, { userId: user.id })
+        vendorDetails = await addEntity(VendorDetail, { userId: user.id, vendorId: req.body.vendorId });
       } else {
         body = {
           email: req.body.email,
@@ -62,16 +62,18 @@ const AuthController = {
         };
         user = await addEntity(User, { ...body });
       }
-
+ 
       user.token = createToken({
         email: user.email,
         id: user.id,
         role: user.role,
-        supplierApproval: vendorDetails !== null ? vendorDetails.approvalStatus : 'not a supplier'
+        supplierApproval: vendorDetails !== undefined ? vendorDetails.approvalStatus : null,
+        vendorId: vendorDetails !== undefined ? vendorDetails.vendorId : null
       });
       res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
       return successResponse(res, { user, vendorDetails }, 201);
     } catch (error) {
+      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -88,16 +90,14 @@ const AuthController = {
     try {
       const { password } = req.body;
       const user = req.userData;
-      const { roleId } = await findByKey(RoleUser, { userId: user.id });
       if (!comparePassword(password, user.password)) return errorResponse(res, { code: 401, message: 'incorrect password or email' });
+      const vendorDetails = await findByKey(VendorDetail, { userId: user.id });
       user.token = createToken({
         email: user.email,
         id: user.id,
-        roleId,
-        vendorId: user.vendorId,
-        name: user.name,
-        companyName: user.companyName,
-        verified: user.verified
+        role: user.role,
+        supplierApproval: vendorDetails !== null ? vendorDetails.approvalStatus : null,
+        vendorId: vendorDetails !== null ? vendorDetails.vendorId : null
       });
       res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
       return successResponse(res, { message: 'Login Successful', token: user.token });

@@ -27,10 +27,6 @@ const {
   VendorDetail,
   Role
 } = database;
-// const {
-//   ADMIN_KEY,
-//   CLIENT_URL
-// } = env;
 
 const AuthController = {
   /**
@@ -123,7 +119,28 @@ const AuthController = {
     }
   },
 
-  
+   /**
+   * reset user password
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async resetPassword(req, res) {
+    try {
+      const { oldPassword, newPassword } = req.body;
+      const { id } = req.tokenData;
+      let user = await findByKey(User, { id });
+      if (!user) return errorResponse(res, { code: 404, message: 'Sorry, user in token does not exist' });
+      if (!comparePassword(oldPassword, user.password)) return errorResponse(res, { code: 401, message: 'Old password is incorrect' });
+      const hashedPassword = hashPassword(newPassword);
+      user = await updateByKey(User, { password: hashedPassword }, { id });
+      successResponse(res, { message: 'Password has been changed successfully' });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
   /**
    * logs user out
    * @param {object} req

@@ -7,7 +7,8 @@ const {
   verifySignup,
   verifySupplierSignup,
   verifyLogin,
-  authenticate
+  authenticate,
+  verifyPasswordReset
 } = AuthMiddleware;
 const {
   userBouncers,
@@ -16,6 +17,7 @@ const {
   signup,
   login,
   getProfile,
+  resetPassword,
   logoutUser
 } = AuthController;
 
@@ -25,6 +27,7 @@ router.post('/signup/supplier/check', verifySupplierSignup);
 router.post('/signup/supplier', verifySupplierSignup, signup);
 router.post('/login', verifyLogin, login);
 router.get('/profile', userBouncers, getProfile);
+router.post('/reset-password', authenticate, verifyPasswordReset, resetPassword);
 router.post('/logout', authenticate, logoutUser);
 
 export default router;

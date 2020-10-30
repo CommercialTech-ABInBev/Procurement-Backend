@@ -7,12 +7,15 @@ const {
   supplierBouncers, userBouncers
 } = Bouncers;
 const {
-  verifySupplierProfileUpdate
+  verifySupplierProfileUpdate,
+  verifyCategory
 } = SupplierMiddleware;
 const {
-  updateProfile
+  updateProfile,
+  addVendorCategory
 } = SupplierController;
 
 router.patch('/profile', userBouncers, verifySupplierProfileUpdate, updateProfile);
+router.post('/category', supplierBouncers, verifyCategory, addVendorCategory);
 
 export default router;

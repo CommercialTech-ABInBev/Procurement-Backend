@@ -76,6 +76,11 @@ module.exports = (sequelize, DataTypes) => {
       as: 'vendorDetails',
       foreignKey: 'userId'
     });
+    VendorDetail.belongsToMany(models.Category, {
+      through: 'vendorCategory',
+      as: 'category',
+      foreignKey: 'vendorId'
+    });
   };
   return VendorDetail;
 };

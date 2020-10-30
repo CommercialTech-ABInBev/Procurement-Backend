@@ -122,6 +122,24 @@ const AuthController = {
       errorResponse(res, {});
     }
   },
+
+  
+  /**
+   * logs user out
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async logoutUser(req, res) {
+    try {
+      const token = '';
+      res.cookie('token', token, { maxAge: 0, httpOnly: true });
+      return successResponse(res, { message: 'Logout Successful', token });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
 };
 
 export default AuthController;

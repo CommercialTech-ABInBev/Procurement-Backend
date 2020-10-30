@@ -6,7 +6,8 @@ const router = Router();
 const {
   verifySignup,
   verifySupplierSignup,
-  verifyLogin
+  verifyLogin,
+  authenticate
 } = AuthMiddleware;
 const {
   userBouncers,
@@ -14,7 +15,8 @@ const {
 const {
   signup,
   login,
-  getProfile
+  getProfile,
+  logoutUser
 } = AuthController;
 
 router.post('/signup/check', verifySignup);
@@ -23,5 +25,6 @@ router.post('/signup/supplier/check', verifySupplierSignup);
 router.post('/signup/supplier', verifySupplierSignup, signup);
 router.post('/login', verifyLogin, login);
 router.get('/profile', userBouncers, getProfile);
+router.post('/logout', authenticate, logoutUser);
 
 export default router;

@@ -10,7 +10,7 @@ const {
 } = Toolbox;
 const {
   updateByKey,
-  addEntity
+  findMultipleByKey
 } = GeneralService;
 const {
   User,
@@ -55,8 +55,17 @@ const SupplierController = {
   async addVendorCategory(req, res) {
     try {
       const { categoryId, subCategories } = req.body;
-      let body;
-      body = subCategories.map((item) => ({
+      let check = false;
+      const venCat = await findMultipleByKey(VendorCategory, { vendorId: req.vendorDetails.id });
+      venCat.forEach(element => {
+        subCategories.forEach((item) => {
+          if (element.subCategory === item) {
+            check = true;
+          }
+        })
+      });
+      if (check) return errorResponse(res, { code: 404, message: 'subCategory is already added to this vendor' });
+      const body = subCategories.map((item) => ({
         vendorId: req.vendorDetails.id, categoryId, subCategory: item
       }));
       const vendorcategory = await VendorCategory.bulkCreate(body);

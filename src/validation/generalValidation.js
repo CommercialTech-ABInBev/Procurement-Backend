@@ -17,8 +17,7 @@ const GeneralValidation = {
         .label('Please enter a valid email address'),
       id: joi.number().positive()
         .label('id parameter must be a positive number'),
-      vendorId: joi.number().positive()
-        .label('id parameter must be a positive number'),
+      vendorId: joi.string().label('id parameter must be a positive number'),
       categoryId: joi.number().positive()
         .label('id parameter must be a positive number'),
       userId: joi.number().positive()
@@ -31,7 +30,7 @@ const GeneralValidation = {
         .label('Please enter a valid description \n the field must not be empty and it must be more than 10 letters'),
       mediaUrls: joi.array().items(joi.string().uri())
         .label('Please upload urls of media images in the right format'),
-      subcategories: joi.array().items(joi.string().uri())
+      subCategories: joi.array().items(joi.string())
         .label('Please subcategories should be an array'),
     };
     const { error } = joi.validate({ ...payload }, schema);

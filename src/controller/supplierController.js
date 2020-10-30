@@ -10,10 +10,12 @@ const {
 } = Toolbox;
 const {
   updateByKey,
+  addEntity
 } = GeneralService;
 const {
   User,
-  VendorDetail
+  VendorDetail,
+  VendorCategory
 } = database;
 // const {
 //   ADMIN_KEY,
@@ -38,6 +40,27 @@ const SupplierController = {
         await updateByKey(VendorDetail, { mediaUrls }, { userId: id });
       } else await updateByKey(VendorDetail, { ...req.body }, { userId: id });
       successResponse(res, { message: 'Profile update was successful' });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * update user profile
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof SupplierController
+   */
+  async addVendorCategory(req, res) {
+    try {
+      const { categoryId, subCategories } = req.body;
+      let body;
+      body = subCategories.map((item) => ({
+        vendorId: req.vendorDetails.id, categoryId, subCategory: item
+      }));
+      const vendorcategory = await VendorCategory.bulkCreate(body);
+      successResponse(res, { message: 'category added to vendor successfully', vendorcategory });
     } catch (error) {
       errorResponse(res, {});
     }

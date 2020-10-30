@@ -11,6 +11,7 @@ const {
 } = GeneralService;
 const {
   validateProfile,
+  validateParameters
 } = GeneralValidation;
 const {
   Vendor,
@@ -29,16 +30,9 @@ const SupplierMiddleware = {
    */
   async verifySupplierProfileUpdate(req, res, next) {
     try {
-      validateParameters(req.body);
-      const { categoryId, vendorId } = req.body;
-      const category = await findByKey(Category, { id: categoryId });
-      if (!category) return errorResponse(res, { code: 404, message: 'Category does not exist' });
-      const vendor = await findByKey(VendorDetail, { vendorId });
-      if (!vendor) return errorResponse(res, { code: 404, message: 'Vendor does not exist' });
-      req.vendorDetails = vendor;
+      validateProfile(req.body);
       next();
     } catch (error) {
-      console.error(error);
       errorResponse(res, { code: 400, message: error });
     }
   },
@@ -53,7 +47,13 @@ const SupplierMiddleware = {
    */
   async verifyCategory(req, res, next) {
     try {
-      validateProfile(req.body);
+      validateParameters(req.body);
+      const { categoryId, vendorId } = req.body;
+      const category = await findByKey(Category, { id: categoryId });
+      if (!category) return errorResponse(res, { code: 404, message: 'Category does not exist' });
+      const vendor = await findByKey(VendorDetail, { vendorId });
+      if (!vendor) return errorResponse(res, { code: 404, message: 'Vendor does not exist' });
+      req.vendorDetails = vendor;
       next();
     } catch (error) {
       console.error(error);

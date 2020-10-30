@@ -25,9 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   User.associate = (models) => {
-    User.belongsToMany(models.Role, {
-      through: 'roleUsers',
-      as: 'role',
+    User.hasOne(models.VendorDetail, {
+      as: 'user',
       foreignKey: 'userId'
     });
   };

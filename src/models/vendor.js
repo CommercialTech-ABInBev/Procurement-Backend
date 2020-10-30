@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Role = sequelize.define(
+  const Vendor = sequelize.define(
     'Vendor',
     {
       vendorId: {
@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   // eslint-disable-next-line no-unused-vars
-  Role.associate = (models) => {
+  Vendor.associate = (models) => {
   };
-  return Role;
+  return Vendor;
 };

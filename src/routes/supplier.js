@@ -14,11 +14,15 @@ const {
 const {
   updateProfile,
   addVendorCategory,
-  getVendorCategory
+  getVendorCategory,
+  serachCategories,
+  serachVendors
 } = SupplierController;
 
 router.patch('/profile', userBouncers, verifySupplierProfileUpdate, updateProfile);
 router.post('/category', supplierBouncers, verifyCategory, addVendorCategory);
-router.get('/category', userBouncers, verifySupplierCategory, getVendorCategory);
+router.get('/category', verifySupplierCategory, getVendorCategory); // ?categortId=[]
+router.get('/category/search', serachCategories); //?search=[]
+router.get('/vendor/search', serachVendors); //?search=[]
 
 export default router;

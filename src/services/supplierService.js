@@ -1,6 +1,6 @@
 /* eslint-disable valid-jsdoc */
 // import { ApiError } from '../utils';
-// import { Op } from 'sequelize';
+import { Op, QueryTypes } from 'sequelize';
 import database from '../models';
 import GeneralService from './generalService';
 
@@ -41,6 +41,50 @@ const CategoryService = {
             },
         ],
       }).map((values) => values.get({ plain: true }));
+      return entities;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+   /**
+   * search products with keys
+   * @async
+   * @param {object} key - inputs like names or tags
+   * @returns {promise-Object} - A promise object with entity details
+   * @memberof SupplierService
+   */
+  async searchCategoryByKey(key) {
+    try {
+        const entities = await Category.findAll({
+            where: {
+                [Op.or]: [
+                    { name: { [Op.like]: `%${key}%` } },
+                ]
+            }
+      });
+      return entities;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+   /**
+   * search products with keys
+   * @async
+   * @param {object} key - inputs like names or tags
+   * @returns {promise-Object} - A promise object with entity details
+   * @memberof SupplierService
+   */
+  async searchVendorByKey(key) {
+    try {
+        const entities = await VendorDetail.findAll({
+            where: {
+                [Op.or]: [
+                    { companyName: { [Op.like]: `%${key}%` } },
+                ]
+            }
+      });
       return entities;
     } catch (error) {
       throw new Error(error);

@@ -13,12 +13,15 @@ const {
   findMultipleByKey
 } = GeneralService;
 const {
-  vendorsByCategory
+  vendorsByCategory,
+  searchCategoryByKey,
+  searchVendorByKey
 } = CategoryService;
 const {
   User,
   VendorDetail,
-  VendorCategory
+  VendorCategory,
+  Category
 } = database;
 // const {
 //   ADMIN_KEY,
@@ -91,6 +94,42 @@ const SupplierController = {
       const categoryVendors = await vendorsByCategory({ categoryId });
       if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors for this category' });
       return successResponse(res, { categoryVendors });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+   /**
+   * search vendors and categories with name
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the product review details
+   * @memberof SupplierController
+   */
+  async serachCategories(req, res) {
+    try {
+      const category = await searchCategoryByKey(req.query.search);
+      if (!category.length) return errorResponse(res, { code: 404, message: 'Categories With Search Criteria is not available' });
+      return successResponse(res, { category });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
+
+
+   /**
+   * search vendors and categories with name
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the product review details
+   * @memberof SupplierController
+   */
+  async serachVendors(req, res) {
+    try {
+      const vendor = await searchVendorByKey(req.query.search);
+      if (!vendor.length) return errorResponse(res, { code: 404, message: 'Vendor With Search Criteria is not available' });
+      return successResponse(res, { vendor });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

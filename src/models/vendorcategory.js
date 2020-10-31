@@ -26,7 +26,14 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   VendorCategory.associate = function(models) {
-    // associations can be defined here
+    VendorCategory.belongsTo(models.VendorDetail, {
+      as: 'vendorDetail',
+      foreignKey: 'vendorId',
+    });
+    VendorCategory.belongsTo(models.Category, {
+      as: 'category',
+      foreignKey: 'categoryId',
+    });
   };
   return VendorCategory;
 };

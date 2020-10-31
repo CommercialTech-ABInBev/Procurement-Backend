@@ -10,8 +10,6 @@ const {
   Category
 } = database;
 
-const { findMultipleByKey, findByKey, decremnentByKeys } = GeneralService;
-
 const CategoryService = {
   /**
    * user get product entities by category
@@ -39,7 +37,7 @@ const CategoryService = {
                 ]
             },
         ],
-        where: key.id ? { id: key.id } : {}
+        where: key.id ? { id: key.id, approvalStatus: 'approved' } : { approvalStatus: 'approved' }
       }).map((values) => values.get({ plain: true }));
       return entities;
     } catch (error) {
@@ -56,12 +54,12 @@ const CategoryService = {
    */
   async searchCategoryByKey(key) {
     try {
-        const entities = await Category.findAll({
-            where: {
-                [Op.or]: [
-                    { name: { [Op.like]: `%${key}%` } },
-                ]
-            }
+      const entities = await Category.findAll({
+        where: {
+            [Op.or]: [
+                { name: { [Op.like]: `%${key}%` } },
+            ]
+        }
       });
       return entities;
     } catch (error) {
@@ -78,12 +76,13 @@ const CategoryService = {
    */
   async searchVendorByKey(key) {
     try {
-        const entities = await VendorDetail.findAll({
-            where: {
-                [Op.or]: [
-                    { companyName: { [Op.like]: `%${key}%` } },
-                ]
-            }
+      const entities = await VendorDetail.findAll({
+        where: {
+          approvalStatus: 'approved',
+            [Op.or]: [
+                { companyName: { [Op.like]: `%${key}%` } },
+            ]
+        }
       });
       return entities;
     } catch (error) {

@@ -138,6 +138,24 @@ const SupplierController = {
       errorResponse(res, {});
     }
   },
+
+   /**
+   * update vendor status
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the product review details
+   * @memberof SupplierController
+   */
+  async updateVendorStatus(req, res) {
+    try {
+      const { id, approvalStatus } = req.query;
+      const vendor = await updateByKey(VendorDetail, { approvalStatus }, { id });
+      return successResponse(res, { message: `Vendor is ${approvalStatus}`, vendor });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
 };
 
 export default SupplierController;

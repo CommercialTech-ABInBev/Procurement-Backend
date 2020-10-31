@@ -15,6 +15,7 @@ const GeneralValidation = {
     const schema = {
       email: joi.string().email()
         .label('Please enter a valid email address'),
+      approvalStatus: joi.string().valid('pending', 'approved', 'rejected').label('parameter must be approved/rejected'),
       id: joi.number().positive()
         .label('id parameter must be a positive number'),
       vendorId: joi.string().label('id parameter must be a positive number'),

@@ -29,17 +29,17 @@ const CategoryService = {
             {
                 model: VendorCategory,
                 as: 'vendorCategories',
-                where: key,
+                where: key.categoryId ? { categoryId: key.categoryId } : {},
                 include: [
                     {
                         model: Category,
                         as: 'category',
-                        // where: { id: key.categoryId },
              
                     },
                 ]
             },
         ],
+        where: key.id ? { id: key.id } : {}
       }).map((values) => values.get({ plain: true }));
       return entities;
     } catch (error) {

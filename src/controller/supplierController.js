@@ -88,10 +88,13 @@ const SupplierController = {
    * @returns {JSON } A JSON response with the user's profile details.
    * @memberof SupplierController
    */
-  async getVendorCategory(req, res) {
+  async getVendor(req, res) {
     try {
-      const { categoryId } = req.query;
-      const categoryVendors = await vendorsByCategory({ categoryId });
+      const { categoryId, id } = req.query;
+      let categoryVendors 
+      if (categoryId) categoryVendors = await vendorsByCategory({ categoryId });
+      if (id) categoryVendors = await vendorsByCategory({ id });
+      else categoryVendors = await vendorsByCategory({ id });
       if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors for this category' });
       return successResponse(res, { categoryVendors });
     } catch (error) {

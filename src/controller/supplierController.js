@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { GeneralService } from '../services';
+import { GeneralService, CategoryService } from '../services';
 import { Toolbox } from '../util';
 import database from '../models';
 // import { env } from '../config';
@@ -12,6 +12,9 @@ const {
   updateByKey,
   findMultipleByKey
 } = GeneralService;
+const {
+  vendorsByCategory
+} = CategoryService;
 const {
   User,
   VendorDetail,
@@ -71,6 +74,24 @@ const SupplierController = {
       const vendorcategory = await VendorCategory.bulkCreate(body);
       successResponse(res, { message: 'category added to vendor successfully', vendorcategory });
     } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * get supplier by category
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof SupplierController
+   */
+  async getVendorCategory(req, res) {
+    try {
+      const { categoryId } = req.query;
+      const categoryVendors = await vendorsByCategory({ categoryId });
+      return successResponse(res, { categoryVendors });
+    } catch (error) {
+      console.error(error);
       errorResponse(res, {});
     }
   },

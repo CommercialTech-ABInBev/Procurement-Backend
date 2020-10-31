@@ -76,9 +76,13 @@ module.exports = (sequelize, DataTypes) => {
       as: 'vendorDetails',
       foreignKey: 'userId'
     });
-    VendorDetail.belongsToMany(models.Category, {
-      through: 'vendorCategory',
-      as: 'category',
+    // VendorDetail.belongsToMany(models.Category, {
+    //   through: 'VendorCategory',
+    //   as: 'category',
+    //   foreignKey: 'vendorId'
+    // });
+    VendorDetail.hasMany(models.VendorCategory, {
+      as: 'vendorCategories',
       foreignKey: 'vendorId'
     });
   };

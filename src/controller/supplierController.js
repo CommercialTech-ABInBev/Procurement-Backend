@@ -89,6 +89,7 @@ const SupplierController = {
     try {
       const { categoryId } = req.query;
       const categoryVendors = await vendorsByCategory({ categoryId });
+      if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors for this category' });
       return successResponse(res, { categoryVendors });
     } catch (error) {
       console.error(error);

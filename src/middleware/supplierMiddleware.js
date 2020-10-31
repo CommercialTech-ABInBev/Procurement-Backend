@@ -87,6 +87,29 @@ const SupplierMiddleware = {
       errorResponse(res, { code: 400, message: error });
     }
   },
+
+  /**
+   * verify supplier category
+   * @param {object} req
+   * @param {object} res
+   * @param {object} next
+   * @returns {object} - return and object {error or response}
+   * @memberof SupplierMiddleware
+   */
+  async verifyApproval(req, res, next) {
+    try {
+      validateParameters(req.query);
+      const { id } = req.query;
+      if (id) {
+        const vendor = await findByKey(VendorDetail, { id });
+        if (!vendor) return errorResponse(res, { code: 404, message: 'Vendor does not exist' });
+      }
+      next();
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, { code: 400, message: error });
+    }
+  },
 };
 
 export default SupplierMiddleware;

@@ -101,9 +101,9 @@ const SupplierController = {
         else categoryVendors = await vendorsById({ approvalStatus: 'approved' }, role);
       } else {
         if (categoryId) categoryVendors = await vendorsByCategory({ categoryId });
-        else if (id) categoryVendors = await vendorsById({ id }, role);
-        else if (approvalStatus) categoryVendors = await vendorsById({ approvalStatus }, role);
-        else categoryVendors = await vendorsById({}, role);
+        else if (id) categoryVendors = await vendorsById({ id });
+        else if (approvalStatus) categoryVendors = await vendorsById({ approvalStatus });
+        else categoryVendors = await vendorsById({});
       };
       if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors yet' });
       return successResponse(res, { categoryVendors });

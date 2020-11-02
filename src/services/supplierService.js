@@ -27,12 +27,11 @@ const CategoryService = {
             {
                 model: VendorCategory,
                 as: 'vendorCategories',
-                required: false,
+                where: key,
                 include: [
                     {
                         model: Category,
                         as: 'category',
-                        where: { id: key.categoryId },
                     },
                 ]
             },

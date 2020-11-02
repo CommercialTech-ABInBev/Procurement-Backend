@@ -116,6 +116,7 @@ const SupplierController = {
       const profile = await vendorProfile({ vendorId });
       return successResponse(res, { profile });
     } catch (error) {
+      console.error(error);
       errorResponse(res, {});
     }
   },

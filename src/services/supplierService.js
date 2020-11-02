@@ -56,7 +56,7 @@ const CategoryService = {
     try {
       const entities = await VendorDetail.findOne({
         where: key
-      }).map((values) => values.get({ plain: true }));
+      });
       return entities;
     } catch (error) {
       throw new Error(error);

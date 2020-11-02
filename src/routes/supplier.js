@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { Bouncers, SupplierMiddleware } from '../middleware';
+import { Bouncers, SupplierMiddleware, AuthMiddleware } from '../middleware';
 import { SupplierController } from '../controller';
 
 const router = Router();
@@ -13,6 +13,9 @@ const {
   verifyApproval
 } = SupplierMiddleware;
 const {
+  authenticate
+} = AuthMiddleware;
+const {
   updateProfile,
   addVendorCategory,
   getVendor,
@@ -25,7 +28,7 @@ const {
 router.patch('/profile', userBouncers, verifySupplierProfileUpdate, updateProfile);
 router.post('/category', supplierBouncers, verifyCategory, addVendorCategory);
 router.get('/', verifySupplierCategory, getVendor); // ?categortId=[]&id=[]
-router.get('/me', getProfile); // ?categortId=[]&id=[]
+router.get('/me', authenticate, getProfile); // ?categortId=[]&id=[]
 router.get('/category/search', serachCategories); //?search=[]
 router.get('/vendor/search', serachVendors); //?search=[]
 router.patch('/approve', verifyApproval, updateVendorStatus); //?approvalStatus=[]

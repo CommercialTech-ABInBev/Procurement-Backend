@@ -18,7 +18,8 @@ const {
   getVendor,
   serachCategories,
   serachVendors,
-  updateVendorStatus
+  updateVendorStatus,
+  getProfile
 } = SupplierController;
 
 router.patch('/profile', userBouncers, verifySupplierProfileUpdate, updateProfile);

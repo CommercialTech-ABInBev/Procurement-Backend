@@ -45,6 +45,24 @@ const CategoryService = {
     }
   },
 
+  /**
+   * user get product entities by category
+   * @async
+   * @param {object} key - object containing category key and value
+   * @returns {promise-Object} - A promise object with entity details
+   * @memberof CategoryService
+   */
+  async vendorProfile(key) {
+    try {
+      const entities = await VendorDetail.findOne({
+        where: key
+      }).map((values) => values.get({ plain: true }));
+      return entities;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
    /**
    * search products with keys
    * @async

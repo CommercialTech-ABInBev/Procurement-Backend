@@ -15,7 +15,8 @@ const {
 const {
   vendorsByCategory,
   searchCategoryByKey,
-  searchVendorByKey
+  searchVendorByKey,
+  vendorProfile
 } = CategoryService;
 const {
   User,
@@ -97,6 +98,23 @@ const SupplierController = {
       else categoryVendors = await vendorsByCategory({ id });
       if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors for this category' });
       return successResponse(res, { categoryVendors });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * get supplier by category
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof SupplierController
+   */
+  async getProfile(req, res) {
+    try {
+      const { vendorId } = req.tokenData;
+      const profile = await vendorProfile({ vendorId });
+      return successResponse(res, { profile });
     } catch (error) {
       errorResponse(res, {});
     }

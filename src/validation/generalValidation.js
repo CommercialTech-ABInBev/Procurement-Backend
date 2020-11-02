@@ -130,7 +130,8 @@ const GeneralValidation = {
         .label('company description has a limit of 300 characters'),
       profileImage: joi.string().uri().label('Please profileImage must be in form of an image URL'),
       companyLogo: joi.string().uri().label('Please logo  must be in form of an image URL'),
-      portfolioUrl: joi.string().uri().label('Please logo  must be in form of an image URL'),
+      portfolioUrl: joi.string().uri().label('Please logo  must be in form of a URL'),
+      website: joi.string().uri().label('Please logo  must be in form of a URL'),
       companyBanner: joi.string().uri().label('Please company banner must be in form of an image URL'),
       companyUrl: joi.string().uri().label('Please company website must be in form of a URL'),
       companyEmail: joi.string().email()
@@ -138,8 +139,8 @@ const GeneralValidation = {
       companyTheme: joi.string().regex(/^#[A-Fa-f0-9]{6}$/).label('colour nust be a Hex in format #ffffff'),
       mediaPictures: joi.array().items(joi.string().uri())
         .label('Please upload urls of media images in the right format'),
-      companyLocation: joi.array().items(joi.string().uri())
-        .label('Please company location should be in a array format'),
+      companyLocation: joi.string()
+        .label('Please company location should be a string'),
       // eslint-disable-next-line no-useless-escape
       companyPhoneNumber: joi.string().regex(/^[0-9+\(\)#\.\s\/ext-]+$/).label('Please input a valid phone number'),
     };

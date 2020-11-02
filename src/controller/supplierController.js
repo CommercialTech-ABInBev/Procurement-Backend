@@ -92,13 +92,15 @@ const SupplierController = {
   async getVendor(req, res) {
     try {
       const { categoryId, id } = req.query;
+      const { role } = req.tokenData;
       let categoryVendors 
-      if (categoryId) categoryVendors = await vendorsByCategory({ categoryId });
-      if (id) categoryVendors = await vendorsByCategory({ id });
-      else categoryVendors = await vendorsByCategory({ id });
+      if (categoryId) categoryVendors = await vendorsByCategory({ categoryId }, role);
+      if (id) categoryVendors = await vendorsByCategory({ id }, role);
+      else categoryVendors = await vendorsByCategory({}, role);
       if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors for this category' });
       return successResponse(res, { categoryVendors });
     } catch (error) {
+      console.error(error);
       errorResponse(res, {});
     }
   },

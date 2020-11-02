@@ -16,11 +16,11 @@ const CategoryService = {
    * @async
    * @param {object} key - object containing category key and value
    * e.g { id: 5 }
-   * @param {object} status - object containing approval status of product
+   * @param {object} role - object containing approval status of product
    * @returns {promise-Object} - A promise object with entity details
    * @memberof CategoryService
    */
-  async vendorsByCategory(key) {
+  async vendorsByCategory(key, role) {
     try {
       const entities = await VendorDetail.findAll({
         include: [
@@ -37,7 +37,9 @@ const CategoryService = {
                 ]
             },
         ],
-        where: key.id ? { id: key.id, approvalStatus: 'approved' } : { approvalStatus: 'approved' }
+        where: key.id ? 
+          role === "admin" ? { id: key.id } : { id: key.id, approvalStatus: 'approved' }
+          : (role === "supplier" || role === "staff") ? { approvalStatus: 'approved' } : {}
       }).map((values) => values.get({ plain: true }));
       return entities;
     } catch (error) {

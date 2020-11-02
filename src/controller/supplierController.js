@@ -112,8 +112,8 @@ const SupplierController = {
    */
   async getProfile(req, res) {
     try {
-      const { vendorId } = req.tokenData;
-      const profile = await vendorProfile({ vendorId });
+      const { id } = req.tokenData;
+      const profile = await vendorProfile({ userId: id });
       return successResponse(res, { profile });
     } catch (error) {
       console.error(error);

@@ -16,7 +16,8 @@ const {
   vendorsByCategory,
   searchCategoryByKey,
   searchVendorByKey,
-  vendorProfile
+  vendorProfile,
+  vendorsById
 } = CategoryService;
 const {
   User,
@@ -91,13 +92,20 @@ const SupplierController = {
    */
   async getVendor(req, res) {
     try {
-      const { categoryId, id } = req.query;
+      const { categoryId, id, approvalStatus } = req.query;
       const { role } = req.tokenData;
-      let categoryVendors 
-      if (categoryId) categoryVendors = await vendorsByCategory({ categoryId }, role);
-      if (id) categoryVendors = await vendorsByCategory({ id }, role);
-      else categoryVendors = await vendorsByCategory({}, role);
-      if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors for this category' });
+      let categoryVendors;
+      if (role !== "admin") {
+        if (categoryId) categoryVendors = await vendorsByCategory({ categoryId });
+        else if (id) categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
+        else categoryVendors = await vendorsById({ approvalStatus: 'approved' }, role);
+      } else {
+        if (categoryId) categoryVendors = await vendorsByCategory({ categoryId });
+        else if (id) categoryVendors = await vendorsById({ id }, role);
+        else if (approvalStatus) categoryVendors = await vendorsById({ approvalStatus }, role);
+        else categoryVendors = await vendorsById({}, role);
+      };
+      if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors yet' });
       return successResponse(res, { categoryVendors });
     } catch (error) {
       console.error(error);

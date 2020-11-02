@@ -27,19 +27,50 @@ const CategoryService = {
             {
                 model: VendorCategory,
                 as: 'vendorCategories',
-                where: key.categoryId ? { categoryId: key.categoryId } : {},
+                required: false,
                 include: [
                     {
                         model: Category,
                         as: 'category',
-             
+                        where: { id: key.categoryId },
                     },
                 ]
             },
         ],
-        where: key.id ? 
-          role === "admin" ? { id: key.id } : { id: key.id, approvalStatus: 'approved' }
-          : (role === "supplier" || role === "staff") ? { approvalStatus: 'approved' } : {}
+        where: { approvalStatus: 'approved' }
+      }).map((values) => values.get({ plain: true }));
+      return entities;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  /**
+   * user get product entities by category
+   * @async
+   * @param {object} key - object containing category key and value
+   * e.g { id: 5 }
+   * @param {object} role - object containing approval status of product
+   * @returns {promise-Object} - A promise object with entity details
+   * @memberof CategoryService
+   */
+  async vendorsById(key, role) {
+    try {
+      const entities = await VendorDetail.findAll({
+        include: [
+            {
+                model: VendorCategory,
+                as: 'vendorCategories',
+                required: true,
+                include: [
+                    {
+                        model: Category,
+                        as: 'category',
+                    },
+                ]
+            },
+        ],
+        where: key
       }).map((values) => values.get({ plain: true }));
       return entities;
     } catch (error) {

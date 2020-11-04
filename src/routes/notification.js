@@ -10,9 +10,11 @@ const {
   verifyNotification
 } = NotificationMiddleware;
 const {
-  addNotification
+  addNotification,
+  getNotifications
 } = NotificationController;
 
 router.post('/', supplierBouncers, verifyNotification, addNotification);
+router.get('/', supplierBouncers, verifyNotification, getNotifications); // ?id=[]
 
 export default router;

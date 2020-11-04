@@ -11,7 +11,8 @@ const {
 const {
   updateByKey,
   findMultipleByKey,
-  findByKey
+  findByKey,
+  addEntity
 } = GeneralService;
 const {
   vendorsByCategory,
@@ -51,6 +52,7 @@ const SupplierController = {
       } else await updateByKey(VendorDetail, { ...req.body }, { userId: id });
       successResponse(res, { message: 'Profile update was successful' });
     } catch (error) {
+      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -180,20 +182,23 @@ const SupplierController = {
   async updateVendorStatus(req, res) {
     try {
       const { id, approvalStatus } = req.query;
-      const vendor = await updateByKey(VendorDetail, { approvalStatus }, { id });
+      await updateByKey(VendorDetail, { approvalStatus }, { id });
+      const vendor = await findByKey(VendorDetail, { id });
       const user = await findByKey(User, { id: vendor.userId });
+      let notification;
       if (vendor){
-        await addEntity(Notification, {
-          to: vendor.companyName,
+        notification = await addEntity(Notification, {
+          to: vendor.companyName || user.vendorId,
           from: 'admin',
           userId: user.id,
-          subject: `Your details is ${toUpperCase(approvalStatus)}`,
-          message: req.body
-            ? req.body.message : approvalStatus === "approved" 
-            ? 'Thank You for registering with us, your request is hereby approved' : 'Please kindly review your details and add all neccessary information.\nThank You.'
+          subject: `Your details is ${approvalStatus.toUpperCase()}`,
+          message: req.body.message ? req.body.message 
+            : approvalStatus == "approved" 
+              ? 'Thank You for registering with us, your request is hereby approved' 
+              : 'Please kindly review your details and add all neccessary information.\nThank You.'
         });
       }
-      return successResponse(res, { message: `Vendor is ${approvalStatus}`, vendor });
+      return successResponse(res, { message: `Vendor is ${approvalStatus}`, vendor, notification });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

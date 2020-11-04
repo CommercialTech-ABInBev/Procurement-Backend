@@ -29,7 +29,14 @@ const NotificationMiddleware = {
    */
   async verifyNotification(req, res, next) {
     try {
-      validateParameters(req.body);
+      if (req.body) validateParameters(req.body);
+      if (req.query.id) {
+        const { id } = req.query;
+        validateParameters({ id });
+        const notification = await findByKey(Notification, { id });
+        if (!notification) return errorResponse(res, { code: 409, message: 'Notification does not exist' });
+        req.notification = notification;
+      }
       next();
     } catch (error) {
       errorResponse(res, {});

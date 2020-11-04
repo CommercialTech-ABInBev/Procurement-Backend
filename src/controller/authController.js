@@ -53,7 +53,7 @@ const AuthController = {
         vendorDetails = await addEntity(VendorDetail, { userId: user.id, vendorId: req.body.vendorId });
         if (vendorDetails){
           await addEntity(Notification, {
-            to: vendorDetails.companyName,
+            to: vendorDetails.companyName || req.body.vendorId,
             from: 'admin',
             userId: user.id,
             subject: 'Welcome to PMS',

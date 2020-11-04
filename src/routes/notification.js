@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { Bouncers, NotificationMiddleware } from '../middleware';
-import { CategoryController } from '../controller';
+import { NotificationController } from '../controller';
 
 const router = Router();
 const {
@@ -10,9 +10,9 @@ const {
   verifyNotification
 } = NotificationMiddleware;
 const {
-    getCategories
-} = CategoryController;
+  addNotification
+} = NotificationController;
 
-router.post('/', supplierBouncers, verifyNotification, getCategories);
+router.post('/', supplierBouncers, verifyNotification, addNotification);
 
 export default router;

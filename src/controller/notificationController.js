@@ -11,7 +11,8 @@ const {
 } = Toolbox
 const {
   addEntity,
-  findByKey
+  findByKey,
+  updateByKey
 } = GeneralService;
 const {
   notificationsBykey
@@ -61,6 +62,7 @@ const NotificationController = {
       const { id, role } = req.tokenData;
       let notifications;
       if (req.query.id) {
+        await updateByKey(Notification, { read: true }, { id: req.query.id });
         notifications = await notificationsBykey({ id: req.query.id });
       } else {
         if (role === "supplier") notifications = await notificationsBykey({ userId: id, from: 'admin' });

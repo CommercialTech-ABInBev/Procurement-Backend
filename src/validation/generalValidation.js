@@ -25,10 +25,14 @@ const GeneralValidation = {
         .label('id parameter must be a positive number'),
       name: joi.string().min(3).max(30)
         .label('Please enter a valid name \n the field must not be empty and it must be more than 2 letters'),
+      subject: joi.string().min(3).max(50)
+        .label('Please enter a valid subject'),
       userName: joi.string().regex(/^[a-zA-Z0-9_]{3,30}$/)
         .label('Please input a valid userName \n It must only contain alphabets and/underscore ("-")'),
       description: joi.string().min(10).max(500)
         .label('Please enter a valid description \n the field must not be empty and it must be more than 10 letters'),
+      message: joi.string().min(10).max(500)
+        .label('Please enter a valid message \n the field must not be empty and it must be more than 10 letters'),
       mediaUrls: joi.array().items(joi.string().uri())
         .label('Please upload urls of media images in the right format'),
       subCategories: joi.array().items(joi.string())
@@ -126,7 +130,7 @@ const GeneralValidation = {
       discount: joi.number().label('Please add the product discount'),
       companyAddress: joi.string().min(3).max(120)
         .label('company address has a limit of 120 characters'),
-      companyDescription: joi.string().min(3).max(300)
+      companyDescription: joi.string().min(3).max(500)
         .label('company description has a limit of 300 characters'),
       profileImage: joi.string().uri().label('Please profileImage must be in form of an image URL'),
       companyLogo: joi.string().uri().label('Please logo  must be in form of an image URL'),

@@ -10,7 +10,8 @@ const {
 } = Toolbox;
 const {
   updateByKey,
-  findMultipleByKey
+  findMultipleByKey,
+  findByKey
 } = GeneralService;
 const {
   vendorsByCategory,
@@ -23,7 +24,8 @@ const {
   User,
   VendorDetail,
   VendorCategory,
-  Category
+  Category,
+  Notification
 } = database;
 // const {
 //   ADMIN_KEY,
@@ -179,6 +181,18 @@ const SupplierController = {
     try {
       const { id, approvalStatus } = req.query;
       const vendor = await updateByKey(VendorDetail, { approvalStatus }, { id });
+      const user = await findByKey(User, { id: vendor.userId });
+      if (vendor){
+        await addEntity(Notification, {
+          to: vendor.companyName,
+          from: 'admin',
+          userId: user.id,
+          subject: `Your details is ${toUpperCase(approvalStatus)}`,
+          message: req.body
+            ? req.body.message : approvalStatus === "approved" 
+            ? 'Thank You for registering with us, your request is hereby approved' : 'Please kindly review your details and add all neccessary information.\nThank You.'
+        });
+      }
       return successResponse(res, { message: `Vendor is ${approvalStatus}`, vendor });
     } catch (error) {
       console.error(error);

@@ -3,6 +3,7 @@
 import { GeneralService } from '../services';
 import { Toolbox } from '../util';
 import database from '../models';
+import vendordetails from '../models/vendordetails';
 // import { env } from '../config';
 
 const {
@@ -25,7 +26,7 @@ const {
 const {
   User,
   VendorDetail,
-  Role
+  Notification
 } = database;
 
 const AuthController = {
@@ -50,6 +51,15 @@ const AuthController = {
         };
         user = await addEntity(User, { ...body });
         vendorDetails = await addEntity(VendorDetail, { userId: user.id, vendorId: req.body.vendorId });
+        if (vendorDetails){
+          await addEntity(Notification, {
+            to: vendorDetails.companyName,
+            from: 'admin',
+            userId: user.id,
+            subject: 'Welcome to PMS',
+            message: 'A big welcome to you. Please ensure to fill in your details in the company details tab and submit for approval.\nWe will definitely get back to you as soon as possible.\nHappy doing business with you.'
+          });
+        }
       } else {
         body = {
           email: req.body.email,

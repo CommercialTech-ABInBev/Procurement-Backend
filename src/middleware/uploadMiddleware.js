@@ -7,11 +7,11 @@ const {
 } = Toolbox;
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-      cb(null, 'uploads');
-  },
+  // destination: (req, file, cb) => {
+  //     cb(null, 'uploads');
+  // },
   filename: (req, file, cb) => {
-      console.log(file);
+      // console.log(file);
       cb(null, Date.now() + path.extname(file.originalname));
   }
 });

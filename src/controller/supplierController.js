@@ -2,12 +2,17 @@
 import { GeneralService, CategoryService } from '../services';
 import { Toolbox } from '../util';
 import database from '../models';
+import { AzureUpload } from './../util';
+// import upload from '../middleware/uploadMiddleware';
 // import { env } from '../config';
 
 const {
   successResponse,
   errorResponse,
 } = Toolbox;
+const {
+  uploadImage
+} = AzureUpload;
 const {
   updateByKey,
   findMultipleByKey,
@@ -44,11 +49,12 @@ const SupplierController = {
   async updateProfile(req, res) {
     try {
       const { id } = req.tokenData;
-      if (req.body.files) {
-        
-        return console.log(req.files);
-        const mediaUrls = JSON.stringify(req.body.mediaPictures);
-        await delete req.body.mediaPictures;
+      if (req.files) {
+        let mediaUrls = [...req.files];
+        mediaUrls = await uploadImage(mediaUrls);
+        mediaUrls = JSON.stringify(mediaUrls);
+        // const mediaUrls = JSON.stringify(req.body.mediaPictures);
+        await delete req.body.file;
         await updateByKey(VendorDetail,{ ...req.body }, { userId: id });
         await updateByKey(VendorDetail, { mediaUrls }, { userId: id });
       } else await updateByKey(VendorDetail, { ...req.body }, { userId: id });

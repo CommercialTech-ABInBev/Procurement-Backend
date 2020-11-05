@@ -116,8 +116,7 @@ const GeneralValidation = {
    */
   validateImages(payload) {
     const schema = {
-      file: joi.array().items(joi.object())
-      .label('Please upload at least 2 Images for display'),
+      file: joi.object({ files: joi.array().single() }).label('Please upload more than 1 image')
     };
     const { error } = joi.validate({ ...payload }, schema);
     if (error) throw error.details[0].context.label;

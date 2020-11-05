@@ -32,7 +32,7 @@ const SupplierMiddleware = {
   async verifySupplierProfileUpdate(req, res, next) {
     try {
       validateProfile(req.body);
-      if (req.files) validateImages([...req.file]);
+      if (req.files) validateImages(req.file);
       next();
     } catch (error) {
       console.error(error);

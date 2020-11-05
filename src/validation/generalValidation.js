@@ -108,6 +108,22 @@ const GeneralValidation = {
     return true;
   },
 
+    /**
+   * validate images
+   * @param {object} payload - user object
+   * @returns {object | boolean} - returns a boolean or an error object
+   * @memberof GeneralValidation
+   */
+  validateImages(payload) {
+    const schema = {
+      file: joi.array().items(joi.object())
+      .label('Please upload at least 2 Images for display'),
+    };
+    const { error } = joi.validate({ ...payload }, schema);
+    if (error) throw error.details[0].context.label;
+    return true;
+  },
+
   /**
    * validate user profile data
    * @param {object} payload - user object

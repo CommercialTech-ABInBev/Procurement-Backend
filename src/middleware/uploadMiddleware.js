@@ -1,34 +1,29 @@
 import multer from 'multer';
+import { Toolbox } from '../util';
+import path from "path";
 
-const UploadMiddleware = {
-  /**
-   * check if upload data is not more than 10mb
-   * @param {object} req
-   * @param {object} res
-   * @param {object} next
-   * @returns {object} - returns error or response object
-   * @memberof UploadMiddleware
-   */
-  verifyUpload(req, res, next) {
-    try {
-      multer({
-        limits: {
-          fileSize: 1000000
-        },
-      
-        fileFilter(req, file, cb) {
-          if (!file.originalname.match(/\.(jpg|jpeg|png|svg|PNG)$/)) {
-            return cb(new ErrorEvent('PLease upload a Picture format'));
-          }
-      
-          cb(undefined, true);
-        }
-      });
-      next();
-    } catch (error) {
-      errorResponse(res, {});
-    }
+const {
+  errorResponse,
+} = Toolbox;
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+      cb(null, 'uploads');
+  },
+  filename: (req, file, cb) => {
+      console.log(file);
+      cb(null, Date.now() + path.extname(file.originalname));
   }
-};
+});
 
-export default UploadMiddleware;
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype == 'image/jpeg' || file.mimetype == 'image/png' || file.mimetype == 'image/jpg' || file.mimetype == 'image/JPEG') {
+      cb(null, true);
+  } else {
+      cb(null, false);
+  }
+}
+const upload = multer({ storage: storage, fileFilter: fileFilter });
+
+
+export default upload;

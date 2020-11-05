@@ -1,6 +1,7 @@
 import { Router } from 'express';
-import { Bouncers, SupplierMiddleware, AuthMiddleware, UploadMiddleware } from '../middleware';
+import { Bouncers, SupplierMiddleware, AuthMiddleware } from '../middleware';
 import { SupplierController } from '../controller';
+import upload from './../middleware/uploadMiddleware';
 
 const router = Router();
 const {
@@ -15,9 +16,9 @@ const {
 const {
   authenticate
 } = AuthMiddleware;
-const {
-  verifyUpload
-} = UploadMiddleware;
+// const {
+//   verifyUpload
+// } = UploadMiddleware;
 const {
   updateProfile,
   addVendorCategory,
@@ -28,7 +29,7 @@ const {
   getProfile
 } = SupplierController;
 
-router.patch('/profile', userBouncers, verifySupplierProfileUpdate, verifyUpload, updateProfile);
+router.patch('/profile', userBouncers, upload.array('file'), verifySupplierProfileUpdate, updateProfile);
 router.post('/category', supplierBouncers, verifyCategory, addVendorCategory);
 router.get('/', authenticate, verifySupplierCategory, getVendor); // ?categortId=[]&id=[]
 router.get('/me', authenticate, getProfile); // ?categortId=[]&id=[]

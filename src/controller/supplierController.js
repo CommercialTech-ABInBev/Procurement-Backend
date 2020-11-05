@@ -44,7 +44,9 @@ const SupplierController = {
   async updateProfile(req, res) {
     try {
       const { id } = req.tokenData;
-      if (req.body.mediaPictures) {
+      if (req.body.files) {
+        
+        return console.log(req.files);
         const mediaUrls = JSON.stringify(req.body.mediaPictures);
         await delete req.body.mediaPictures;
         await updateByKey(VendorDetail,{ ...req.body }, { userId: id });

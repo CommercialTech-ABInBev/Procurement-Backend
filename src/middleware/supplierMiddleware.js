@@ -11,7 +11,8 @@ const {
 } = GeneralService;
 const {
   validateProfile,
-  validateParameters
+  validateParameters,
+  validateImages
 } = GeneralValidation;
 const {
   Vendor,
@@ -31,8 +32,10 @@ const SupplierMiddleware = {
   async verifySupplierProfileUpdate(req, res, next) {
     try {
       validateProfile(req.body);
+      if (req.files) validateImages([...req.file]);
       next();
     } catch (error) {
+      console.error(error);
       errorResponse(res, { code: 400, message: error });
     }
   },

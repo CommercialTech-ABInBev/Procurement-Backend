@@ -33,10 +33,12 @@
   },
   "homepage": "https://github.com/Tueloper/Procurement-Backend#readme",
   "dependencies": {
+    "@azure/storage-blob": "^12.2.1",
     "@babel/polyfill": "^7.4.4",
     "@hapi/joi": "^15.1.1",
     "@sendgrid/mail": "^6.4.0",
     "@types/hapi__joi": "^15.0.3",
+    "azure-storage": "^2.10.3",
     "bcryptjs": "^2.4.3",
     "chai": "^4.2.0",
     "cloudinary": "^1.19.0",

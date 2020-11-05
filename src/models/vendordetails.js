@@ -80,6 +80,10 @@ module.exports = (sequelize, DataTypes) => {
       as: 'vendorCategories',
       foreignKey: 'vendorId'
     });
+    VendorDetail.hasMany(models.Media, {
+      as: 'vendorDetailImage',
+      foreignKey: 'vendorDetailsId'
+    });
   };
   return VendorDetail;
 };

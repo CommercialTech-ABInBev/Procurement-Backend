@@ -130,6 +130,7 @@ const GeneralValidation = {
    */
   validateProfile(payload) {
     const schema = {
+      vendorId: joi.string().label('Please enter a valid vendor id'),
       name: joi.string().min(3).max(25)
         .label('Please enter a valid firstname \n the field must not be empty and it must be more than 2 letters'),
       gender: joi.string().valid('male', 'female')

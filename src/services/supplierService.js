@@ -7,7 +7,8 @@ import GeneralService from './generalService';
 const {
   VendorDetail,
   VendorCategory,
-  Category
+  Category,
+  Media
 } = database;
 
 const CategoryService = {
@@ -35,6 +36,11 @@ const CategoryService = {
                     },
                 ]
             },
+            {
+              model: Media,
+              as: 'vendorDetailImage',
+              attributes: ['imageUrl'],
+          },
         ],
         where: { approvalStatus: 'approved' }
       }).map((values) => values.get({ plain: true }));
@@ -68,6 +74,11 @@ const CategoryService = {
                     },
                 ]
             },
+            {
+              model: Media,
+              as: 'vendorDetailImage',
+              attributes: ['id', 'imageUrl'],
+          },
         ],
         where: key
       }).map((values) => values.get({ plain: true }));
@@ -87,6 +98,13 @@ const CategoryService = {
   async vendorProfile(key) {
     try {
       const entities = await VendorDetail.findOne({
+        include: [
+          {
+              model: Media,
+              as: 'vendorDetailImage',
+              attributes: ['id', 'imageUrl'],
+          },
+        ],
         where: key
       });
       return entities;
@@ -127,6 +145,13 @@ const CategoryService = {
   async searchVendorByKey(key) {
     try {
       const entities = await VendorDetail.findAll({
+        include: [
+          {
+              model: Media,
+              as: 'vendorDetailImage',
+              attributes: ['id', 'imageUrl'],
+          },
+        ],
         where: {
           approvalStatus: 'approved',
             [Op.or]: [

@@ -67,6 +67,7 @@
     "request": "^2.87.0",
     "sequelize": "^5.15.0",
     "sequelize-cli": "^5.5.0",
+    "sharp": "^0.26.2",
     "underscore": "^1.9.1",
     "uuid": "^8.0.0"
   },

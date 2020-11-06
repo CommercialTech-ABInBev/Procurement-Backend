@@ -12,7 +12,8 @@ const {
 const {
   addEntity,
   findByKey,
-  updateByKey
+  updateByKey,
+  deleteByKey
 } = GeneralService;
 const {
   notificationsBykey
@@ -70,6 +71,26 @@ const NotificationController = {
       }
       if (!notifications.length) return errorResponse(res, { code: 404, message: 'No Notifications Yet' });
       return successResponse(res, { notifications });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * delete notification
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof NotificationController
+   */
+  async deleteNotification(req, res) {
+    try {
+      if (!req.query.id) {
+        return errorResponse(res, { code: 409, message: 'Please select a notification to delete.' });
+      }
+      const image = await deleteByKey(Notification, { id: req.query.id });
+      successResponse(res, { message: 'Notification deleted successfully.', image });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

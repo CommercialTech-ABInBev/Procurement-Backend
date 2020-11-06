@@ -16,9 +16,6 @@ const {
 const {
   authenticate
 } = AuthMiddleware;
-// const {
-//   verifyUpload
-// } = UploadMiddleware;
 const {
   updateProfile,
   addVendorCategory,
@@ -28,7 +25,8 @@ const {
   updateVendorStatus,
   getProfile,
   updateLogo,
-  deleteImage
+  deleteImage,
+  getVendorBySubcategory
 } = SupplierController;
 
 router.patch('/profile', userBouncers, upload.array('file'), verifySupplierProfileUpdate, updateProfile);
@@ -36,6 +34,7 @@ router.patch('/logo', userBouncers, upload.array('file'), updateLogo);
 router.delete('/image', userBouncers, deleteImage); //?id=[]
 router.post('/category', supplierBouncers, verifyCategory, addVendorCategory);
 router.get('/', authenticate, verifySupplierCategory, getVendor); // ?categortId=[]&id=[]
+router.get('/subcategory', authenticate, getVendorBySubcategory);
 router.get('/me', authenticate, getProfile); // ?categortId=[]&id=[]
 router.get('/category/search', authenticate, serachCategories); //?search=[]
 router.get('/vendor/search', authenticate, serachVendors); //?search=[]

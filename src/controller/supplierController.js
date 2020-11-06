@@ -173,6 +173,25 @@ const SupplierController = {
   },
 
   /**
+   * get supplier by subcategory
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof SupplierController
+   */
+  async getVendorBySubcategory(req, res) {
+    try {
+      const { subCategory } = req.body;
+      const categoryVendors = await vendorsByCategory({ subCategory });
+      if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors yet' });
+      return successResponse(res, { categoryVendors });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
+
+  /**
    * get supplier by category
    * @param {object} req
    * @param {object} res

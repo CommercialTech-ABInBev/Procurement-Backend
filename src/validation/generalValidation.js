@@ -25,11 +25,11 @@ const GeneralValidation = {
         .label('id parameter must be a positive number'),
       name: joi.string().min(3).max(30)
         .label('Please enter a valid name \n the field must not be empty and it must be more than 2 letters'),
-      subject: joi.string().min(3).max(50)
+      subject: joi.string().min(1).max(50)
         .label('Please enter a valid subject'),
       userName: joi.string().regex(/^[a-zA-Z0-9_]{3,30}$/)
         .label('Please input a valid userName \n It must only contain alphabets and/underscore ("-")'),
-      description: joi.string().min(10).max(500)
+      description: joi.string().min(2).max(500)
         .label('Please enter a valid description \n the field must not be empty and it must be more than 10 letters'),
       message: joi.string().min(10).max(500)
         .label('Please enter a valid message \n the field must not be empty and it must be more than 10 letters'),

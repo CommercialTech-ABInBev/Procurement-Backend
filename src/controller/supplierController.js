@@ -17,7 +17,8 @@ const {
   updateByKey,
   findMultipleByKey,
   findByKey,
-  addEntity
+  addEntity,
+  deleteByKey
 } = GeneralService;
 const {
   vendorsByCategory,
@@ -68,7 +69,7 @@ const SupplierController = {
   },
 
   /**
-   * update user logo
+   * update vendor logo
    * @param {object} req
    * @param {object} res
    * @returns {JSON } A JSON response with the user's profile details.
@@ -84,6 +85,27 @@ const SupplierController = {
       logo = await uploadImage(logo);
       await updateByKey(VendorDetail,{ companyLogo: logo[0] }, { userId: id });
       successResponse(res, { message: 'Profile update was successful' });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * delete vendor image
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof SupplierController
+   */
+  async deleteImage(req, res) {
+    try {
+      
+      if (!req.query.id) {
+        return errorResponse(res, { code: 409, message: 'Please select an image to delete.' });
+      }
+      const image = await deleteByKey(Media, { id: req.query.id });
+      successResponse(res, { message: 'Image deleted successfully.', image });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

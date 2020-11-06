@@ -27,11 +27,13 @@ const {
   serachVendors,
   updateVendorStatus,
   getProfile,
-  updateLogo
+  updateLogo,
+  deleteImage
 } = SupplierController;
 
 router.patch('/profile', userBouncers, upload.array('file'), verifySupplierProfileUpdate, updateProfile);
 router.patch('/logo', userBouncers, upload.array('file'), updateLogo);
+router.delete('/image', userBouncers, deleteImage); //?id=[]
 router.post('/category', supplierBouncers, verifyCategory, addVendorCategory);
 router.get('/', authenticate, verifySupplierCategory, getVendor); // ?categortId=[]&id=[]
 router.get('/me', authenticate, getProfile); // ?categortId=[]&id=[]

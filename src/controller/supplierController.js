@@ -2,6 +2,8 @@
 import { GeneralService, CategoryService } from '../services';
 import { Toolbox } from '../util';
 import database from '../models';
+import { AzureUpload } from './../util';
+// import upload from '../middleware/uploadMiddleware';
 // import { env } from '../config';
 
 const {
@@ -9,10 +11,14 @@ const {
   errorResponse,
 } = Toolbox;
 const {
+  uploadImage
+} = AzureUpload;
+const {
   updateByKey,
   findMultipleByKey,
   findByKey,
-  addEntity
+  addEntity,
+  deleteByKey
 } = GeneralService;
 const {
   vendorsByCategory,
@@ -26,7 +32,8 @@ const {
   VendorDetail,
   VendorCategory,
   Category,
-  Notification
+  Notification,
+  Media
 } = database;
 // const {
 //   ADMIN_KEY,
@@ -44,13 +51,61 @@ const SupplierController = {
   async updateProfile(req, res) {
     try {
       const { id } = req.tokenData;
-      if (req.body.mediaPictures) {
-        const mediaUrls = JSON.stringify(req.body.mediaPictures);
-        await delete req.body.mediaPictures;
+      let images;
+      if (req.files) {
+        let mediaUrls = [...req.files];
+        mediaUrls = await uploadImage(mediaUrls);
+        const vendor = await findByKey(VendorDetail, { userId: id });
+        mediaUrls = mediaUrls.map((item) => ({ imageUrl: item, vendorDetailsId: vendor.id }));
+        images = await Media.bulkCreate(mediaUrls);
+        await delete req.body.file;
         await updateByKey(VendorDetail,{ ...req.body }, { userId: id });
-        await updateByKey(VendorDetail, { mediaUrls }, { userId: id });
       } else await updateByKey(VendorDetail, { ...req.body }, { userId: id });
+      successResponse(res, { message: 'Profile update was successful', images });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * update vendor logo
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof SupplierController
+   */
+  async updateLogo(req, res) {
+    try {
+      const { id } = req.tokenData;
+      if (!req.files) {
+        return errorResponse(res, { code: 409, message: 'Please add a logo' });
+      }
+      let logo = [...req.files];
+      logo = await uploadImage(logo);
+      await updateByKey(VendorDetail,{ companyLogo: logo[0] }, { userId: id });
       successResponse(res, { message: 'Profile update was successful' });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * delete vendor image
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof SupplierController
+   */
+  async deleteImage(req, res) {
+    try {
+      
+      if (!req.query.id) {
+        return errorResponse(res, { code: 409, message: 'Please select an image to delete.' });
+      }
+      const image = await deleteByKey(Media, { id: req.query.id });
+      successResponse(res, { message: 'Image deleted successfully.', image });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

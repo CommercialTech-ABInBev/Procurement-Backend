@@ -108,6 +108,21 @@ const GeneralValidation = {
     return true;
   },
 
+    /**
+   * validate images
+   * @param {object} payload - user object
+   * @returns {object | boolean} - returns a boolean or an error object
+   * @memberof GeneralValidation
+   */
+  validateImages(payload) {
+    const schema = {
+      file: joi.object({ files: joi.array().single() }).label('Please upload more than 1 image')
+    };
+    const { error } = joi.validate({ ...payload }, schema);
+    if (error) throw error.details[0].context.label;
+    return true;
+  },
+
   /**
    * validate user profile data
    * @param {object} payload - user object
@@ -115,6 +130,7 @@ const GeneralValidation = {
    */
   validateProfile(payload) {
     const schema = {
+      vendorId: joi.string().label('Please enter a valid vendor id'),
       name: joi.string().min(3).max(25)
         .label('Please enter a valid firstname \n the field must not be empty and it must be more than 2 letters'),
       gender: joi.string().valid('male', 'female')

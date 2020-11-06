@@ -1,7 +1,5 @@
-import { AuthValidation, GeneralValidation } from '../validation';
+import { GeneralValidation } from '../validation';
 import { Toolbox } from '../util';
-import { superAdminSchema, rolesSchema } from '../validation/adminValidation';
-import { changePasswordSchema, passwordResetEmailSchema } from '../validation/passwordValidation';
 import { GeneralService } from '../services';
 import database from '../models';
 

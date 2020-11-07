@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 import { BlobServiceClient } from "@azure/storage-blob";
 import sharp from "sharp";
+import { v4 as uuidToken } from 'uuid';
 import azure from "azure-storage";
 import { env } from '../config';
 
@@ -30,21 +31,27 @@ const AzureUpload = {
 
       let result = [];
       await file.forEach( async(item) => {
-        let fileName = item.filename;
-        let buffer = item.buffer;
-        let type = item.mimetype
+        try {
+          let blob = uuidToken();
+          let text = item.buffer;
+          let type = item.mimetype
 
-        const data = await blobService__.createBlockBlobFromText('procurement', fileName, buffer, 
-          { contentType:type }, async (err, resultImage) => {
-            if(err) {
-              console.log(err);
-            } else {
-              return await resultImage;
-            }
-          });
-          const imageUrl = `https://eyemarket6973837452.blob.core.windows.net/procurement/${data.name}`
-          result.push(imageUrl);
+          const data = blobService__.createBlockBlobFromText('procurement', blob, text,
+            { contentType:type }, async (err, resultImage) => {
+              if(err) {
+                console.log(err);
+              } else {
+                return await resultImage;
+              }
+            });
+            // console.log(data);
+            const imageUrl = `https://eyemarket6973837452.blob.core.windows.net/procurement/${data.name}`
+            result.push(imageUrl);
+        } catch (error) {
+          console.error(error);
+        }
       });
+      console.log(result);
       return result;
     } catch (error) {
       console.error(`i am the error ${error}`);

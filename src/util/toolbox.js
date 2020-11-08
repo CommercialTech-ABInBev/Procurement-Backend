@@ -221,6 +221,20 @@ const Toolbox = {
     });
     return allItemsMatch;
   },
+
+    /**
+   * generates image reference code
+   * @static
+   * @param {object} image - supplierId
+   * @returns {string} reference - A unique value for ref
+   * @memberof Toolbox
+   */
+  generateReference(image) {
+    const randomNumber = Math.floor(Math.random() * 8999 + 1000);
+    const anotherRandomNumber = Math.floor(Math.random() * 8999 + 1000);
+    const reference = `ref_${image}${randomNumber}${anotherRandomNumber}`;
+    return reference;
+  },
 };
 
 export default Toolbox;

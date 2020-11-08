@@ -4,12 +4,17 @@ import sharp from "sharp";
 import { v4 as uuidToken } from 'uuid';
 import azure from "azure-storage";
 import { env } from '../config';
+import Toolbox from "./toolbox";
 
 const {
   BUCKET_NAME,
   AZURE_KEY,
   STORAGE_CONNECTION_STRING
 } = env;
+
+const {
+  generateReference
+} = Toolbox;
 
  
 const AzureUpload = {
@@ -32,9 +37,10 @@ const AzureUpload = {
       let result = [];
       await file.forEach( async(item) => {
         try {
-          let blob = uuidToken();
+          let blob = generateReference('IMG_');
           let text = item.buffer;
           let type = item.mimetype
+          // console.log(type);
 
           const data = blobService__.createBlockBlobFromText('procurement', blob, text,
             { contentType:type }, async (err, resultImage) => {
@@ -44,7 +50,6 @@ const AzureUpload = {
                 return await resultImage;
               }
             });
-            // console.log(data);
             const imageUrl = `https://eyemarket6973837452.blob.core.windows.net/procurement/${data.name}`
             result.push(imageUrl);
         } catch (error) {

@@ -37,10 +37,10 @@ const AzureUpload = {
       let result = [];
       await file.forEach( async(item) => {
         try {
-          let blob = generateReference('IMG_');
+          let blob = `${generateReference('IMG_')}.jpg`;
           let text = item.buffer;
           let type = item.mimetype
-          // console.log(type);
+          console.log(text);
 
           const data = blobService__.createBlockBlobFromText('procurement', blob, text,
             { contentType:type }, async (err, resultImage) => {
@@ -50,13 +50,14 @@ const AzureUpload = {
                 return await resultImage;
               }
             });
+            console.log(data);
             const imageUrl = `https://eyemarket6973837452.blob.core.windows.net/procurement/${data.name}`
             result.push(imageUrl);
         } catch (error) {
           console.error(error);
         }
       });
-      console.log(result);
+      // console.log(result);
       return result;
     } catch (error) {
       console.error(`i am the error ${error}`);

@@ -52,10 +52,10 @@ const SupplierController = {
     try {
       const { id } = req.tokenData;
       let images;
+      // return console.log(req.files);
       if (req.files) {
         let mediaUrls = [...req.files];
         mediaUrls = await uploadImage(mediaUrls);
-        // return console(mediaUrls);
         const vendor = await findByKey(VendorDetail, { userId: id });
         mediaUrls = mediaUrls.map((item) => ({ imageUrl: item, vendorDetailsId: vendor.id }));
         images = await Media.bulkCreate(mediaUrls);

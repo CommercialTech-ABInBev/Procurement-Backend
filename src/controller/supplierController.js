@@ -52,6 +52,7 @@ const SupplierController = {
     try {
       const { id } = req.tokenData;
       let images;
+      // return console.log(req.files);
       if (req.files) {
         let mediaUrls = [...req.files];
         mediaUrls = await uploadImage(mediaUrls);

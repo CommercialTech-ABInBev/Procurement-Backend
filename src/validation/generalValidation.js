@@ -163,6 +163,8 @@ const GeneralValidation = {
         .label('Please upload urls of media images in the right format'),
       companyLocation: joi.array().items(joi.string())
       .label('Please companyLocation should be an array'),
+      file: joi.array().items(joi.object())
+      .label('Please images should be an array'),
       // eslint-disable-next-line no-useless-escape
       companyPhoneNumber: joi.string().regex(/^[0-9+\(\)#\.\s\/ext-]+$/).label('Please input a valid phone number'),
     };

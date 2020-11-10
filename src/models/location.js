@@ -1,6 +1,7 @@
+'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Media = sequelize.define('Media', {
-    imageUrl: {
+  const Location = sequelize.define('Location', {
+    state: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -15,11 +16,11 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     },
   }, {});
-  Media.associate = function(models) {
-    Media.belongsTo(models.VendorDetail, {
+  Location.associate = function(models) {
+    Location.belongsTo(models.VendorDetail, {
       as: 'vendorDetailImages',
       foreignKey: 'vendorDetailsId'
     });
   };
-  return Media;
+  return Location;
 };

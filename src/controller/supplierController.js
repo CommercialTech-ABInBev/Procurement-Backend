@@ -3,7 +3,6 @@ import { GeneralService, CategoryService } from '../services';
 import { Toolbox } from '../util';
 import database from '../models';
 import { AzureUpload } from './../util';
-// import upload from '../middleware/uploadMiddleware';
 // import { env } from '../config';
 
 const {
@@ -35,10 +34,7 @@ const {
   Notification,
   Media
 } = database;
-// const {
-//   ADMIN_KEY,
-//   CLIENT_URL
-// } = env;
+
 
 const SupplierController = {
   /**
@@ -52,7 +48,6 @@ const SupplierController = {
     try {
       const { id } = req.tokenData;
       let images;
-      // return console.log(req.files);
       if (req.files) {
         let mediaUrls = [...req.files];
         mediaUrls = await uploadImage(mediaUrls);

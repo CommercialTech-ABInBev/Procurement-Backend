@@ -156,18 +156,19 @@ const SupplierController = {
    */
   async getVendor(req, res) {
     try {
-      const { categoryId, id, approvalStatus, location } = req.query;
+      const { categoryId, id, approvalStatus, label } = req.query;
       const { role } = req.tokenData;
       let categoryVendors;
       if (role !== "admin") {
-        if (categoryId && location) categoryVendors = await vendorsByCategory({ categoryId }, { location });
-        else if (categoryId && !location) categoryVendors = await vendorsByCategory({ categoryId }, {});
-        else if (!categoryId && location) categoryVendors = await vendorsByCategory({}, { location });
+        if (categoryId && label) categoryVendors = await vendorsByCategory({ categoryId }, { label });
+        else if (categoryId && !label) categoryVendors = await vendorsByCategory({ categoryId }, {});
+        else if (!categoryId && label) categoryVendors = await vendorsByCategory({}, { label });
         else if (id) categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
         else categoryVendors = await vendorsById({ approvalStatus: 'approved' }, role);
       } else {
-        if (categoryId && !location) categoryVendors = await vendorsByCategory({ categoryId }, {});
-        else if (!categoryId && location) categoryVendors = await vendorsByCategory({}, { location });
+        if (categoryId && label) categoryVendors = await vendorsByCategory({ categoryId }, { label });
+        else if (categoryId && !label) categoryVendors = await vendorsByCategory({ categoryId }, {});
+        else if (!categoryId && label) categoryVendors = await vendorsByCategory({}, { label });
         else if (id) categoryVendors = await vendorsById({ id });
         else if (approvalStatus) categoryVendors = await vendorsById({ approvalStatus });
         else categoryVendors = await vendorsById({});
@@ -189,11 +190,11 @@ const SupplierController = {
    */
   async getVendorBySubcategory(req, res) {
     try {
-      const { subCategory, location } = req.body;
+      const { subCategory, label } = req.body;
       let categoryVendors 
-      if (subCategory && !location) categoryVendors = await vendorsByCategory({ subCategory }, {});
-      if (!subCategory && location) categoryVendors = await vendorsByCategory({}, { location });
-      if (subCategory && location) categoryVendors = await vendorsByCategory({ subCategory }, { location });
+      if (subCategory && !label) categoryVendors = await vendorsByCategory({ subCategory }, {});
+      if (!subCategory && label) categoryVendors = await vendorsByCategory({}, { label });
+      if (subCategory && label) categoryVendors = await vendorsByCategory({ subCategory }, { label });
       if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors yet' });
       return successResponse(res, { categoryVendors });
     } catch (error) {

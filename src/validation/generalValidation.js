@@ -18,6 +18,8 @@ const GeneralValidation = {
       approvalStatus: joi.string().valid('pending', 'approved', 'rejected').label('parameter must be approved/rejected'),
       id: joi.number().positive()
         .label('id parameter must be a positive number'),
+      vendorDetailsId: joi.number().positive()
+        .label('id parameter must be a positive number'),
       vendorId: joi.string().label('id parameter must be a positive number'),
       categoryId: joi.number().positive()
         .label('id parameter must be a positive number'),
@@ -27,8 +29,8 @@ const GeneralValidation = {
         .label('Please enter a valid name \n the field must not be empty and it must be more than 2 letters'),
       subject: joi.string().min(1).max(50)
         .label('Please enter a valid subject'),
-      location: joi.string().min(1).max(50)
-        .label('Please enter a valid subject'),
+      label: joi.string().min(1).max(50)
+        .label('Please enter a valid location'),
       userName: joi.string().regex(/^[a-zA-Z0-9_]{3,30}$/)
         .label('Please input a valid userName \n It must only contain alphabets and/underscore ("-")'),
       description: joi.string().min(2).max(500)

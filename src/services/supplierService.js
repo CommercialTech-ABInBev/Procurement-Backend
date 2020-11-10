@@ -29,7 +29,7 @@ const CategoryService = {
       const entities = await VendorDetail.findAll({
         include: [
           (key.categoryId || key.subCategory) ?
-          {
+            {
               model: VendorCategory,
               as: 'vendorCategories',
               where: key,
@@ -39,31 +39,31 @@ const CategoryService = {
                       as: 'category',
                   },
               ]
-          } :  {
-            model: VendorCategory,
-            as: 'vendorCategories',
-            include: [
+            } :  {
+              model: VendorCategory,
+              as: 'vendorCategories',
+              include: [
                 {
                     model: Category,
                     as: 'category',
                 },
-            ]
-        },
+              ]
+          },
           {
             model: Media,
             as: 'vendorDetailImage',
             attributes: ['id', 'imageUrl'],
           },
-          key2.location ?
+          key2.label ?
           {
             model: Location,
             as: 'locations',
-            attributes: ['id', 'label', 'value'],
+            attributes: ['label', 'value'],
             where: key2
           } :  {
             model: Location,
             as: 'locations',
-            attributes: ['id', 'label', 'value']
+            attributes: ['label', 'value']
           },
         ],
         where: { approvalStatus: 'approved' }
@@ -106,7 +106,7 @@ const CategoryService = {
           {
             model: Location,
             as: 'locations',
-            attributes: ['id', 'label', 'value']
+            attributes: ['label', 'value']
           }
         ],
         where: key
@@ -136,7 +136,7 @@ const CategoryService = {
           {
             model: Location,
             as: 'locations',
-            attributes: ['id', 'label', 'value']
+            attributes: ['label', 'value']
           }
         ],
         where: key
@@ -188,7 +188,7 @@ const CategoryService = {
           {
             model: Location,
             as: 'locations',
-            attributes: ['id', 'label', 'value']
+            attributes: ['label', 'value']
           }
         ],
         where: {

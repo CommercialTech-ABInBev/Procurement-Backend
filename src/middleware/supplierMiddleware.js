@@ -41,7 +41,7 @@ const SupplierMiddleware = {
         const locations = await findMultipleByKey(Location, { vendorDetailsId: vendor.id });
         req.body.companyLocation.forEach((item, index) => {
           locations.forEach((loc) => {
-            if (item === loc.state) {
+            if (item === loc.label) {
               req.body.companyLocation.splice(index, 1);
             }
           })

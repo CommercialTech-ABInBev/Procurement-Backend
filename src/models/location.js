@@ -1,7 +1,14 @@
-'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Location = sequelize.define('Location', {
-    state: {
+    label: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    value: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    label: {
       type: DataTypes.STRING,
       allowNull: false,
     },

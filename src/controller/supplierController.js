@@ -53,7 +53,7 @@ const SupplierController = {
       const vendor = req.vendor;
       if (req.body.companyLocation) {
         const stateDetails = req.body.companyLocation.map((item) => ({
-          state: item, vendorDetailsId: vendor.id,
+          label: item, value: item, vendorDetailsId: vendor.id,
         }));
         states = await Location.bulkCreate(stateDetails);
         await delete req.body.companyLocation;

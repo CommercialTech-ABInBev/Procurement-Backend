@@ -160,7 +160,8 @@ const SupplierController = {
       const { role } = req.tokenData;
       let categoryVendors;
       if (role !== "admin") {
-        if (categoryId && !location) categoryVendors = await vendorsByCategory({ categoryId }, {});
+        if (categoryId && location) categoryVendors = await vendorsByCategory({ categoryId }, { location });
+        else if (categoryId && !location) categoryVendors = await vendorsByCategory({ categoryId }, {});
         else if (!categoryId && location) categoryVendors = await vendorsByCategory({}, { location });
         else if (id) categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
         else categoryVendors = await vendorsById({ approvalStatus: 'approved' }, role);

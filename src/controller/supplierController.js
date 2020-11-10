@@ -32,7 +32,8 @@ const {
   VendorCategory,
   Category,
   Notification,
-  Media
+  Media,
+  Location
 } = database;
 
 
@@ -48,16 +49,24 @@ const SupplierController = {
     try {
       const { id } = req.tokenData;
       let images;
+      let states;
+      const vendor = await findByKey(VendorDetail, { userId: id });
+      if (req.body.companyLocation) {
+        const stateDetails = req.body.companyLocation.map((item) => ({
+          state: item, vendorDetailsId: vendor.id,
+        }));
+        states = await Location.bulkCreate(stateDetails);
+        await delete req.body.companyLocation;
+      }
       if (req.files) {
         let mediaUrls = [...req.files];
         mediaUrls = await uploadImage(mediaUrls);
-        const vendor = await findByKey(VendorDetail, { userId: id });
         mediaUrls = mediaUrls.map((item) => ({ imageUrl: item, vendorDetailsId: vendor.id }));
         images = await Media.bulkCreate(mediaUrls);
         await delete req.body.file;
         await updateByKey(VendorDetail,{ ...req.body }, { userId: id });
       } else await updateByKey(VendorDetail, { ...req.body }, { userId: id });
-      successResponse(res, { message: 'Profile update was successful', images });
+      successResponse(res, { message: 'Profile update was successful', images, states });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

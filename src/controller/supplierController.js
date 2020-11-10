@@ -50,7 +50,7 @@ const SupplierController = {
       const { id } = req.tokenData;
       let images;
       let states;
-      const vendor = await findByKey(VendorDetail, { userId: id });
+      const vendor = req.vendor;
       if (req.body.companyLocation) {
         const stateDetails = req.body.companyLocation.map((item) => ({
           state: item, vendorDetailsId: vendor.id,
@@ -156,15 +156,17 @@ const SupplierController = {
    */
   async getVendor(req, res) {
     try {
-      const { categoryId, id, approvalStatus } = req.query;
+      const { categoryId, id, approvalStatus, location } = req.query;
       const { role } = req.tokenData;
       let categoryVendors;
       if (role !== "admin") {
-        if (categoryId) categoryVendors = await vendorsByCategory({ categoryId });
+        if (categoryId && !location) categoryVendors = await vendorsByCategory({ categoryId }, {});
+        else if (!categoryId && location) categoryVendors = await vendorsByCategory({}, { location });
         else if (id) categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
         else categoryVendors = await vendorsById({ approvalStatus: 'approved' }, role);
       } else {
-        if (categoryId) categoryVendors = await vendorsByCategory({ categoryId });
+        if (categoryId && !location) categoryVendors = await vendorsByCategory({ categoryId }, {});
+        else if (!categoryId && location) categoryVendors = await vendorsByCategory({}, { location });
         else if (id) categoryVendors = await vendorsById({ id });
         else if (approvalStatus) categoryVendors = await vendorsById({ approvalStatus });
         else categoryVendors = await vendorsById({});
@@ -186,7 +188,29 @@ const SupplierController = {
    */
   async getVendorBySubcategory(req, res) {
     try {
-      const { subCategory } = req.body;
+      const { subCategory, location } = req.body;
+      let categoryVendors 
+      if (subCategory && !location) categoryVendors = await vendorsByCategory({ subCategory }, {});
+      if (!subCategory && location) categoryVendors = await vendorsByCategory({}, { location });
+      if (subCategory && location) categoryVendors = await vendorsByCategory({ subCategory }, { location });
+      if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors yet' });
+      return successResponse(res, { categoryVendors });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * get supplier by location
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof SupplierController
+   */
+  async getVendorByLocation(req, res) {
+    try {
+      const { location } = req.body;
       const categoryVendors = await vendorsByCategory({ subCategory });
       if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors yet' });
       return successResponse(res, { categoryVendors });

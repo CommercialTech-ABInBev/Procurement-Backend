@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Location.associate = function(models) {
     Location.belongsTo(models.VendorDetail, {
-      as: 'vendorDetailImages',
+      as: 'location',
       foreignKey: 'vendorDetailsId'
     });
   };

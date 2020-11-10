@@ -8,7 +8,8 @@ const {
   VendorDetail,
   VendorCategory,
   Category,
-  Media
+  Media,
+  Location
 } = database;
 
 const CategoryService = {
@@ -17,29 +18,52 @@ const CategoryService = {
    * @async
    * @param {object} key - object containing category key and value
    * e.g { id: 5 }
+   * @param {object} ke2 - object containing category key and value
+   * e.g { id: 5 }
    * @param {object} role - object containing approval status of product
    * @returns {promise-Object} - A promise object with entity details
    * @memberof CategoryService
    */
-  async vendorsByCategory(key, role) {
+  async vendorsByCategory(key, key2) {
     try {
       const entities = await VendorDetail.findAll({
         include: [
-            {
-                model: VendorCategory,
-                as: 'vendorCategories',
-                where: key,
-                include: [
-                    {
-                        model: Category,
-                        as: 'category',
-                    },
-                ]
-            },
-            {
-              model: Media,
-              as: 'vendorDetailImage',
-              attributes: ['imageUrl'],
+          (key.categoryId || key.subCategory) ?
+          {
+              model: VendorCategory,
+              as: 'vendorCategories',
+              where: key,
+              include: [
+                  {
+                      model: Category,
+                      as: 'category',
+                  },
+              ]
+          } :  {
+            model: VendorCategory,
+            as: 'vendorCategories',
+            include: [
+                {
+                    model: Category,
+                    as: 'category',
+                },
+            ]
+        },
+          {
+            model: Media,
+            as: 'vendorDetailImage',
+            attributes: ['id', 'imageUrl'],
+          },
+          key2.location ?
+          {
+            model: Location,
+            as: 'locations',
+            attributes: ['id', 'state'],
+            where: key2
+          } :  {
+            model: Location,
+            as: 'locations',
+            attributes: ['id', 'state']
           },
         ],
         where: { approvalStatus: 'approved' }
@@ -79,6 +103,11 @@ const CategoryService = {
               as: 'vendorDetailImage',
               attributes: ['id', 'imageUrl'],
           },
+          {
+            model: Location,
+            as: 'locations',
+            attributes: ['id', 'state']
+          }
         ],
         where: key
       }).map((values) => values.get({ plain: true }));
@@ -104,6 +133,11 @@ const CategoryService = {
               as: 'vendorDetailImage',
               attributes: ['id', 'imageUrl'],
           },
+          {
+            model: Location,
+            as: 'locations',
+            attributes: ['id', 'state']
+          }
         ],
         where: key
       });
@@ -147,10 +181,15 @@ const CategoryService = {
       const entities = await VendorDetail.findAll({
         include: [
           {
-              model: Media,
-              as: 'vendorDetailImage',
-              attributes: ['id', 'imageUrl'],
+            model: Media,
+            as: 'vendorDetailImage',
+            attributes: ['id', 'imageUrl'],
           },
+          {
+            model: Location,
+            as: 'locations',
+            attributes: ['id', 'state']
+          }
         ],
         where: {
           approvalStatus: 'approved',

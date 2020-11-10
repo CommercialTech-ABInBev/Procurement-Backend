@@ -58,12 +58,12 @@ const CategoryService = {
           {
             model: Location,
             as: 'locations',
-            attributes: ['id', 'state'],
+            attributes: ['id', 'label', 'value'],
             where: key2
           } :  {
             model: Location,
             as: 'locations',
-            attributes: ['id', 'state']
+            attributes: ['id', 'label', 'value']
           },
         ],
         where: { approvalStatus: 'approved' }
@@ -106,7 +106,7 @@ const CategoryService = {
           {
             model: Location,
             as: 'locations',
-            attributes: ['id', 'state']
+            attributes: ['id', 'label', 'value']
           }
         ],
         where: key
@@ -136,7 +136,7 @@ const CategoryService = {
           {
             model: Location,
             as: 'locations',
-            attributes: ['id', 'state']
+            attributes: ['id', 'label', 'value']
           }
         ],
         where: key
@@ -188,7 +188,7 @@ const CategoryService = {
           {
             model: Location,
             as: 'locations',
-            attributes: ['id', 'state']
+            attributes: ['id', 'label', 'value']
           }
         ],
         where: {

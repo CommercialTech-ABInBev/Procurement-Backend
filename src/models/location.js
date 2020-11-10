@@ -1,6 +1,14 @@
 module.exports = (sequelize, DataTypes) => {
-  const Media = sequelize.define('Media', {
-    imageUrl: {
+  const Location = sequelize.define('Location', {
+    label: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    value: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    label: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -15,11 +23,11 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     },
   }, {});
-  Media.associate = function(models) {
-    Media.belongsTo(models.VendorDetail, {
-      as: 'vendorDetailImages',
+  Location.associate = function(models) {
+    Location.belongsTo(models.VendorDetail, {
+      as: 'location',
       foreignKey: 'vendorDetailsId'
     });
   };
-  return Media;
+  return Location;
 };

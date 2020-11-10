@@ -7,7 +7,8 @@ const {
   errorResponse,
 } = Toolbox;
 const {
-  findByKey
+  findByKey,
+  findMultipleByKey
 } = GeneralService;
 const {
   validateProfile,
@@ -17,7 +18,8 @@ const {
 const {
   Vendor,
   VendorDetail, 
-  Category
+  Category,
+  Location
 } = database;
 
 const SupplierMiddleware = {
@@ -31,11 +33,25 @@ const SupplierMiddleware = {
    */
   async verifySupplierProfileUpdate(req, res, next) {
     try {
+      const { id } = req.tokenData;
+      const vendor = await findByKey(VendorDetail, { userId: id });
       validateProfile(req.body);
       if (req.files) validateImages(req.file);
+      if (req.body.companyLocation) {
+        const locations = await findMultipleByKey(Location, { vendorDetailsId: vendor.id });
+        req.body.companyLocation.forEach((item, index) => {
+          locations.forEach((loc) => {
+            if (item === loc.label) {
+              req.body.companyLocation.splice(index, 1);
+            }
+          })
+        });
+
+        if (!req.body.companyLocation.length) return errorResponse(res, { code: 409, message: 'States already added' });
+      }
+      req.vendor = vendor;
       next();
     } catch (error) {
-      console.error(error);
       errorResponse(res, { code: 400, message: error });
     }
   },

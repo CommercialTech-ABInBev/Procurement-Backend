@@ -84,6 +84,10 @@ module.exports = (sequelize, DataTypes) => {
       as: 'vendorDetailImage',
       foreignKey: 'vendorDetailsId'
     });
+    VendorDetail.hasMany(models.Location, {
+      as: 'locations',
+      foreignKey: 'vendorDetailsId'
+    });
   };
   return VendorDetail;
 };

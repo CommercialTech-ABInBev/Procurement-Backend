@@ -27,6 +27,8 @@ const GeneralValidation = {
         .label('Please enter a valid name \n the field must not be empty and it must be more than 2 letters'),
       subject: joi.string().min(1).max(50)
         .label('Please enter a valid subject'),
+      location: joi.string().min(1).max(50)
+        .label('Please enter a valid subject'),
       userName: joi.string().regex(/^[a-zA-Z0-9_]{3,30}$/)
         .label('Please input a valid userName \n It must only contain alphabets and/underscore ("-")'),
       description: joi.string().min(2).max(500)
@@ -159,8 +161,8 @@ const GeneralValidation = {
       companyTheme: joi.string().regex(/^#[A-Fa-f0-9]{6}$/).label('colour nust be a Hex in format #ffffff'),
       mediaPictures: joi.array().items(joi.string().uri())
         .label('Please upload urls of media images in the right format'),
-      companyLocation: joi.string()
-        .label('Please company location should be a string'),
+      companyLocation: joi.array().items(joi.string())
+      .label('Please companyLocation should be an array'),
       // eslint-disable-next-line no-useless-escape
       companyPhoneNumber: joi.string().regex(/^[0-9+\(\)#\.\s\/ext-]+$/).label('Please input a valid phone number'),
     };

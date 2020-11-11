@@ -89,7 +89,7 @@ const SupplierController = {
       let logo = [...req.files];
       logo = await uploadImage(logo);
       await updateByKey(VendorDetail,{ companyLogo: logo[0] }, { userId: id });
-      successResponse(res, { message: 'Profile update was successful' });
+      successResponse(res, { message: 'Profile update was successful', logo });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

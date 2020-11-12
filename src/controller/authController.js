@@ -205,6 +205,28 @@ const AuthController = {
   },
 
   /**
+   * one time password set
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async setPassword(req, res) {
+    try {
+      const { newPassword } = req.body;
+      const { id } = req.tokenData;
+      let user = await findByKey(User, { id });
+      if (!user) return errorResponse(res, { code: 404, message: 'Sorry, user in token does not exist' });
+      const hashedPassword = hashPassword(newPassword);
+      user = await updateByKey(User, { password: hashedPassword }, { id });
+      successResponse(res, { message: 'Password has been set successfully' });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+
+  /**
    * logs user out
    * @param {object} req
    * @param {object} res

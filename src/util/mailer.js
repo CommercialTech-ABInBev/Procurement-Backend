@@ -26,7 +26,7 @@ const Mailer = {
       id, email, vendorId, role
     } = user;
     const passwordResetLink = createPasswordResetLink(req, {
-      id, email, vendorId, role
+      id, email: vendor ? vendor.companyEmail : email, vendorId, role
     });
     const mail = {
       to: vendor ? vendor.companyEmail : email,

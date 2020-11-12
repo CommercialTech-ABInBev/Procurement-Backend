@@ -8,7 +8,7 @@ const {
   verifySupplierSignup,
   verifyLogin,
   authenticate,
-  verifyPasswordReset
+  verifyPasswordReset,
 } = AuthMiddleware;
 const {
   userBouncers,
@@ -20,6 +20,7 @@ const {
   resetPassword,
   resetPasswordEmailLink,
   verifyResetPasswordLink,
+  setPassword,
   logoutUser
 } = AuthController;
 

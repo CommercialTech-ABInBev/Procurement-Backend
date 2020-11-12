@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 import { GeneralService } from '../services';
-import { Toolbox } from '../util';
+import { Toolbox, Mailer } from '../util';
 import database from '../models';
 import vendordetails from '../models/vendordetails';
 // import { env } from '../config';
@@ -14,10 +14,9 @@ const {
   comparePassword,
   verifyToken,
 } = Toolbox;
-// const {
-//   sendVerificationEmail,
-//   sendPasswordResetEmail
-// } = Mailer;
+const {
+  sendPasswordResetEmail
+} = Mailer;
 const {
   addEntity,
   updateByKey,
@@ -146,6 +145,29 @@ const AuthController = {
       const hashedPassword = hashPassword(newPassword);
       user = await updateByKey(User, { password: hashedPassword }, { id });
       successResponse(res, { message: 'Password has been changed successfully' });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+   /**
+   * user reset password email
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async resetPasswordEmailLink(req, res) {
+    try {
+      const { vendorIdOrEmail } = req.body;
+      let user = await findByKey(User, { email: vendorIdOrEmail });
+      if (!user) user = await findByKey(User, { vendorId: vendorIdOrEmail });
+      if (!user) return errorResponse(res, { code: 404, message: 'email or vendorId does not match anything in our database' });
+      // TODO: uncomment for production
+      const emailSent = await sendPasswordResetEmail(req, user);
+      // TODO: delete bottom line for production
+      // const emailSent = true;
+      if (emailSent) return successResponse(res, { message: 'A password reset link has been sent to your email' });
     } catch (error) {
       errorResponse(res, {});
     }

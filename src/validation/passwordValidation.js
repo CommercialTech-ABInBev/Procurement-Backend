@@ -11,9 +11,8 @@ const complexityOPtions = {
   requirementCount: 3,
 };
 export const passwordResetEmailSchema = joi.object().keys({
-  email: joi.string()
-    .email()
-    .required()
+  vendorIdOrEmail: joi.string().min(3).max(50).required()
+  .label('Incorrect vendorId or email'),
 });
 
 export const changePasswordSchema = joi.object().keys({

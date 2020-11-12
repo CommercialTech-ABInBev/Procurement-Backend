@@ -4,7 +4,7 @@ import { GeneralService } from '../services';
 import { Toolbox, Mailer } from '../util';
 import database from '../models';
 import vendordetails from '../models/vendordetails';
-// import { env } from '../config';
+import { env } from '../config';
 
 const {
   successResponse,
@@ -27,6 +27,9 @@ const {
   VendorDetail,
   Notification
 } = database;
+const {
+  CLIENT_URL
+} = env;
 
 const AuthController = {
   /**

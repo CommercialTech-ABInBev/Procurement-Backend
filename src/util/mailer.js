@@ -17,10 +17,11 @@ const Mailer = {
    * send email for password reset
    * @param {object} req
    * @param {object} user
+   * @param {object} vendor
    * @returns {Promise<boolean>} - Returns true if mail is sent, false if not
    * @memberof Mailer
    */
-  async sendPasswordResetEmail(req, user) {
+  async sendPasswordResetEmail(req, user, vendor) {
     const {
       id, email, vendorId, role
     } = user;
@@ -28,13 +29,10 @@ const Mailer = {
       id, email, vendorId, role
     });
     const mail = {
-      to: email,
+      to: vendor ? vendor.companyEmail : email,
       from: ADMIN_EMAIL,
-      templateId: 'd-4d40ffcdc0dc44c0a7980d6d0609e1e3',
-      dynamic_template_data: {
-        name: firstName,
-        reset_link: passwordResetLink
-      }
+      subject: 'RESET PASSWORD',
+      html: `<p>Please click on this link to reset your password, ${passwordResetLink}</p>`
     };
     try {
       await sendgrid.send(mail);

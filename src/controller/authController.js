@@ -160,15 +160,20 @@ const AuthController = {
   async resetPasswordEmailLink(req, res) {
     try {
       const { vendorIdOrEmail } = req.body;
+      let vendor;
       let user = await findByKey(User, { email: vendorIdOrEmail });
-      if (!user) user = await findByKey(User, { vendorId: vendorIdOrEmail });
+      if (!user) {
+        user = await findByKey(User, { vendorId: vendorIdOrEmail });
+        vendor = await findByKey(VendorDetail, { vendorId: vendorIdOrEmail });
+      }
       if (!user) return errorResponse(res, { code: 404, message: 'email or vendorId does not match anything in our database' });
       // TODO: uncomment for production
-      const emailSent = await sendPasswordResetEmail(req, user);
+      const emailSent = await sendPasswordResetEmail(req, user, vendor);
       // TODO: delete bottom line for production
       // const emailSent = true;
       if (emailSent) return successResponse(res, { message: 'A password reset link has been sent to your email' });
     } catch (error) {
+      console.error(error);
       errorResponse(res, {});
     }
   },

@@ -178,6 +178,32 @@ const AuthController = {
     }
   },
 
+    /**
+   * verify reset password link
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async verifyResetPasswordLink(req, res) {
+    try {
+      const { token } = req.query;verifyToken
+      const tokenData = (token);
+      if (tokenData) {
+        res.cookie('token', token, { maxAge: 70000000, httpOnly: true });
+        // const url = `${req.protocol}s://${req.get('host')}/v1.0/api/auth/set-password`;
+        // successResponse(res, { message: `success, redirect to api route ${url} with password objects` });
+        return res.redirect(`${CLIENT_URL}/set-password?token=${token}`);
+      }
+    } catch (error) {
+      if (error.message === 'Invalid Token') {
+        return errorResponse(res, { code: 400, message: 'The token provided was invalid' });
+      }
+      const status = error.status || 500;
+      errorResponse(res, { code: status, message: `could not verify, ${error.message}` });
+    }
+  },
+
   /**
    * logs user out
    * @param {object} req

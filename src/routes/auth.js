@@ -19,6 +19,7 @@ const {
   getProfile,
   resetPassword,
   resetPasswordEmailLink,
+  verifyResetPasswordLink,
   logoutUser
 } = AuthController;
 
@@ -30,8 +31,8 @@ router.post('/login', verifyLogin, login);
 router.get('/profile', userBouncers, getProfile);
 router.post('/reset-password', authenticate, verifyPasswordReset, resetPassword);
 router.post('/reset-password/email', verifyPasswordReset, resetPasswordEmailLink);
-// router.get('/reset-password/email', verifyResetPasswordLink);
-// router.post('/set-password', authenticate, verifyUser, verifyPasswordReset, setPassword);
+router.get('/reset-password/email', verifyResetPasswordLink);
+router.post('/set-password', authenticate, verifyPasswordReset, setPassword);
 router.post('/logout', authenticate, logoutUser);
 
 export default router;

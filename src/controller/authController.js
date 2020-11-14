@@ -190,7 +190,7 @@ const AuthController = {
    */
   async verifyResetPasswordLink(req, res) {
     try {
-      const { token } = req.query;verifyToken
+      const { token } = req.query;
       const tokenData = (token);
       if (tokenData) {
         res.cookie('token', token, { maxAge: 70000000, httpOnly: true });

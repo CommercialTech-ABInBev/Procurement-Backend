@@ -309,6 +309,34 @@ const SupplierController = {
       errorResponse(res, {});
     }
   },
+
+   /**
+   * submit for approval request
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the product review details
+   * @memberof SupplierController
+   */
+  async submitForApproval(req, res) {
+    try {
+      const { id, vendorId } = req.tokenData;
+      const vendor = await findByKey(VendorDetail, { userId: id });
+      let notification;
+      if (vendor){
+        notification = await addEntity(Notification, {
+          to: 'admin',
+          from: vendor.companyName || vendorId,
+          userId: id,
+          subject: `Approval Request`,
+          message: 'Please kindly review my details approve my request.\nThank You.'
+        });
+      }
+      return successResponse(res, { notification });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
 };
 
 export default SupplierController;

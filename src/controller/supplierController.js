@@ -126,23 +126,33 @@ const SupplierController = {
    */
   async addVendorCategory(req, res) {
     try {
-      const { categoryId, subCategories } = req.body;
+      const bodyData = req.body;
       let check = false;
       const venCat = await findMultipleByKey(VendorCategory, { vendorId: req.vendorDetails.id });
       venCat.forEach(element => {
-        subCategories.forEach((item) => {
-          if (element.subCategory === item) {
-            check = true;
-          }
+        bodyData.forEach((x) => {
+          x.subCategories.forEach((item) => {
+            if (element.subCategory === item) {
+              check = true;
+            }
+          })
         })
       });
-      if (check) return errorResponse(res, { code: 404, message: 'subCategory is already added to this vendor' });
-      const body = subCategories.map((item) => ({
-        vendorId: req.vendorDetails.id, categoryId, subCategory: item
-      }));
+
+      if (check) return errorResponse(res, { code: 404, message: 'A subCategory is already added to this vendor' });
+      let body = [];
+      bodyData.forEach((item) => {
+        item.subCategories.forEach((x) => {
+          body.push({
+            vendorId: req.vendorDetails.id, categoryId: item.categoryId, subCategory: x
+          });
+        })
+      });
+
       const vendorcategory = await VendorCategory.bulkCreate(body);
       successResponse(res, { message: 'category added to vendor successfully', vendorcategory });
     } catch (error) {
+      console.error(error);
       errorResponse(res, {});
     }
   },

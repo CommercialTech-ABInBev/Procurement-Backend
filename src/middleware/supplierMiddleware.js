@@ -66,12 +66,13 @@ const SupplierMiddleware = {
    */
   async verifyCategory(req, res, next) {
     try {
-      validateParameters(req.body);
-      const { categoryId, vendorId } = req.body;
-      const category = await findByKey(Category, { id: categoryId });
-      if (!category) return errorResponse(res, { code: 404, message: 'Category does not exist' });
-      const vendor = await findByKey(VendorDetail, { vendorId });
-      if (!vendor) return errorResponse(res, { code: 404, message: 'Vendor does not exist' });
+      // validateParameters(req.body);
+      // const { categoryId, vendorId } = req.body;
+      // const category = await findByKey(Category, { id: categoryId });
+      // if (!category) return errorResponse(res, { code: 404, message: 'Category does not exist' });
+      const body = req.body;
+      const vendor = await findByKey(VendorDetail, { vendorId: body[0].vendorId });
+      // if (!vendor) return errorResponse(res, { code: 404, message: 'Vendor does not exist' });
       req.vendorDetails = vendor;
       next();
     } catch (error) {

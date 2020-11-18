@@ -37,17 +37,17 @@ const SupplierMiddleware = {
       const vendor = await findByKey(VendorDetail, { userId: id });
       validateProfile(req.body);
       if (req.files) validateImages(req.file);
-      if (req.body.companyLocation) {
-        const locations = await findMultipleByKey(Location, { vendorDetailsId: vendor.id });
-        req.body.companyLocation.forEach((item, index) => {
-          locations.forEach((loc) => {
+      if (req.body.locations) {
+        const locationState = await findMultipleByKey(Location, { vendorDetailsId: vendor.id });
+        req.body.locations.forEach((item, index) => {
+          locationState.forEach((loc) => {
             if (item === loc.label) {
-              req.body.companyLocation.splice(index, 1);
+              req.body.locations.splice(index, 1);
             }
           })
         });
 
-        if (!req.body.companyLocation.length) return errorResponse(res, { code: 409, message: 'States already added' });
+        if (!req.body.locations.length) return errorResponse(res, { code: 409, message: 'States already added' });
       }
       req.vendor = vendor;
       next();

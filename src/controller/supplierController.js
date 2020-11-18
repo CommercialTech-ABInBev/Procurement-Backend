@@ -51,12 +51,12 @@ const SupplierController = {
       let images;
       let states;
       const vendor = req.vendor;
-      if (req.body.companyLocation) {
-        const stateDetails = req.body.companyLocation.map((item) => ({
+      if (req.body.locations) {
+        const stateDetails = req.body.locations.map((item) => ({
           label: item, value: item, vendorDetailsId: vendor.id,
         }));
         states = await Location.bulkCreate(stateDetails);
-        await delete req.body.companyLocation;
+        await delete req.body.locations;
       }
       if (req.files) {
         let mediaUrls = [...req.files];

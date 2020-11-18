@@ -33,14 +33,14 @@ const AzureUpload = {
           console.log(`Container ${i++}: ${container.name}`);
       };
       const blobService__ = azure.createBlobService(BUCKET_NAME, AZURE_KEY);
-
+      // console.log('Hi');
       let result = [];
       await file.forEach( async(item) => {
         try {
           let blob = `${generateReference('IMG_')}.jpg`;
           let text = item.buffer;
           let type = item.mimetype
-          console.log(text);
+          // console.log(text);
 
           const data = blobService__.createBlockBlobFromText('procurement', blob, text,
             { contentType:type }, async (err, resultImage) => {
@@ -50,7 +50,7 @@ const AzureUpload = {
                 return await resultImage;
               }
             });
-            console.log(data);
+            // console.log(data);
             const imageUrl = `https://eyemarket6973837452.blob.core.windows.net/procurement/${data.name}`
             result.push(imageUrl);
         } catch (error) {

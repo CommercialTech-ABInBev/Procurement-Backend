@@ -151,7 +151,7 @@ const SupplierController = {
       });
 
       const vendorcategory = await VendorCategory.bulkCreate(body);
-      if (approvalStatus === 'approved') await updateByKey(VendorDetail, { approvalStatus: 'pending' }, { id });
+      if (approvalStatus !== 'pending') await updateByKey(VendorDetail, { approvalStatus: 'pending' }, { id });
       successResponse(res, { message: 'category added to vendor successfully', vendorcategory });
     } catch (error) {
       console.error(error);

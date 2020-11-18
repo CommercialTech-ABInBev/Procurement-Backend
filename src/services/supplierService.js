@@ -137,7 +137,18 @@ const CategoryService = {
             model: Location,
             as: 'locations',
             attributes: ['label', 'value']
-          }
+          },
+          {
+            model: VendorCategory,
+            as: 'vendorCategories',
+            required: true,
+            include: [
+                {
+                    model: Category,
+                    as: 'category',
+                },
+            ]
+        },
         ],
         where: key
       });

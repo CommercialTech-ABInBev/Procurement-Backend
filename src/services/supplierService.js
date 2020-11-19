@@ -90,6 +90,7 @@ const CategoryService = {
             {
                 model: VendorCategory,
                 as: 'vendorCategories',
+                required: true,
                 include: [
                     {
                         model: Category,

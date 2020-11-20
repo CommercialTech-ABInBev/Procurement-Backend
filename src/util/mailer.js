@@ -6,7 +6,8 @@ const {
   ADMIN_EMAIL, SENDGRID_KEY
 } = env;
 const {
-  createPasswordResetLink
+  createPasswordResetLink,
+  createVerificationLink
 } = Toolbox;
 
 sendgrid.setApiKey(SENDGRID_KEY);
@@ -43,6 +44,42 @@ const Mailer = {
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;">Reset Password</a>
+      `
+    };
+    try {
+      await sendgrid.send(mail);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  },
+
+   /**
+   * send email verification to user after signup
+   * @param {object} req
+   * @param {object} user - { id, email, firstName ...etc}
+   * @returns {Promise<boolean>} - Returns true if mail is sent, false if not
+   * @memberof Mailer
+   */
+  async sendVerificationEmail(req, user) {
+    const { id, email } = user;
+    const verificationLink = createVerificationLink(req, { id, email });
+    const mail = {
+      to: email,
+      from: ADMIN_EMAIL,
+      subject: 'PMS EMAIL VERIFICATION',
+      html: `<h4>A big welcome to you for registering to our platform. The button below will redirect to verify your email and complete the registration.\n
+        I hope you have a great time with using this appliation.</h4><br><br>
+        <a href="${verificationLink}" target="_blank" style="background-color: #B11F24;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;">Reset Password</a>
       `
     };
     try {

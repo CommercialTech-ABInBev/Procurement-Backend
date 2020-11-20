@@ -15,7 +15,8 @@ const {
   verifyToken,
 } = Toolbox;
 const {
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
+  sendVerificationEmail
 } = Mailer;
 const {
   addEntity,
@@ -42,14 +43,13 @@ const AuthController = {
    */
   async signup(req, res) {
     try {
-      let body;
-      let user;
-      let vendorDetails;
+      let body, user, vendorDetails, emailSent;
       if (req.body.vendorId) {
         body = {
           vendorId: req.body.vendorId,
           password: hashPassword(req.body.password),
-          role: 'supplier'
+          role: 'supplier',
+          verified: true
         };
         user = await addEntity(User, { ...body });
         vendorDetails = await addEntity(VendorDetail, { userId: user.id, vendorId: req.body.vendorId });
@@ -66,20 +66,23 @@ const AuthController = {
         body = {
           email: req.body.email,
           password: hashPassword(req.body.password),
-          role: req.body.admin ? 'admin' : 'staff'
+          role: req.body.admin ? 'admin' : 'staff',
+          verified: req.body.admin ? true : false
         };
         user = await addEntity(User, { ...body });
       }
- 
+      
+      if (user.role === 'staff') emailSent = await sendVerificationEmail(req, user);
       user.token = createToken({
         email: user.email,
         id: user.id,
         role: user.role,
         supplierApproval: vendorDetails !== undefined ? vendorDetails.approvalStatus : null,
-        vendorId: vendorDetails !== undefined ? vendorDetails.vendorId : null
+        vendorId: vendorDetails !== undefined ? vendorDetails.vendorId : null,
+        verified: user.verified
       });
       res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
-      return successResponse(res, { user, vendorDetails }, 201);
+      return successResponse(res, { user, vendorDetails, emailSent }, 201);
     } catch (error) {
       console.error(error);
       errorResponse(res, {});
@@ -99,13 +102,15 @@ const AuthController = {
       const { password } = req.body;
       const user = req.userData;
       if (!comparePassword(password, user.password)) return errorResponse(res, { code: 401, message: 'incorrect password or email' });
+      if (user.role === 'staff' && !user.verified)  return errorResponse(res, { code: 409, message: 'Not Verified, Please check your email and verify your account.' });
       const vendorDetails = await findByKey(VendorDetail, { userId: user.id });
       user.token = createToken({
         email: user.email,
         id: user.id,
         role: user.role,
         supplierApproval: vendorDetails !== null ? vendorDetails.approvalStatus : null,
-        vendorId: vendorDetails !== null ? vendorDetails.vendorId : null
+        vendorId: vendorDetails !== null ? vendorDetails.vendorId : null,
+        verified: user.verified
       });
       res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
       return successResponse(res, { message: 'Login Successful', token: user.token });

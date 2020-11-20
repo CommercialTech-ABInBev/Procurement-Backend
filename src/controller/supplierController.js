@@ -65,7 +65,7 @@ const SupplierController = {
         images = await Media.bulkCreate(mediaUrls);
         await delete req.body.file;
         await updateByKey(VendorDetail,{ ...req.body }, { userId: id });
-        if (images.length > 0 && vendor.approvalStatus === 'pending') await updateByKey(VendorDetail, { approvalStatus: 'pending' }, { userId: id });
+        if (images.length > 0 && vendor.approvalStatus !== 'pending') await updateByKey(VendorDetail, { approvalStatus: 'pending' }, { userId: id });
       } else await updateByKey(VendorDetail, { ...req.body }, { userId: id });
       successResponse(res, { message: 'Profile update was successful', images, states });
     } catch (error) {

@@ -163,7 +163,9 @@ const GeneralValidation = {
       companyTheme: joi.string().regex(/^#[A-Fa-f0-9]{6}$/).label('colour nust be a Hex in format #ffffff'),
       mediaPictures: joi.array().items(joi.string().uri())
         .label('Please upload urls of media images in the right format'),
-      companyLocation: joi.array().items(joi.string())
+      companyLocation: joi.string().min(2).max(12)
+        .label('Please enter a valid company location'),
+      locations: joi.array().items(joi.string())
       .label('Please companyLocation should be an array'),
       file: joi.any()
       .label('Please images should be an array'),

@@ -51,12 +51,12 @@ const SupplierController = {
       let images;
       let states;
       const vendor = req.vendor;
-      if (req.body.companyLocation) {
-        const stateDetails = req.body.companyLocation.map((item) => ({
+      if (req.body.locations) {
+        const stateDetails = req.body.locations.map((item) => ({
           label: item, value: item, vendorDetailsId: vendor.id,
         }));
         states = await Location.bulkCreate(stateDetails);
-        await delete req.body.companyLocation;
+        await delete req.body.locations;
       }
       if (req.files) {
         let mediaUrls = [...req.files];
@@ -126,9 +126,10 @@ const SupplierController = {
    */
   async addVendorCategory(req, res) {
     try {
+      const { id, approvalStatus } = req.vendorDetails;
       const bodyData = req.body;
       let check = false;
-      const venCat = await findMultipleByKey(VendorCategory, { vendorId: req.vendorDetails.id });
+      const venCat = await findMultipleByKey(VendorCategory, { vendorId: id });
       venCat.forEach(element => {
         bodyData.forEach((x) => {
           x.subCategories.forEach((item) => {
@@ -144,12 +145,13 @@ const SupplierController = {
       bodyData.forEach((item) => {
         item.subCategories.forEach((x) => {
           body.push({
-            vendorId: req.vendorDetails.id, categoryId: item.categoryId, subCategory: x
+            vendorId: id, categoryId: item.categoryId, subCategory: x
           });
         })
       });
 
       const vendorcategory = await VendorCategory.bulkCreate(body);
+      if (approvalStatus !== 'pending') await updateByKey(VendorDetail, { approvalStatus: 'pending' }, { id });
       successResponse(res, { message: 'category added to vendor successfully', vendorcategory });
     } catch (error) {
       console.error(error);
@@ -168,13 +170,17 @@ const SupplierController = {
     try {
       const { categoryId, id, approvalStatus, label } = req.query;
       const { role } = req.tokenData;
-      let categoryVendors;
+      let categoryVendors, similarVendors;
       if (role !== "admin") {
         if (categoryId && label) categoryVendors = await vendorsByCategory({ categoryId }, { label });
         else if (categoryId && !label) categoryVendors = await vendorsByCategory({ categoryId }, {});
         else if (!categoryId && label) categoryVendors = await vendorsByCategory({}, { label });
         else if (id) categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
         else categoryVendors = await vendorsById({ approvalStatus: 'approved' }, role);
+
+        // if (categoryId) {
+        //   similarVendors = 
+        // }
       } else {
         if (categoryId && label) categoryVendors = await vendorsByCategory({ categoryId }, { label });
         else if (categoryId && !label) categoryVendors = await vendorsByCategory({ categoryId }, {});
@@ -337,8 +343,8 @@ const SupplierController = {
           to: 'admin',
           from: vendor.companyName || vendorId,
           userId: id,
-          subject: `Approval Request`,
-          message: 'Please kindly review my details approve my request.\nThank You.'
+          subject: `Vendor Approval Request`,
+          message: 'I can attest that the information provided are valid and accurate. Kindly Approve my request.\nThank You.'
         });
       }
       return successResponse(res, { notification });

@@ -152,6 +152,29 @@ const AuthController = {
     }
   },
 
+   /**
+   * user gets a new email verification link
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async resendEmailVerificationLink(req, res) {
+    try {
+      const { email } = req.body;
+      const user = await findByKey(User, { email });
+      if (!user) return errorResponse(res, { code: 404, message: `user with email ${email} does not exist` });
+      // TODO: uncomment for production
+      const emailSent = await sendVerificationEmail(req, user);
+      // TODO: delete bottom line for production
+      // const emailSent = true;
+      if (emailSent) return successResponse(res, { message: 'An Email Verification link has been resent to your email' });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+
   /**
    * get user profile
    * @param {object} req

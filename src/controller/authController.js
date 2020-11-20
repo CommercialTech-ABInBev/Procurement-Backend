@@ -119,6 +119,39 @@ const AuthController = {
     }
   },
 
+   /**
+   * verify user email
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async verifyEmail(req, res) {
+    try {
+      const { token } = req.query;
+      const tokenData = verifyToken(token);
+      const { id } = tokenData;
+      await updateByKey(User, { verified: true }, { id });
+      const user =  await findByKey(User, { id });
+      const newToken = createToken({
+        email: user.email,
+        id: user.id,
+        role: user.role,
+        verified: user.verified
+      });
+      res.cookie('token', newToken, { maxAge: 70000000, httpOnly: true });
+      return res.redirect(`${CLIENT_URL}/staff?token=${newToken}`);
+    } catch (error) {
+      if (error.message === 'Invalid Token') {
+        return errorResponse(res, { code: 400, message: 'We could not verify your email, the token provided was invalid' });
+      }
+      if (error.message === 'Not Found') {
+        return errorResponse(res, { code: 404, message: 'Sorry, we do not recognise this user in our database' });
+      }
+      errorResponse(res, {});
+    }
+  },
+
   /**
    * get user profile
    * @param {object} req

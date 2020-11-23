@@ -21,7 +21,9 @@ const {
   resetPasswordEmailLink,
   verifyResetPasswordLink,
   setPassword,
-  logoutUser
+  logoutUser,
+  verifyEmail,
+  resendEmailVerificationLink
 } = AuthController;
 
 router.post('/signup/check', verifySignup);
@@ -29,6 +31,8 @@ router.post('/signup', verifySignup, signup);
 router.post('/signup/supplier/check', verifySupplierSignup);
 router.post('/signup/supplier', verifySupplierSignup, signup);
 router.post('/login', verifyLogin, login);
+router.get('/verify', verifyEmail);
+router.post('/resend-verification/email', resendEmailVerificationLink);
 router.get('/profile', userBouncers, getProfile);
 router.post('/reset-password', authenticate, verifyPasswordReset, resetPassword);
 router.post('/reset-password/email', verifyPasswordReset, resetPasswordEmailLink);

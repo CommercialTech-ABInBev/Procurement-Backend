@@ -72,7 +72,7 @@ const AuthController = {
         user = await addEntity(User, { ...body });
       }
       
-      if (user.role === 'staff') emailSent = await sendVerificationEmail(req, user);
+      // if (user.role === 'staff') emailSent = await sendVerificationEmail(req, user);
       user.token = createToken({
         email: user.email,
         id: user.id,
@@ -102,7 +102,7 @@ const AuthController = {
       const { password } = req.body;
       const user = req.userData;
       if (!comparePassword(password, user.password)) return errorResponse(res, { code: 401, message: 'incorrect password or email' });
-      if (user.role === 'staff' && !user.verified)  return errorResponse(res, { code: 409, message: 'Not Verified, Please check your email and verify your account.' });
+      // if (user.role === 'staff' && !user.verified)  return errorResponse(res, { code: 409, message: 'Not Verified, Please check your email and verify your account.' });
       const vendorDetails = await findByKey(VendorDetail, { userId: user.id });
       user.token = createToken({
         email: user.email,
@@ -164,8 +164,9 @@ const AuthController = {
       const { email } = req.body;
       const user = await findByKey(User, { email });
       if (!user) return errorResponse(res, { code: 404, message: `user with email ${email} does not exist` });
+      if (user.role !== "staff") return errorResponse(res, { code: 409, message: `This user is not a staff and does not need to be verified to access the platform` });
       // TODO: uncomment for production
-      const emailSent = await sendVerificationEmail(req, user);
+      // const emailSent = await sendVerificationEmail(req, user);
       // TODO: delete bottom line for production
       // const emailSent = true;
       if (emailSent) return successResponse(res, { message: 'An Email Verification link has been resent to your email' });

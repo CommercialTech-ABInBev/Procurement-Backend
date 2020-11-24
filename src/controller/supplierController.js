@@ -129,19 +129,21 @@ const SupplierController = {
     try {
       const { id, approvalStatus } = req.vendorDetails;
       const bodyData = req.body;
+      let subCategoryArray = [];
       let check = false;
       const venCat = await findMultipleByKey(VendorCategory, { vendorId: id });
       venCat.forEach(element => {
         bodyData.forEach((x) => {
           x.subCategories.forEach((item) => {
             if (element.subCategory === item) {
+              subCategoryArray.push(item);
               check = true;
             }
           })
         })
       });
 
-      if (check) return errorResponse(res, { code: 404, message: 'A subCategory is already added to this vendor' });
+      if (check) return errorResponse(res, { code: 404, message: `The following Sub Categories are already added ${subCategoryArray.join(', ')}` });
       let body = [];
       bodyData.forEach((item) => {
         item.subCategories.forEach((x) => {
@@ -178,10 +180,6 @@ const SupplierController = {
         else if (!categoryId && label) categoryVendors = await vendorsByCategory({}, { label });
         else if (id) categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
         else categoryVendors = await vendorsById({ approvalStatus: 'approved' }, role);
-
-        // if (categoryId) {
-        //   similarVendors = 
-        // }
       } else {
         if (categoryId && label) categoryVendors = await vendorsByCategory({ categoryId }, { label });
         else if (categoryId && !label) categoryVendors = await vendorsByCategory({ categoryId }, {});

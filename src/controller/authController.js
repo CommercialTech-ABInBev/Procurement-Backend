@@ -72,7 +72,7 @@ const AuthController = {
         user = await addEntity(User, { ...body });
       }
       
-      // if (user.role === 'staff') emailSent = await sendVerificationEmail(req, user);
+      if (user.role === 'staff') emailSent = await sendVerificationEmail(req, user);
       user.token = createToken({
         email: user.email,
         id: user.id,
@@ -166,7 +166,7 @@ const AuthController = {
       if (!user) return errorResponse(res, { code: 404, message: `user with email ${email} does not exist` });
       if (user.role !== "staff") return errorResponse(res, { code: 409, message: `This user is not a staff and does not need to be verified to access the platform` });
       // TODO: uncomment for production
-      // const emailSent = await sendVerificationEmail(req, user);
+      const emailSent = await sendVerificationEmail(req, user);
       // TODO: delete bottom line for production
       // const emailSent = true;
       if (emailSent) return successResponse(res, { message: 'An Email Verification link has been resent to your email' });

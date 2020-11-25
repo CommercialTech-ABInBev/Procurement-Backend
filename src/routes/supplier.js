@@ -36,7 +36,7 @@ router.patch('/logo', userBouncers, upload.array('file'), updateLogo);
 router.delete('/image', userBouncers, deleteImage); //?id=[]
 router.post('/category', supplierBouncers, verifyCategory, addVendorCategory);
 router.get('/', authenticate, verifySupplierCategory, getVendor); // ?categortId=[]&id=[]
-router.get('/similar', authenticate, getSimilarVendors); // ?similarVendors=[]
+router.get('/similar', authenticate, getSimilarVendors); // ?similarVendors=[]&vendorId=[]
 router.post('/subcategory', authenticate, getVendorBySubcategory);
 router.post('/location', authenticate, getVendorBySubcategory);
 router.get('/me', authenticate, getProfile); // ?categortId=[]&id=[]

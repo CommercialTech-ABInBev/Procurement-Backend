@@ -173,7 +173,7 @@ const SupplierController = {
     try {
       const { categoryId, id, approvalStatus, label } = req.query;
       const { role } = req.tokenData;
-      let categoryVendors, similarVendors;
+      let categoryVendors, similarVendors, similarCategoryVendors;
       if (role !== "admin") {
         if (categoryId && label) categoryVendors = await vendorsByCategory({ categoryId }, { label });
         else if (categoryId && !label) categoryVendors = await vendorsByCategory({ categoryId }, {});
@@ -181,9 +181,11 @@ const SupplierController = {
         else if (id) {
           categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
           if (categoryVendors[0].similarVendors === null) {
-            similarVendors = categoryVendors[0].vendorCategories[0].categoryId;
-            await updateByKey(VendorDetail, { similarVendors }, { id });
-            categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
+            similarCategoryVendors = await vendorsByCategory({ categoryId: categoryVendors[0].vendorCategories[0].categoryId }, {});
+            similarCategoryVendors = similarCategoryVendors.filter((x) => x.id !== categoryVendors[0].id);
+          } else {
+            similarCategoryVendors = await vendorsByCategory({ categoryId: categoryVendors[0].similarVendors }, {});
+            similarCategoryVendors = similarCategoryVendors.filter((x) => x.id !== categoryVendors[0].id);
           }
         } else categoryVendors = await vendorsById({ approvalStatus: 'approved' }, role);
       } else {
@@ -195,7 +197,7 @@ const SupplierController = {
         else categoryVendors = await vendorsById({});
       };
       if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors yet' });
-      return successResponse(res, { categoryVendors });
+      return successResponse(res, { categoryVendors, similarCategoryVendors });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

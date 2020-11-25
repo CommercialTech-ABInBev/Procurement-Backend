@@ -234,8 +234,8 @@ const SupplierController = {
     try {
       const { subCategory, label } = req.body;
       let categoryVendors 
-      if (subCategory && !label) categoryVendors = await vendorsByCategory({ subCategory }, {});
-      if (!subCategory && label) categoryVendors = await vendorsByCategory({}, { label });
+      if (subCategory && (!label || label === null)) categoryVendors = await vendorsByCategory({ subCategory }, {});
+      if ((!subCategory || subCategory === null) && label) categoryVendors = await vendorsByCategory({}, { label });
       if (subCategory && label) categoryVendors = await vendorsByCategory({ subCategory }, { label });
       if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors yet' });
       return successResponse(res, { categoryVendors });

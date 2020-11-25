@@ -143,7 +143,7 @@ const SupplierController = {
         })
       });
 
-      if (check) return errorResponse(res, { code: 404, message: `The following Sub Categories are already added ${subCategoryArray.join(', ')}` });
+      if (check) return errorResponse(res, { code: 404, message: `The following Sub Categories are already added ${subCategoryArray.join(', ')}. Please remove them and try again.` });
       let body = [];
       bodyData.forEach((item) => {
         item.subCategories.forEach((x) => {
@@ -178,8 +178,14 @@ const SupplierController = {
         if (categoryId && label) categoryVendors = await vendorsByCategory({ categoryId }, { label });
         else if (categoryId && !label) categoryVendors = await vendorsByCategory({ categoryId }, {});
         else if (!categoryId && label) categoryVendors = await vendorsByCategory({}, { label });
-        else if (id) categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
-        else categoryVendors = await vendorsById({ approvalStatus: 'approved' }, role);
+        else if (id) {
+          categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
+          if (categoryVendors[0].similarVendors === null) {
+            similarVendors = categoryVendors[0].vendorCategories[0].categoryId;
+            await updateByKey(VendorDetail, { similarVendors }, { id });
+            categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
+          }
+        } else categoryVendors = await vendorsById({ approvalStatus: 'approved' }, role);
       } else {
         if (categoryId && label) categoryVendors = await vendorsByCategory({ categoryId }, { label });
         else if (categoryId && !label) categoryVendors = await vendorsByCategory({ categoryId }, {});
@@ -189,6 +195,27 @@ const SupplierController = {
         else categoryVendors = await vendorsById({});
       };
       if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors yet' });
+      return successResponse(res, { categoryVendors });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * get supplier by category
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof SupplierController
+   */
+  async getSimilarVendors(req, res) {
+    try {
+      const { similarVendors } = req.query;
+      let categoryVendors;
+      if (similarVendors === null || !similarVendors) return errorResponse(res, { code: 404, message: 'No Similar Vendors Yet!' });
+      categoryVendors = await vendorsByCategory({ categoryId: similarVendors }, {});
+      if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'No Similar Vendors Yet!' });
       return successResponse(res, { categoryVendors });
     } catch (error) {
       console.error(error);

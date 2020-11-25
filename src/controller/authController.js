@@ -102,7 +102,7 @@ const AuthController = {
       const { password } = req.body;
       const user = req.userData;
       if (!comparePassword(password, user.password)) return errorResponse(res, { code: 401, message: 'incorrect password or email' });
-      if (user.role === 'staff' && !user.verified)  return errorResponse(res, { code: 409, message: 'Not Verified, Please check your email and verify your account.' });
+      // if (user.role === 'staff' && !user.verified)  return errorResponse(res, { code: 409, message: 'Not Verified, Please check your email and verify your account.' });
       const vendorDetails = await findByKey(VendorDetail, { userId: user.id });
       user.token = createToken({
         email: user.email,

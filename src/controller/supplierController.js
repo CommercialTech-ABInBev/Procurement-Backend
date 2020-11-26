@@ -180,20 +180,18 @@ const SupplierController = {
         else if (!categoryId && label) categoryVendors = await vendorsByCategory({}, { label });
         else if (id) {
           categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
-          if (categoryVendors[0].similarVendors === null) {
-            similarCategoryVendors = await vendorsByCategory({ categoryId: categoryVendors[0].vendorCategories[0].categoryId }, {});
-            similarCategoryVendors = similarCategoryVendors.filter((x) => x.id !== categoryVendors[0].id);
-          } else {
-            similarCategoryVendors = await vendorsByCategory({ categoryId: categoryVendors[0].similarVendors }, {});
-            similarCategoryVendors = similarCategoryVendors.filter((x) => x.id !== categoryVendors[0].id);
-          }
+          similarCategoryVendors = await vendorsByCategory({ categoryId: categoryVendors[0].vendorCategories[0].categoryId }, {});
+          similarCategoryVendors = similarCategoryVendors.filter((x) => x.id !== categoryVendors[0].id);
         } else categoryVendors = await vendorsById({ approvalStatus: 'approved' }, role);
       } else {
         if (categoryId && label) categoryVendors = await vendorsByCategory({ categoryId }, { label });
         else if (categoryId && !label) categoryVendors = await vendorsByCategory({ categoryId }, {});
         else if (!categoryId && label) categoryVendors = await vendorsByCategory({}, { label });
-        else if (id) categoryVendors = await vendorsById({ id });
-        else if (approvalStatus) categoryVendors = await vendorsById({ approvalStatus });
+        else if (id) {
+          categoryVendors = await vendorsById({ id });
+          similarCategoryVendors = await vendorsByCategory({ categoryId: categoryVendors[0].vendorCategories[0].categoryId }, {});
+          similarCategoryVendors = similarCategoryVendors.filter((x) => x.id !== categoryVendors[0].id);
+        } else if (approvalStatus) categoryVendors = await vendorsById({ approvalStatus });
         else categoryVendors = await vendorsById({});
       };
       if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors yet' });

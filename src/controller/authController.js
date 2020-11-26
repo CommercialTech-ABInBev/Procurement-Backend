@@ -3,7 +3,6 @@
 import { GeneralService } from '../services';
 import { Toolbox, Mailer } from '../util';
 import database from '../models';
-import vendordetails from '../models/vendordetails';
 import { env } from '../config';
 
 const {
@@ -21,7 +20,8 @@ const {
 const {
   addEntity,
   updateByKey,
-  findByKey
+  findByKey,
+  deleteByKey
 } = GeneralService;
 const {
   User,
@@ -303,6 +303,26 @@ const AuthController = {
       const token = '';
       res.cookie('token', token, { maxAge: 0, httpOnly: true });
       return successResponse(res, { message: 'Logout Successful', token });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * deactivate a user by an admin
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async deactivateUsers(req, res) {
+    try {
+      const { id, email, vendorId } = req.query;
+      let user;
+      if (id) user = await deleteByKey(User, { id });
+      if (email) user = await deleteByKey(User, { email });
+      if (vendorId) user = await deleteByKey(User, { vendorId });
+      return successResponse(res, { message: 'User Deleted Successfully', user });
     } catch (error) {
       errorResponse(res, {});
     }

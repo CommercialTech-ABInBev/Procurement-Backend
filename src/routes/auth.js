@@ -9,9 +9,10 @@ const {
   verifyLogin,
   authenticate,
   verifyPasswordReset,
+  verifyInactiveUser
 } = AuthMiddleware;
 const {
-  userBouncers,
+  userBouncers, adminBouncers
 } = Bouncers;
 const {
   signup,
@@ -23,7 +24,8 @@ const {
   setPassword,
   logoutUser,
   verifyEmail,
-  resendEmailVerificationLink
+  resendEmailVerificationLink,
+  deactivateUsers
 } = AuthController;
 
 router.post('/signup/check', verifySignup);
@@ -39,5 +41,6 @@ router.post('/reset-password/email', verifyPasswordReset, resetPasswordEmailLink
 router.get('/reset-password/email', verifyResetPasswordLink);
 router.post('/set-password', authenticate, verifyPasswordReset, setPassword);
 router.post('/logout', authenticate, logoutUser);
+router.delete('/deactivate', adminBouncers, verifyInactiveUser, deactivateUsers);//email=[]&id=[]&vendorId=[]
 
 export default router;

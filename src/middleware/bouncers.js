@@ -10,7 +10,8 @@ const {
 
 const Bouncers = {
   userBouncers: [authenticate, verifyRoles(user)],
-  adminBouncers: [authenticate, verifyUser, verifyRoles(admins)],
+  adminBouncers: [authenticate, verifyRoles(admins)],
+  // adminBouncers: [authenticate, verifyUser, verifyRoles(admins)],
   supplierBouncers: [authenticate, verifyRoles(suppliers)]
 };
 

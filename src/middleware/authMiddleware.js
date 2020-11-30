@@ -207,6 +207,28 @@ const AuthMiddleware = {
     } catch (error) {
       errorResponse(res, {});
     }
+  },
+
+  /**
+   * verify user to delete
+   * @param {object} req
+   * @param {object} res
+   * @param {object} next
+   * @returns {object} - returns error or response object
+   * @memberof AuthMiddleware
+   */
+  async verifyInactiveUser(req, res, next) {
+    try {
+      const { id, email, vendorId } = req.query;
+      let user;
+      if (id) user = await findByKey(User, { id });
+      if (email) user = await findByKey(User, { email });
+      if (vendorId) user = await findByKey(User, { vendorId });
+      if (!user) return errorResponse(res, { code: 404, message: 'User does not exists. Please check your details' });
+      next();
+    } catch (error) {
+      errorResponse(res, {});
+    }
   }
 };
 

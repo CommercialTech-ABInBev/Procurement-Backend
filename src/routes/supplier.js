@@ -11,7 +11,8 @@ const {
   verifySupplierProfileUpdate,
   verifyCategory,
   verifySupplierCategory,
-  verifyApproval
+  verifyApproval,
+  verifyVendors
 } = SupplierMiddleware;
 const {
   authenticate
@@ -44,5 +45,6 @@ router.get('/category/search', authenticate, serachCategories); //?search=[]
 router.get('/vendor/search', authenticate, serachVendors); //?search=[]
 router.patch('/approve', authenticate, verifyApproval, updateVendorStatus); //?approvalStatus=[]
 router.post('/submit', authenticate, submitForApproval);
+router.post('/vendors', adminBouncers, verifyVendors);
 
 export default router;

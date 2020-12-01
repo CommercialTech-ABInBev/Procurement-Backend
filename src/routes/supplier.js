@@ -29,7 +29,8 @@ const {
   deleteImage,
   getVendorBySubcategory,
   submitForApproval,
-  getSimilarVendors
+  getSimilarVendors,
+  addVendorIds
 } = SupplierController;
 
 router.patch('/profile', userBouncers, upload.array('file'), verifySupplierProfileUpdate, updateProfile);
@@ -45,6 +46,6 @@ router.get('/category/search', authenticate, serachCategories); //?search=[]
 router.get('/vendor/search', authenticate, serachVendors); //?search=[]
 router.patch('/approve', authenticate, verifyApproval, updateVendorStatus); //?approvalStatus=[]
 router.post('/submit', authenticate, submitForApproval);
-router.post('/vendors', adminBouncers, verifyVendors);
+router.post('/vendors', adminBouncers, verifyVendors, addVendorIds);
 
 export default router;

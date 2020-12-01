@@ -66,7 +66,7 @@ const SupplierMiddleware = {
    */
   async verifyVendors(req, res, next) {
     try {
-      if (!req.body.vendorId.length) return errorResponse(res, { code: 409, message: 'vendorIds already added' });
+      if (!req.body.vendorId.length) return errorResponse(res, { code: 409, message: 'please add a vendorId' });
       const vendors = await findMultipleByKey(Vendor, {});
       req.body.vendorId.forEach((item, index) => {
         vendors.forEach((loc) => {
@@ -77,7 +77,6 @@ const SupplierMiddleware = {
       });
 
       if (!req.body.vendorId.length) return errorResponse(res, { code: 409, message: 'vendorIds already added' });
-      // return console.log(req.body.vendorId)
       next();
     } catch (error) {
       console.error(error);

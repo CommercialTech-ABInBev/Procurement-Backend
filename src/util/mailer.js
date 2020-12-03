@@ -79,7 +79,7 @@ const Mailer = {
           display: inline-block;
           font-size: 16px;
           margin: 4px 2px;
-          cursor: pointer;">Reset Password</a>
+          cursor: pointer;">Verify Email</a>
       `
     };
     try {

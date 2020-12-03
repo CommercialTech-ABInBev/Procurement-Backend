@@ -3,7 +3,6 @@
 import { GeneralService } from '../services';
 import { Toolbox, Mailer } from '../util';
 import database from '../models';
-import vendordetails from '../models/vendordetails';
 import { env } from '../config';
 
 const {
@@ -15,12 +14,14 @@ const {
   verifyToken,
 } = Toolbox;
 const {
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
+  sendVerificationEmail
 } = Mailer;
 const {
   addEntity,
   updateByKey,
-  findByKey
+  findByKey,
+  deleteByKey
 } = GeneralService;
 const {
   User,
@@ -42,14 +43,13 @@ const AuthController = {
    */
   async signup(req, res) {
     try {
-      let body;
-      let user;
-      let vendorDetails;
+      let body, user, vendorDetails, emailSent;
       if (req.body.vendorId) {
         body = {
           vendorId: req.body.vendorId,
           password: hashPassword(req.body.password),
-          role: 'supplier'
+          role: 'supplier',
+          verified: true
         };
         user = await addEntity(User, { ...body });
         vendorDetails = await addEntity(VendorDetail, { userId: user.id, vendorId: req.body.vendorId });
@@ -66,20 +66,23 @@ const AuthController = {
         body = {
           email: req.body.email,
           password: hashPassword(req.body.password),
-          role: req.body.admin ? 'admin' : 'staff'
+          role: req.body.admin ? 'admin' : 'staff',
+          verified: req.body.admin ? true : false
         };
         user = await addEntity(User, { ...body });
       }
- 
+      
+      if (user.role === 'staff') emailSent = await sendVerificationEmail(req, user);
       user.token = createToken({
         email: user.email,
         id: user.id,
         role: user.role,
         supplierApproval: vendorDetails !== undefined ? vendorDetails.approvalStatus : null,
-        vendorId: vendorDetails !== undefined ? vendorDetails.vendorId : null
+        vendorId: vendorDetails !== undefined ? vendorDetails.vendorId : null,
+        verified: user.verified
       });
       res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
-      return successResponse(res, { user, vendorDetails }, 201);
+      return successResponse(res, { user, vendorDetails, emailSent }, 201);
     } catch (error) {
       console.error(error);
       errorResponse(res, {});
@@ -99,13 +102,15 @@ const AuthController = {
       const { password } = req.body;
       const user = req.userData;
       if (!comparePassword(password, user.password)) return errorResponse(res, { code: 401, message: 'incorrect password or email' });
+      if (user.role === 'staff' && !user.verified)  return errorResponse(res, { code: 409, message: 'Not Verified, Please check your email and verify your account.' });
       const vendorDetails = await findByKey(VendorDetail, { userId: user.id });
       user.token = createToken({
         email: user.email,
         id: user.id,
         role: user.role,
         supplierApproval: vendorDetails !== null ? vendorDetails.approvalStatus : null,
-        vendorId: vendorDetails !== null ? vendorDetails.vendorId : null
+        vendorId: vendorDetails !== null ? vendorDetails.vendorId : null,
+        verified: user.verified
       });
       res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
       return successResponse(res, { message: 'Login Successful', token: user.token });
@@ -113,6 +118,63 @@ const AuthController = {
       errorResponse(res, {});
     }
   },
+
+   /**
+   * verify user email
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async verifyEmail(req, res) {
+    try {
+      const { token } = req.query;
+      const tokenData = verifyToken(token);
+      const { id } = tokenData;
+      await updateByKey(User, { verified: true }, { id });
+      const user =  await findByKey(User, { id });
+      const newToken = createToken({
+        email: user.email,
+        id: user.id,
+        role: user.role,
+        verified: user.verified
+      });
+      res.cookie('token', newToken, { maxAge: 70000000, httpOnly: true });
+      return res.redirect(`${CLIENT_URL}/staff?token=${newToken}`);
+    } catch (error) {
+      if (error.message === 'Invalid Token') {
+        return errorResponse(res, { code: 400, message: 'We could not verify your email, the token provided was invalid' });
+      }
+      if (error.message === 'Not Found') {
+        return errorResponse(res, { code: 404, message: 'Sorry, we do not recognise this user in our database' });
+      }
+      errorResponse(res, {});
+    }
+  },
+
+   /**
+   * user gets a new email verification link
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async resendEmailVerificationLink(req, res) {
+    try {
+      const { email } = req.body;
+      const user = await findByKey(User, { email });
+      if (!user) return errorResponse(res, { code: 404, message: `user with email ${email} does not exist` });
+      if (user.role !== "staff") return errorResponse(res, { code: 409, message: `This user is not a staff and does not need to be verified to access the platform` });
+      // TODO: uncomment for production
+      const emailSent = await sendVerificationEmail(req, user);
+      // TODO: delete bottom line for production
+      // const emailSent = true;
+      if (emailSent) return successResponse(res, { message: 'An Email Verification link has been resent to your email' });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
 
   /**
    * get user profile
@@ -241,6 +303,26 @@ const AuthController = {
       const token = '';
       res.cookie('token', token, { maxAge: 0, httpOnly: true });
       return successResponse(res, { message: 'Logout Successful', token });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * deactivate a user by an admin
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} - a JSON response
+   * @memberof AuthController
+   */
+  async deactivateUsers(req, res) {
+    try {
+      const { id, email, vendorId } = req.query;
+      let user;
+      if (id) user = await deleteByKey(User, { id });
+      if (email) user = await deleteByKey(User, { email });
+      if (vendorId) user = await deleteByKey(User, { vendorId });
+      return successResponse(res, { message: 'User Deleted Successfully', user });
     } catch (error) {
       errorResponse(res, {});
     }

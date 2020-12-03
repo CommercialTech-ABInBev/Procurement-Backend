@@ -23,7 +23,7 @@ const Toolbox = {
    * @returns {string} JWT token.
    * @memberof Toolbox
    */
-  createToken(payload, expiresIn = '1d') {
+  createToken(payload, expiresIn = '2d') {
     return jwt.sign(payload, SECRET, { expiresIn });
   },
 

@@ -21,7 +21,7 @@
   },
   "formation": {},
   "name": "procurement-backend",
-  "repository": "https://github.com/Tueloper/Procurement-Backend.git",
+  "repository": "https://github.com/CommercialTech-ABInBev/Procurement-Backend.git",
   "scripts": {},
   "stack": "heroku-18"
 }

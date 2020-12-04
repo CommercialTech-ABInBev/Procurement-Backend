@@ -16,6 +16,8 @@ if (environ === 'production') {
   sequelize = new Sequelize(env.database, env.username, env.password, {
     host: env.host,
     port: env.dbPort,
+    dialect: 'mysql',
+    ssl: true,
   });
 } else {
   sequelize = new Sequelize(

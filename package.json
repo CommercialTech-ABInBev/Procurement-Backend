@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tueloper/Procurement-Backend.git"
+    "url": "git+https://github.com/CommercialTech-ABInBev/Procurement-Backend.git"
   },
   "keywords": [
     "procurement",
@@ -30,9 +30,9 @@
   "author": "Tochuwu Ozurumba",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tueloper/Procurement-Backend/issues"
+    "url": "https://github.com/CommercialTech-ABInBev/Procurement-Backend/issues"
   },
-  "homepage": "https://github.com/Tueloper/Procurement-Backend#readme",
+  "homepage": "https://github.com/CommercialTech-ABInBev/Procurement-Backend#readme",
   "dependencies": {
     "@azure/storage-blob": "^12.3.0",
     "@babel/polyfill": "^7.12.1",

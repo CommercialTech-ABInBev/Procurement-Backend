@@ -1,11 +1,6 @@
 import env from './env';
 
 module.exports = {
-  production: {
-    url: env.PRO_URL,
-    dialect: 'mysql',
-  },
-
   development: {
     url: env.DATABASE_URL_DEV || env.LOCAL_URL,
     dialect: 'mysql',

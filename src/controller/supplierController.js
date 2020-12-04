@@ -33,7 +33,8 @@ const {
   Category,
   Notification,
   Media,
-  Location
+  Location,
+  Vendor
 } = database;
 
 
@@ -374,6 +375,24 @@ const SupplierController = {
         });
       }
       return successResponse(res, { notification });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
+
+   /**
+   * add vendor Ids
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the product review details
+   * @memberof SupplierController
+   */
+  async addVendorIds(req, res) {
+    try {
+      const vendor = req.body.vendorId.map((c) => ({ vendorId: c }));
+      const vendors = await Vendor.bulkCreate(vendor);
+      return successResponse(res, { vendors });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

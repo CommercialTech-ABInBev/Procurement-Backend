@@ -1,5 +1,5 @@
+import fs from 'fs';
 import env from './env';
-// import mysql from './mysql2';
 
 module.exports = {
   production: {

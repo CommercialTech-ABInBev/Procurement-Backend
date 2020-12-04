@@ -57,6 +57,34 @@ const SupplierMiddleware = {
   },
 
   /**
+   * verify vendorIds
+   * @param {object} req
+   * @param {object} res
+   * @param {object} next
+   * @returns {object} - return and object {error or response}
+   * @memberof SupplierMiddleware
+   */
+  async verifyVendors(req, res, next) {
+    try {
+      if (!req.body.vendorId.length) return errorResponse(res, { code: 409, message: 'please add a vendorId' });
+      const vendors = await findMultipleByKey(Vendor, {});
+      req.body.vendorId.forEach((item, index) => {
+        vendors.forEach((loc) => {
+          if (item === loc.vendorId) {
+            req.body.vendorId.splice(index, 1);
+          }
+        })
+      });
+
+      if (!req.body.vendorId.length) return errorResponse(res, { code: 409, message: 'vendorIds already added' });
+      next();
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, { code: 400, message: error });
+    }
+  },
+
+  /**
    * verify profile update
    * @param {object} req
    * @param {object} res

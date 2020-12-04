@@ -32,8 +32,8 @@ const Mailer = {
     const mail = {
       to: vendor ? vendor.companyEmail : email,
       from: ADMIN_EMAIL,
-      subject: 'RESET PASSWORD',
-      html: `<h4>You've requested for a password reset. Click the link below to reset your password successfully!</h4><br><br>
+      subject: 'PMS RESET PASSWORD',
+      html: `<p>You've requested for a password reset. Click the link below to reset your password!</p><br><br>
       <a href="${passwordResetLink}" target="_blank" style="background-color: #B11F24;
         border: none;
         color: white;
@@ -68,8 +68,8 @@ const Mailer = {
       to: email,
       from: ADMIN_EMAIL,
       subject: 'PMS EMAIL VERIFICATION',
-      html: `<h4>A big welcome to you for registering to our platform. The button below will redirect to verify your email and complete the registration.\n
-        I hope you have a great time with using this appliation.</h4><br><br>
+      html: `<p>A big welcome to you for registering to our platform. The button below will redirect to verify your email and complete your registration.\n
+        I hope you have a great time with using this appliation.</p><br><br>
         <a href="${verificationLink}" target="_blank" style="background-color: #B11F24;
           border: none;
           color: white;
@@ -79,7 +79,7 @@ const Mailer = {
           display: inline-block;
           font-size: 16px;
           margin: 4px 2px;
-          cursor: pointer;">Reset Password</a>
+          cursor: pointer;">Verify Email</a>
       `
     };
     try {

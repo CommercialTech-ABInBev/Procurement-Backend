@@ -17,10 +17,12 @@ if (environ === 'production') {
     host: env.DB_HOST,
     port: env.DB_PORT,
     dialect: 'mysql',
-    ssl: {
-      key: fs.readFileSync('./certs/client-key.pem'),
-      cert: fs.readFileSync('./certs/client-cert.pem')
-    }
+    ssl: true,
+    dialectOptions: {
+       ssl: {
+          require: true
+       }
+     }
   });
 } else {
   sequelize = new Sequelize(

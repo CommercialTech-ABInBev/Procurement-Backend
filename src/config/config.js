@@ -8,7 +8,10 @@ module.exports = {
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     dialect: 'mysql',
-    ssl: true
+    ssl: {
+      key: fs.readFileSync('./certs/client-key.pem'),
+      cert: fs.readFileSync('./certs/client-cert.pem')
+    }
   },
 
   development: {

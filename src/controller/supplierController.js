@@ -107,7 +107,7 @@ const SupplierController = {
    */
   async deleteImage(req, res) {
     try {
-      
+
       if (!req.query.id) {
         return errorResponse(res, { code: 409, message: 'Please select an image to delete.' });
       }
@@ -234,7 +234,7 @@ const SupplierController = {
   async getVendorBySubcategory(req, res) {
     try {
       const { subCategory, label } = req.body;
-      let categoryVendors 
+      let categoryVendors
       if (subCategory && (!label || label === null)) categoryVendors = await vendorsByCategory({ subCategory }, {});
       if ((!subCategory || subCategory === null) && label) categoryVendors = await vendorsByCategory({}, { label });
       if (subCategory && label) categoryVendors = await vendorsByCategory({ subCategory }, { label });
@@ -339,10 +339,10 @@ const SupplierController = {
           to: vendor.companyName || user.vendorId,
           from: 'admin',
           userId: user.id,
-          subject: `Your details is ${approvalStatus.toUpperCase()}`,
-          message: req.body.message ? req.body.message 
-            : approvalStatus == "approved" 
-              ? 'Thank You for registering with us, your request is hereby approved' 
+          subject: req.body.subject ?? `Your details is ${approvalStatus.toUpperCase()}`,
+          message: req.body.message ? req.body.message
+            : approvalStatus == "approved"
+              ? 'Thank You for registering with us, your request is hereby approved'
               : 'Please kindly review your details and add all neccessary information.\nThank You.'
         });
       }

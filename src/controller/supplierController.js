@@ -340,7 +340,8 @@ const SupplierController = {
           from: 'admin',
           userId: user.id,
           subject: req.body.subject ?? `Your details is ${approvalStatus.toUpperCase()}`,
-          message: req.body.message ?? approvalStatus == "approved"
+          message: req.body.message ? req.body.message
+            : approvalStatus == "approved"
               ? 'Thank You for registering with us, your request is hereby approved'
               : 'Please kindly review your details and add all neccessary information.\nThank You.'
         });

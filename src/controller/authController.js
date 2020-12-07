@@ -74,7 +74,7 @@ const AuthController = {
 
       if (user.role === 'staff') {
         emailSent = await sendVerificationEmail(req, user);
-        return successResponse(res, { user, emailSent }, 201);
+        return successResponse(res, { user, emailSent, message: 'A verification link has been Sent to your email, please verify your account' }, 201);
       }
       user.token = createToken({
         email: user.email,
@@ -116,7 +116,11 @@ const AuthController = {
         verified: user.verified
       });
       res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
-      return successResponse(res, { message: 'Login Successful', token: user.token });
+      return successResponse(res, {
+        message: (user.role === 'staff' && user.verified === 'false')
+          ? 'Please verifiy your account to use the platform' : 'Login Successful',
+        token: user.token
+      });
     } catch (error) {
       errorResponse(res, {});
     }

@@ -71,8 +71,11 @@ const AuthController = {
         };
         user = await addEntity(User, { ...body });
       }
-      
-      if (user.role === 'staff') emailSent = await sendVerificationEmail(req, user);
+
+      if (user.role === 'staff') {
+        emailSent = await sendVerificationEmail(req, user);
+        return successResponse(res, { user, emailSent }, 201);
+      }
       user.token = createToken({
         email: user.email,
         id: user.id,

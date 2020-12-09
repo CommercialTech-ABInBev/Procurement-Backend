@@ -58,8 +58,8 @@ const AuthController = {
             to: vendorDetails.companyName || req.body.vendorId,
             from: 'admin',
             userId: user.id,
-            subject: 'Welcome to PMS',
-            message: 'A big welcome to you. Please ensure to fill in your details in the company details tab and submit for approval.\nWe will definitely get back to you as soon as possible.\nHappy doing business with you.'
+            subject: 'Welcome to IB Vendor Central',
+            message: 'A big welcome to you. Please ensure to fill in your details in the company profile tab and submit for approval.\nWe will definitely get back to you as soon as possible.\nHappy doing business with you.'
           });
         }
       } else {

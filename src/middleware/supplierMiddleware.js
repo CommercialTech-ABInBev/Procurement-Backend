@@ -36,6 +36,10 @@ const SupplierMiddleware = {
       const { id } = req.tokenData;
       const vendor = await findByKey(VendorDetail, { userId: id });
       validateProfile(req.body);
+      if (req.body.companyEmail) {
+        const user = await findByKey(VendorDetail, { companyEmail: req.body.companyEmail });
+        if (user) return errorResponse(res, { code: 409, message: 'Email is already used by another company.' });
+      }
       if (req.files) validateImages(req.file);
       if (req.body.locations) {
         const locationState = await findMultipleByKey(Location, { vendorDetailsId: vendor.id });

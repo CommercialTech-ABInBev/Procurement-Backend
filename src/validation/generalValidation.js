@@ -141,8 +141,8 @@ const GeneralValidation = {
         .label('please input a gender (male or female)'),
       birthDate: joi.date().iso().label('Please input a valid date format: yy-mm-dd'),
       // eslint-disable-next-line no-useless-escape
-      phoneNumber1: joi.string().regex(/^[0-9+\(\)#\.\s\/ext-]+$/).label('Please input a valid phone number'),
-      phoneNumber2: joi.string().regex(/^[0-9+\(\)#\.\s\/ext-]+$/).label('Please input a valid phone number'),
+      phoneNumber1: joi.string().regex(/^[0-9+\(\)#\.\s\/ext-]+$/).label('Please input a valid phone number 1'),
+      phoneNumber2: joi.string().regex(/^[0-9+\(\)#\.\s\/ext-]+$/).label('Please input a valid phone number 2'),
       email: joi.string().email().label('Please enter a valid email address'),
       companyName: joi.string().min(3).max(50)
         .label('company name has a limit of 50 characters'),
@@ -152,23 +152,23 @@ const GeneralValidation = {
         .label('company address has a limit of 120 characters'),
       companyDescription: joi.string().min(3).max(500)
         .label('company description has a limit of 300 characters'),
-      profileImage: joi.string().uri().label('Please profileImage must be in form of an image URL'),
-      companyLogo: joi.string().uri().label('Please logo  must be in form of an image URL'),
-      portfolioUrl: joi.string().uri().label('Please logo  must be in form of a URL'),
-      website: joi.string().uri().label('Please logo  must be in form of a URL'),
+      profileImage: joi.string().uri().label('Please profile Image must be in form of an image URL'),
+      companyLogo: joi.string().uri().label('Please company logo  must be in form of an image URL'),
+      portfolioUrl: joi.string().uri().label('Please portfolio Url must be in form of a URL'),
+      website: joi.string().uri().label('Please website  must be in form of a URL'),
       companyBanner: joi.string().uri().label('Please company banner must be in form of an image URL'),
-      companyUrl: joi.string().uri().label('Please company website must be in form of a URL'),
+      companyUrl: joi.string().uri().label('Please company url must be in form of a URL'),
       companyEmail: joi.string().email()
-        .label('Please enter a valid email address'),
+        .label('Please enter a valid company email address'),
       companyTheme: joi.string().regex(/^#[A-Fa-f0-9]{6}$/).label('colour nust be a Hex in format #ffffff'),
       mediaPictures: joi.array().items(joi.string().uri())
         .label('Please upload urls of media images in the right format'),
       companyLocation: joi.string().min(2).max(12)
         .label('Please enter a valid company location'),
       locations: joi.array().items(joi.string())
-      .label('Please companyLocation should be an array'),
+      .label('Please input a company Location'),
       file: joi.any()
-      .label('Please images should be an array'),
+      .label('Please upload an image'),
       // eslint-disable-next-line no-useless-escape
       companyPhoneNumber: joi.string().regex(/^[0-9+\(\)#\.\s\/ext-]+$/).label('Please input a valid phone number'),
     };

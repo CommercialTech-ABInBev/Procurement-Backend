@@ -50,8 +50,20 @@ const SupplierController = {
     try {
       const { id } = req.tokenData;
       let images = [];
+      const resee = new RegExp("^(http|https)://", "i");
       let states;
       const vendor = req.vendor;
+      if (req.body.website) {
+        const test = resee.test(req.body.website);
+        console.log(test);
+        if (!test) req.body.website = `https://${req.body.website}`;
+      }
+      if (req.body.portfolioUrl) {
+        const test = resee.test(req.body.portfolioUrl);
+        console.log(test);
+        if (!test) req.body.portfolioUrl = `https://${req.body.portfolioUrl}`;
+      }
+      // return console.log(req.body.website, req.body.portfolioUrl);
       if (req.body.locations) {
         const stateDetails = req.body.locations.map((item) => ({
           label: item, value: item, vendorDetailsId: vendor.id,
@@ -181,8 +193,12 @@ const SupplierController = {
         else if (!categoryId && label) categoryVendors = await vendorsByCategory({}, { label });
         else if (id) {
           categoryVendors = await vendorsById({ id, approvalStatus: 'approved' });
-          similarCategoryVendors = await vendorsByCategory({ categoryId: categoryVendors[0].vendorCategories[0].categoryId }, {});
-          similarCategoryVendors = similarCategoryVendors.filter((x) => x.id !== categoryVendors[0].id);
+          const catId = categoryVendors[0].vendorCategories.map((x) => x.categoryId );
+          if (catId === []) similarCategoryVendors = [];
+          else {
+            similarCategoryVendors = await vendorsByCategory({ categoryId: catId }, {});
+            similarCategoryVendors = similarCategoryVendors.filter((x) => x.id !== categoryVendors[0].id);
+          }
         } else categoryVendors = await vendorsById({ approvalStatus: 'approved' }, role);
       } else {
         if (categoryId && label) categoryVendors = await vendorsByCategory({ categoryId }, { label });
@@ -190,10 +206,13 @@ const SupplierController = {
         else if (!categoryId && label) categoryVendors = await vendorsByCategory({}, { label });
         else if (id) {
           categoryVendors = await vendorsById({ id });
-          similarCategoryVendors = await vendorsByCategory({ categoryId: categoryVendors[0].vendorCategories[0].categoryId }, {});
-          similarCategoryVendors = similarCategoryVendors.filter((x) => x.id !== categoryVendors[0].id);
-        } else if (approvalStatus) categoryVendors = await vendorsById({ approvalStatus });
-        else categoryVendors = await vendorsById({});
+          const catId = categoryVendors[0].vendorCategories.map((x) => x.categoryId );
+          if (catId === []) similarCategoryVendors = [];
+          else {
+            similarCategoryVendors = await vendorsByCategory({ categoryId: catId }, {});
+            similarCategoryVendors = similarCategoryVendors.filter((x) => x.id !== categoryVendors[0].id);
+          }
+        } else categoryVendors = await vendorsById({});
       };
       if (!categoryVendors.length) return errorResponse(res, { code: 404, message: 'There are no vendors yet' });
       return successResponse(res, { categoryVendors, similarCategoryVendors });

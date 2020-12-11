@@ -154,8 +154,8 @@ const GeneralValidation = {
         .label('company description has a limit of 300 characters'),
       profileImage: joi.string().uri().label('Please profile Image must be in form of an image URL'),
       companyLogo: joi.string().uri().label('Please company logo  must be in form of an image URL'),
-      portfolioUrl: joi.string().uri().label('Please portfolio Url must be in form of a URL'),
-      website: joi.string().uri().label('Please website  must be in form of a URL'),
+      portfolioUrl: joi.string().label('Please portfolio Url must be in form of a URL'),
+      website: joi.string().label('Please website  must be in form of a URL'),
       companyBanner: joi.string().uri().label('Please company banner must be in form of an image URL'),
       companyUrl: joi.string().uri().label('Please company url must be in form of a URL'),
       companyEmail: joi.string().email()

@@ -15,7 +15,7 @@
     "seed": "sequelize db:seed:all",
     "migrate:seed": "npm run migrate && npm run seed",
     "pretest": "cross-env NODE_ENV=test npm run migrate:reset && cross-env NODE_ENV=test npm run migrate && cross-env NODE_ENV=test npm run seed",
-    "prestart": "npm run migrate && npm run seed",
+    "prestart": "npm run migrate",
     "start:dev": "npm run migrate && nodemon --exec babel-node ./src/index.js"
   },
   "repository": {

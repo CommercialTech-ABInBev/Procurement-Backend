@@ -24,7 +24,9 @@ const {
   searchCategoryByKey,
   searchVendorByKey,
   vendorProfile,
-  vendorsById
+  vendorsById,
+  searchVendorByCategory,
+  searchVendorBySubCategory
 } = CategoryService;
 const {
   User,
@@ -311,8 +313,26 @@ const SupplierController = {
    */
   async serachCategories(req, res) {
     try {
-      const category = await searchCategoryByKey(req.query.search);
+      const category = await searchVendorByCategory(req.query.search);
       if (!category.length) return errorResponse(res, { code: 404, message: 'Categories With Search Criteria is not available' });
+      return successResponse(res, { category });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
+
+   /**
+   * search vendors by subcategory
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the product review details
+   * @memberof SupplierController
+   */
+  async serachSubCategories(req, res) {
+    try {
+      const category = await searchVendorBySubCategory(req.query.search);
+      if (!category.length) return errorResponse(res, { code: 404, message: 'SubCategories With Search Criteria is not available' });
       return successResponse(res, { category });
     } catch (error) {
       console.error(error);
@@ -330,7 +350,9 @@ const SupplierController = {
    */
   async serachVendors(req, res) {
     try {
-      const vendor = await searchVendorByKey(req.query.search);
+      let vendor;
+      const search = req.query.search;
+      vendor = await searchVendorByKey(search);
       if (!vendor.length) return errorResponse(res, { code: 404, message: 'Vendor With Search Criteria is not available' });
       return successResponse(res, { vendor });
     } catch (error) {

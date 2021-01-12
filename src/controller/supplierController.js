@@ -313,11 +313,12 @@ const SupplierController = {
    */
   async serachCategories(req, res) {
     try {
-      const category = await searchVendorByCategory(req.query.search);
-      if (!category.length) return errorResponse(res, { code: 404, message: 'Categories With Search Criteria is not available' });
-      return successResponse(res, { category });
+      const vendor = await searchVendorByCategory(req.query.search);
+      return successResponse(res, { 
+        vendor, 
+        message: vendor === [] ? 'Categories With Search Criteria is not available' : 'Successfully' 
+      });
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -331,11 +332,12 @@ const SupplierController = {
    */
   async serachSubCategories(req, res) {
     try {
-      const category = await searchVendorBySubCategory(req.query.search);
-      if (!category.length) return errorResponse(res, { code: 404, message: 'SubCategories With Search Criteria is not available' });
-      return successResponse(res, { category });
+      const vendor = await searchVendorBySubCategory(req.query.search);
+      return successResponse(res, { 
+        vendor, 
+        message: vendor === [] ? 'No Vendor with subcategory name found' : 'Successfully' 
+      });
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -353,8 +355,31 @@ const SupplierController = {
       let vendor;
       const search = req.query.search;
       vendor = await searchVendorByKey(search);
-      if (!vendor.length) return errorResponse(res, { code: 404, message: 'Vendor With Search Criteria is not available' });
-      return successResponse(res, { vendor });
+      return successResponse(res, { 
+        vendor, 
+        message: vendor === [] ? 'No Vendor with subcategory name found' : 'Successfully' 
+      });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+   /**
+   * search vendors and categories with name
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the product review details
+   * @memberof SupplierController
+   */
+  async search(req, res) {
+    try {
+      const search = req.query.search;
+      const vendorByName = await searchVendorByKey(search);
+      const vendorByCategory = await searchVendorByCategory(search);
+      const vendorBySubcategory = await searchVendorBySubCategory(search);
+      return successResponse(res, { 
+        vendorByName, vendorByCategory, vendorBySubcategory
+      });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

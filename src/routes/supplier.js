@@ -31,7 +31,8 @@ const {
   submitForApproval,
   getSimilarVendors,
   addVendorIds,
-  serachSubCategories
+  serachSubCategories,
+  search
 } = SupplierController;
 
 router.patch('/profile', userBouncers, upload.array('file'), verifySupplierProfileUpdate, updateProfile);
@@ -46,6 +47,8 @@ router.get('/me', authenticate, getProfile); // ?categortId=[]&id=[]
 router.get('/category/search', authenticate, serachCategories); //?search=[]
 router.get('/vendor/search', authenticate, serachVendors); //?search=[]
 router.get('/subCategory/search', authenticate, serachSubCategories); //?search=[]
+router.get('/subCategory/search', authenticate, serachSubCategories); //?search=[]
+router.get('/search', authenticate, search); //?search=[]
 router.patch('/approve', authenticate, verifyApproval, updateVendorStatus); //?approvalStatus=[]
 router.post('/submit', authenticate, submitForApproval);
 router.post('/vendors', adminBouncers, verifyVendors, addVendorIds);

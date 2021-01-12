@@ -164,13 +164,61 @@ const CategoryService = {
    * @returns {promise-Object} - A promise object with entity details
    * @memberof SupplierService
    */
-  async searchCategoryByKey(key) {
+  async searchVendorBySubCategory(key) {
     try {
-      const entities = await Category.findAll({
+      const entities = await VendorDetail.findAll({
+        include: [
+          {
+            model: VendorCategory,
+            as: 'vendorCategories',
+            required: true,
+            where: { 
+              [Op.or]: [
+                { subCategory: { [Op.like]: `%${key}%` } },
+              ],
+            },
+          }
+        ],
         where: {
-            [Op.or]: [
-                { name: { [Op.like]: `%${key}%` } },
+          approvalStatus: 'approved'
+        }
+      });
+      return entities;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+   /**
+   * search products with keys
+   * @async
+   * @param {object} key - inputs like names or tags
+   * @returns {promise-Object} - A promise object with entity details
+   * @memberof SupplierService
+   */
+  async searchVendorByCategory(key) {
+    try {
+      const entities = await VendorDetail.findAll({
+        include: [
+          {
+            model: VendorCategory,
+            as: 'vendorCategories',
+            required: true,
+            include: [
+                {
+                    model: Category,
+                    as: 'category',
+                    where: { 
+                      [Op.or]: [
+                        { name: { [Op.like]: `%${key}%` } },
+                      ],
+                    },
+                },
             ]
+          }
+        ],
+        where: {
+          approvalStatus: 'approved'
         }
       });
       return entities;
@@ -189,18 +237,6 @@ const CategoryService = {
   async searchVendorByKey(key) {
     try {
       const entities = await VendorDetail.findAll({
-        include: [
-          {
-            model: Media,
-            as: 'vendorDetailImage',
-            attributes: ['id', 'imageUrl'],
-          },
-          {
-            model: Location,
-            as: 'locations',
-            attributes: ['label', 'value']
-          }
-        ],
         where: {
           approvalStatus: 'approved',
             [Op.or]: [

@@ -54,7 +54,7 @@ const AuthController = {
         user = await addEntity(User, { ...body });
         vendorDetails = await addEntity(VendorDetail, { 
           userId: user.id, 
-          vendorId: req.body.vendorId 
+          vendorId: req.body.vendorId
         });
         if (vendorDetails){
           await addEntity(Notification, {

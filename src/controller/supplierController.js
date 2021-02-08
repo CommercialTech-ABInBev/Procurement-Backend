@@ -436,7 +436,7 @@ const SupplierController = {
           to: 'admin',
           from: vendor.companyName || vendorId,
           userId: id,
-          subject: `Vendor Approval Request`,
+          subject: `Vendor Approval Request (${vendorId})`,
           message: 'I can attest that the information provided are valid and accurate. Kindly Approve my request.\nThank You.'
         });
       }

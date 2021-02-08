@@ -20,7 +20,8 @@ const {
 } = NotificationService;
 const {
   Notification,
-  VendorDetail
+  VendorDetail,
+  User
 } = database;
 
 const NotificationController = {
@@ -33,6 +34,57 @@ const NotificationController = {
    * @memberof NotificationController
    */
   async addNotification(req, res) {
+    try {
+      const { id, vendorId } = req.tokenData;
+      const vendor = await findByKey(VendorDetail, { userId: id })
+      if(vendor.companyName === null || vendorId === null) return errorResponse(res, { code: 409, message: 'Please update your details before contacting admin' });
+      const notification = await addEntity(Notification, {
+        to: 'admin',
+        from: vendor.companyName || vendorId,
+        userId: id,
+        subject: req.body.subject,
+        message: req.body.message
+      });
+      return successResponse(res, { notification });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * admin add notifications
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof NotificationController
+   */
+  async adminReplySubject(req, res) {
+    try {
+      const { vendorId } = req.query;
+      const vendor = await findByKey(VendorDetail, { vendorId });
+      const user = await findByKey(User, { vendorId });
+      const notification = await addEntity(Notification, {
+        to: vendor.companyName || vendorId,
+        from: 'admin',
+        userId: user.id,
+        subject: req.body.subject,
+        message: req.body.message
+      });
+      return successResponse(res, { notification });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * admin add notifications
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof NotificationController
+   */
+  async vendorReplySubject(req, res) {
     try {
       const { id, vendorId } = req.tokenData;
       const vendor = await findByKey(VendorDetail, { userId: id })
@@ -72,7 +124,6 @@ const NotificationController = {
       if (!notifications.length) return errorResponse(res, { code: 404, message: 'No Notifications Yet' });
       return successResponse(res, { notifications });
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -92,7 +143,6 @@ const NotificationController = {
       const image = await deleteByKey(Notification, { id: req.query.id });
       successResponse(res, { message: 'Notification deleted successfully.', image });
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   },

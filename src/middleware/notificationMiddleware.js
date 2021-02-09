@@ -27,16 +27,23 @@ const NotificationMiddleware = {
    */
   async verifyNotification(req, res, next) {
     try {
+      let notification;
       if (req.body) validateParameters(req.body);
+      if (req.query.subjectId) {
+        notification = await findByKey(Notification, { id: req.query.subjectId });
+        if (!notification) return errorResponse(res, { code: 409, message: 'Notification with subject does not exist' });
+        req.notification = notification;
+      }
       if (req.query.id) {
         const { id } = req.query;
         validateParameters({ id });
-        const notification = await findByKey(Notification, { id });
+        notification = await findByKey(Notification, { id });
         if (!notification) return errorResponse(res, { code: 409, message: 'Notification does not exist' });
         req.notification = notification;
       }
       next();
     } catch (error) {
+      console.error(error);
       errorResponse(res, {});
     }
   }

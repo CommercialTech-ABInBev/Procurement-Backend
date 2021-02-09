@@ -8,13 +8,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    subject: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
     message: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: false
     },
     read: {
       type: DataTypes.BOOLEAN,
@@ -35,11 +31,25 @@ module.exports = (sequelize, DataTypes) => {
       onUpdate: 'CASCADE',
       onDelete: 'CASCADE'
     },
+    subjectId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'Subject',
+        key: 'id'
+      },
+      onUpdate: 'CASCADE',
+      onDelete: 'CASCADE'
+    }
   }, {});
   Notification.associate = function(models) {
     Notification.belongsTo(models.User, {
       as: 'notification',
       foreignKey: 'userId'
+    });
+    Notification.belongsTo(models.Subject, {
+      as: 'messages',
+      foreignKey: 'subjectId'
     });
   };
   return Notification;

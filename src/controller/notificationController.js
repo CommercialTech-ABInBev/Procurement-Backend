@@ -16,12 +16,14 @@ const {
   deleteByKey
 } = GeneralService;
 const {
-  notificationsBykey
+  notificationsBykey,
+  singlenotificationsBykey
 } = NotificationService;
 const {
   Notification,
   VendorDetail,
-  User
+  User,
+  Subject
 } = database;
 
 const NotificationController = {
@@ -35,14 +37,16 @@ const NotificationController = {
    */
   async addNotification(req, res) {
     try {
+      // let subject;
       const { id, vendorId } = req.tokenData;
       const vendor = await findByKey(VendorDetail, { userId: id })
       if(vendor.companyName === null || vendorId === null) return errorResponse(res, { code: 409, message: 'Please update your details before contacting admin' });
+      const subject = await addEntity(Subject, { ...req.body.subject });
       const notification = await addEntity(Notification, {
         to: 'admin',
         from: vendor.companyName || vendorId,
         userId: id,
-        subject: req.body.subject,
+        subjectId: subject.id,
         message: req.body.message
       });
       return successResponse(res, { notification });
@@ -60,15 +64,16 @@ const NotificationController = {
    */
   async adminReplySubject(req, res) {
     try {
-      const { vendorId } = req.query;
+      const { subjectId, vendorId } = req.query;
       const vendor = await findByKey(VendorDetail, { vendorId });
       const user = await findByKey(User, { vendorId });
+      // const subject = await addEntity(Subject, { ...req.body.subject });
       const notification = await addEntity(Notification, {
-        to: vendor.companyName || vendorId,
         from: 'admin',
-        userId: user.id,
-        subject: req.body.subject,
-        message: req.body.message
+        to: vendor.companyName || vendorId,
+        message: req.body.message,
+        subjectId: subjectId,
+        userId: user.id
       });
       return successResponse(res, { notification });
     } catch (error) {
@@ -86,15 +91,15 @@ const NotificationController = {
    */
   async vendorReplySubject(req, res) {
     try {
-      const { id, vendorId } = req.tokenData;
-      const vendor = await findByKey(VendorDetail, { userId: id })
-      // if(vendor.companyName === null || vendorId === null) return errorResponse(res, { code: 409, message: 'Please update your details before contacting admin' });
+      const { subjectId } = req.query;
+      const { id } = req.tokenData;
+      const { vendorId, companyName } = await findByKey(VendorDetail, { userId: id })
       const notification = await addEntity(Notification, {
         to: 'admin',
-        from: vendor.companyName || vendorId,
-        userId: id,
-        subject: req.body.subject,
-        message: req.body.message
+        from: companyName || vendorId,
+        message: req.body.message,
+        subjectId: subjectId,
+        userId: id
       });
       return successResponse(res, { notification });
     } catch (error) {
@@ -114,16 +119,19 @@ const NotificationController = {
     try {
       const { id, role } = req.tokenData;
       let notifications;
-      if (req.query.id) {
-        await updateByKey(Notification, { read: true }, { id: req.query.id });
-        notifications = await notificationsBykey({ id: req.query.id });
+      if (req.query.subjectId) {
+        notifications = await singlenotificationsBykey({ id: req.query.subjectId });
+        const ids = notifications[0].message.map(item => item.id );
+        notifications = await updateByKey(Notification, { read: true }, { id: ids });
+        notifications = await singlenotificationsBykey({ id: req.query.subjectId, userId: id });
       } else {
         if (role === "supplier") notifications = await notificationsBykey({ userId: id });
-        else notifications = await notificationsBykey({ to: 'admin' });
+        else notifications = await notificationsBykey({});
       }
       if (!notifications.length) return errorResponse(res, { code: 404, message: 'No Notifications Yet' });
       return successResponse(res, { notifications });
     } catch (error) {
+      console.error(error);
       errorResponse(res, {});
     }
   },

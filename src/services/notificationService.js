@@ -5,7 +5,9 @@ import database from '../models';
 import GeneralService from './generalService';
 
 const {
-  Notification
+  User,
+  Notification,
+  Subject
 } = database;
 
 const NotificationService = {
@@ -18,21 +20,49 @@ const NotificationService = {
    */
   async notificationsBykey(key) {
     try {
-      const entities = await Notification.findAll({
-        where: key,
-        group: ['subject'],
-        attributes: ['subject', 'message', [Sequelize.fn('COUNT', 'subject'), 'count']],
-        order: [
-          ['id', 'DESC'],
+      const entities = await Subject.findAll({
+        include: [
+          {
+            model: Notification,
+            as: 'message',
+            where: key
+          }
         ],
-        // logging: true,
-        distinct: true,
-        nest: true,
-        raw: true
-      })
+        attributes: ['id', 'subject'],
+        order: [
+          ['updatedAt', 'Desc']
+        ]
+      }).map((values) => values.get({ plain: true }));
       return entities;
     } catch (error) {
-      console.error(error);
+      throw new Error(error);
+    }
+  },
+
+  /**
+   * get notifications
+   * @async
+   * @param {object} key - object containing category key and value
+   * @returns {promise-Object} - A promise object with entity details
+   * @memberof NotificationService
+   */
+  async singlenotificationsBykey(key) {
+    try {
+      const entities = await Subject.findAll({
+        include: [
+          {
+            model: Notification,
+            as: 'message',
+          }
+        ],
+        attributes: ['id', 'subject'],
+        where: { id: key.id },
+        order: [
+          ['updatedAt', 'Desc']
+        ]
+      }).map((values) => values.get({ plain: true }));
+      return entities;
+    } catch (error) {
       throw new Error(error);
     }
   },

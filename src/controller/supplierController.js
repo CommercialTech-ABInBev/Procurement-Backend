@@ -36,7 +36,8 @@ const {
   Notification,
   Media,
   Location,
-  Vendor
+  Vendor, 
+  Subject
 } = database;
 
 
@@ -395,17 +396,19 @@ const SupplierController = {
    */
   async updateVendorStatus(req, res) {
     try {
+      let subject;
       const { id, approvalStatus } = req.query;
       await updateByKey(VendorDetail, { approvalStatus }, { id });
       const vendor = await findByKey(VendorDetail, { id });
       const user = await findByKey(User, { id: vendor.userId });
       let notification;
       if (vendor){
+        subject = await addEntity(Subject, { subject: req.body.subject ?? `${vendor.companyName} details is ${approvalStatus.toUpperCase()}` });
         notification = await addEntity(Notification, {
           to: vendor.companyName || user.vendorId,
           from: 'admin',
           userId: user.id,
-          subject: req.body.subject ?? `Your details is ${approvalStatus.toUpperCase()}`,
+          subjectId: subject.id,
           message: req.body.message ? req.body.message
             : approvalStatus == "approved"
               ? 'Thank You for registering with us, your request is hereby approved'
@@ -428,15 +431,17 @@ const SupplierController = {
    */
   async submitForApproval(req, res) {
     try {
+      let subject;
       const { id, vendorId } = req.tokenData;
       const vendor = await findByKey(VendorDetail, { userId: id });
       let notification;
       if (vendor){
+        subject = await addEntity(Subject, { subject: `Vendor Approval Request (${vendorId})` });
         notification = await addEntity(Notification, {
           to: 'admin',
           from: vendor.companyName || vendorId,
           userId: id,
-          subject: `Vendor Approval Request (${vendorId})`,
+          subjectId: subject.id,
           message: 'I can attest that the information provided are valid and accurate. Kindly Approve my request.\nThank You.'
         });
       }

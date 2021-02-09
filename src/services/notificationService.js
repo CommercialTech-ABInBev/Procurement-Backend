@@ -5,7 +5,8 @@ import database from '../models';
 import GeneralService from './generalService';
 
 const {
-  Notification
+  Notification,
+  Message
 } = database;
 
 const NotificationService = {
@@ -13,19 +14,29 @@ const NotificationService = {
    * get notifications
    * @async
    * @param {object} key - object containing category key and value
+   * @param {object} user - is User
    * @returns {promise-Object} - A promise object with entity details
    * @memberof NotificationService
    */
-  async notificationsBykey(key) {
+  async notificationsBykey(key, user) {
     try {
       const entities = await Notification.findAll({
+        include: [
+          {
+            model: Message,
+            as: 'messages',
+            required: user
+          },
+          // {
+          //   model: Product,
+          //   as: 'product',
+          //   attributes: ['id', 'name', 'imageUrl', 'unit']
+          // }
+        ],
         where: key,
-        group: ['subject'],
-        attributes: ['subject', 'message', [Sequelize.fn('COUNT', 'subject'), 'count']],
         order: [
           ['id', 'DESC'],
         ],
-        // logging: true,
         distinct: true,
         nest: true,
         raw: true

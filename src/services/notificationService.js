@@ -1,6 +1,6 @@
 /* eslint-disable valid-jsdoc */
 // import { ApiError } from '../utils';
-import { Op, QueryTypes } from 'sequelize';
+import Sequelize from 'sequelize';
 import database from '../models';
 import GeneralService from './generalService';
 
@@ -20,12 +20,19 @@ const NotificationService = {
     try {
       const entities = await Notification.findAll({
         where: key,
+        group: ['subject'],
+        attributes: ['subject', 'message', [Sequelize.fn('COUNT', 'subject'), 'count']],
         order: [
           ['id', 'DESC'],
-      ],
-      }).map((values) => values.get({ plain: true }));
+        ],
+        // logging: true,
+        distinct: true,
+        nest: true,
+        raw: true
+      })
       return entities;
     } catch (error) {
+      console.error(error);
       throw new Error(error);
     }
   },

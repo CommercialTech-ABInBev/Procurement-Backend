@@ -88,7 +88,7 @@ const NotificationController = {
     try {
       const { id, vendorId } = req.tokenData;
       const vendor = await findByKey(VendorDetail, { userId: id })
-      if(vendor.companyName === null || vendorId === null) return errorResponse(res, { code: 409, message: 'Please update your details before contacting admin' });
+      // if(vendor.companyName === null || vendorId === null) return errorResponse(res, { code: 409, message: 'Please update your details before contacting admin' });
       const notification = await addEntity(Notification, {
         to: 'admin',
         from: vendor.companyName || vendorId,
@@ -118,7 +118,7 @@ const NotificationController = {
         await updateByKey(Notification, { read: true }, { id: req.query.id });
         notifications = await notificationsBykey({ id: req.query.id });
       } else {
-        if (role === "supplier") notifications = await notificationsBykey({ userId: id, from: 'admin' });
+        if (role === "supplier") notifications = await notificationsBykey({ userId: id });
         else notifications = await notificationsBykey({ to: 'admin' });
       }
       if (!notifications.length) return errorResponse(res, { code: 404, message: 'No Notifications Yet' });

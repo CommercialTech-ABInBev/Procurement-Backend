@@ -16,10 +16,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      subject: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
       message: {
         type: Sequelize.TEXT,
         allowNull: true

@@ -52,7 +52,10 @@ const AuthController = {
           verified: true
         };
         user = await addEntity(User, { ...body });
-        vendorDetails = await addEntity(VendorDetail, { userId: user.id, vendorId: req.body.vendorId });
+        vendorDetails = await addEntity(VendorDetail, { 
+          userId: user.id, 
+          vendorId: req.body.vendorId
+        });
         if (vendorDetails){
           await addEntity(Notification, {
             to: vendorDetails.companyName || req.body.vendorId,

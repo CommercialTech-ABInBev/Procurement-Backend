@@ -4,7 +4,7 @@ import { NotificationController } from '../controller';
 
 const router = Router();
 const {
-  supplierBouncers
+  supplierBouncers, adminBouncers
 } = Bouncers;
 const {
   verifyNotification
@@ -12,10 +12,14 @@ const {
 const {
   addNotification,
   getNotifications,
-  deleteNotification
+  deleteNotification,
+  adminReplySubject,
+  vendorReplySubject
 } = NotificationController;
 
 router.post('/', supplierBouncers, verifyNotification, addNotification);
+router.post('/admin/reply', adminBouncers, verifyNotification, adminReplySubject); // ?subject=[]&vendorId=[]
+router.post('/vendor/reply', supplierBouncers, verifyNotification, vendorReplySubject); // ?subject=[]
 router.get('/', supplierBouncers, verifyNotification, getNotifications); // ?id=[]
 router.delete('/', supplierBouncers, verifyNotification, deleteNotification); // ?id=[]
 

@@ -403,7 +403,7 @@ const SupplierController = {
       const user = await findByKey(User, { id: vendor.userId });
       let notification;
       if (vendor){
-        subject = await addEntity(Subject, { subject: req.body.subject ?? `Your details is ${approvalStatus.toUpperCase()}` });
+        subject = await addEntity(Subject, { subject: req.body.subject ?? `${vendor.companyName} details is ${approvalStatus.toUpperCase()}` });
         notification = await addEntity(Notification, {
           to: vendor.companyName || user.vendorId,
           from: 'admin',

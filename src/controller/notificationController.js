@@ -23,7 +23,6 @@ const {
   Notification,
   VendorDetail,
   User,
-  Message,
   Subject
 } = database;
 
@@ -121,16 +120,13 @@ const NotificationController = {
       const { id, role } = req.tokenData;
       let notifications;
       if (req.query.subjectId) {
-        notifications = await singlenotificationsBykey({ id: req.query.subjectId, userId: id });
+        notifications = await singlenotificationsBykey({ id: req.query.subjectId });
         const ids = notifications[0].message.map(item => item.id );
         notifications = await updateByKey(Notification, { read: true }, { id: ids });
         notifications = await singlenotificationsBykey({ id: req.query.subjectId, userId: id });
       } else {
-        if (role === "supplier") {
-          notifications = await notificationsBykey({ userId: id }, true);
-          // const Messages = notifications.map((item) => item.messages);
-          // notifications = { subject: notifications[0].subject, Messages }
-        } else notifications = await notificationsBykey({ to: 'admin' }, false);
+        if (role === "supplier") notifications = await notificationsBykey({ userId: id });
+        else notifications = await notificationsBykey({});
       }
       if (!notifications.length) return errorResponse(res, { code: 404, message: 'No Notifications Yet' });
       return successResponse(res, { notifications });

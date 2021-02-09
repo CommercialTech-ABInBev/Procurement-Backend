@@ -15,11 +15,10 @@ const NotificationService = {
    * get notifications
    * @async
    * @param {object} key - object containing category key and value
-   * @param {object} user - is User
    * @returns {promise-Object} - A promise object with entity details
    * @memberof NotificationService
    */
-  async notificationsBykey(key, user) {
+  async notificationsBykey(key) {
     try {
       const entities = await Subject.findAll({
         include: [
@@ -29,11 +28,13 @@ const NotificationService = {
             where: key
           }
         ],
-        attributes: ['id', 'subject']
+        attributes: ['id', 'subject'],
+        order: [
+          ['updatedAt', 'Desc']
+        ]
       }).map((values) => values.get({ plain: true }));
       return entities;
     } catch (error) {
-      console.error(error);
       throw new Error(error);
     }
   },
@@ -42,26 +43,26 @@ const NotificationService = {
    * get notifications
    * @async
    * @param {object} key - object containing category key and value
-   * @param {object} user - is User
    * @returns {promise-Object} - A promise object with entity details
    * @memberof NotificationService
    */
-  async singlenotificationsBykey(key, user) {
+  async singlenotificationsBykey(key) {
     try {
       const entities = await Subject.findAll({
         include: [
           {
             model: Notification,
             as: 'message',
-            where: key.userId ? { userId: key.userId } : {},
           }
         ],
         attributes: ['id', 'subject'],
-        where: { id: key.id }
+        where: { id: key.id },
+        order: [
+          ['updatedAt', 'Desc']
+        ]
       }).map((values) => values.get({ plain: true }));
       return entities;
     } catch (error) {
-      console.error(error);
       throw new Error(error);
     }
   },

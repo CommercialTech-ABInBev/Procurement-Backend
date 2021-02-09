@@ -16,7 +16,8 @@ const {
   deleteByKey
 } = GeneralService;
 const {
-  notificationsBykey
+  notificationsBykey,
+  singlenotificationsBykey
 } = NotificationService;
 const {
   Notification,
@@ -119,17 +120,19 @@ const NotificationController = {
     try {
       const { id, role } = req.tokenData;
       let notifications;
-      if (req.query.id) {
-        await updateByKey(Notification, { read: true }, { id: req.query.id });
-        notifications = await notificationsBykey({ id: req.query.id });
+      if (req.query.subjectId) {
+        notifications = await singlenotificationsBykey({ id: req.query.subjectId, userId: id });
+        const ids = notifications[0].message.map(item => item.id );
+        notifications = await updateByKey(Notification, { read: true }, { id: ids });
+        notifications = await singlenotificationsBykey({ id: req.query.subjectId, userId: id });
       } else {
         if (role === "supplier") {
           notifications = await notificationsBykey({ userId: id }, true);
-          const Messages = notifications.map((item) => item.messages);
-          notifications = { subject: notifications[0].subject, Messages }
+          // const Messages = notifications.map((item) => item.messages);
+          // notifications = { subject: notifications[0].subject, Messages }
         } else notifications = await notificationsBykey({ to: 'admin' }, false);
       }
-      if (!notifications.length && !notifications.subject) return errorResponse(res, { code: 404, message: 'No Notifications Yet' });
+      if (!notifications.length) return errorResponse(res, { code: 404, message: 'No Notifications Yet' });
       return successResponse(res, { notifications });
     } catch (error) {
       console.error(error);

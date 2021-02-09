@@ -7,10 +7,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Subject.associate = function(models) {
-    // Message.belongsTo(models.Notification, {
-    //   as: 'singleMmessage',
+    // Subject.belongsToMany(models.User, {
+    //   as: 'user',
+    //   through: 'Notification',
     //   foreignKey: 'subjectId'
     // });
+    Subject.hasMany(models.Notification, {
+      as: 'message',
+      foreignKey: 'subjectId'
+    });
   };
   return Subject;
 };

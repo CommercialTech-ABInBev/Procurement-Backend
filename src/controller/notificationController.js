@@ -21,7 +21,8 @@ const {
 const {
   Notification,
   VendorDetail,
-  User
+  User,
+  Message
 } = database;
 
 const NotificationController = {
@@ -35,6 +36,7 @@ const NotificationController = {
    */
   async addNotification(req, res) {
     try {
+      let message;
       const { id, vendorId } = req.tokenData;
       const vendor = await findByKey(VendorDetail, { userId: id })
       if(vendor.companyName === null || vendorId === null) return errorResponse(res, { code: 409, message: 'Please update your details before contacting admin' });
@@ -44,6 +46,11 @@ const NotificationController = {
         userId: id,
         subject: req.body.subject,
         message: req.body.message
+      });
+      if (notification) message = await addEntity(Message, {
+        from: vendor.companyName || vendorId,
+        message: notification.message,
+        sujectId: notification.id
       });
       return successResponse(res, { notification });
     } catch (error) {
@@ -60,17 +67,13 @@ const NotificationController = {
    */
   async adminReplySubject(req, res) {
     try {
-      const { vendorId } = req.query;
-      const vendor = await findByKey(VendorDetail, { vendorId });
-      const user = await findByKey(User, { vendorId });
-      const notification = await addEntity(Notification, {
-        to: vendor.companyName || vendorId,
+      let message;
+      message = await addEntity(Message, {
         from: 'admin',
-        userId: user.id,
-        subject: req.body.subject,
-        message: req.body.message
+        message: req.body.message,
+        subjectId: req.notification.id,
       });
-      return successResponse(res, { notification });
+      return successResponse(res, { message });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});
@@ -86,17 +89,15 @@ const NotificationController = {
    */
   async vendorReplySubject(req, res) {
     try {
-      const { id, vendorId } = req.tokenData;
-      const vendor = await findByKey(VendorDetail, { userId: id })
-      // if(vendor.companyName === null || vendorId === null) return errorResponse(res, { code: 409, message: 'Please update your details before contacting admin' });
-      const notification = await addEntity(Notification, {
-        to: 'admin',
-        from: vendor.companyName || vendorId,
-        userId: id,
-        subject: req.body.subject,
-        message: req.body.message
+      let message;
+      const { id } = req.tokenData;
+      const { vendorId, companyName } = await findByKey(VendorDetail, { userId: id })
+      message = await addEntity(Message, {
+        from: companyName || vendorId,
+        message: req.body.message,
+        subjectId: req.notification.id,
       });
-      return successResponse(res, { notification });
+      return successResponse(res, { message });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

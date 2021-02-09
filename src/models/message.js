@@ -1,20 +1,13 @@
+'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Notification = sequelize.define('Notification', {
+  const Message = sequelize.define('Message', {
     from: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    to: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    subject: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
     message: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     },
     read: {
       type: DataTypes.BOOLEAN,
@@ -25,26 +18,22 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    userId: {
+    subjectId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'User',
+        model: 'Notification',
         key: 'id'
       },
       onUpdate: 'CASCADE',
       onDelete: 'CASCADE'
-    },
+    }
   }, {});
-  Notification.associate = function(models) {
-    Notification.belongsTo(models.User, {
-      as: 'notification',
-      foreignKey: 'userId'
-    });
-    Notification.hasMany(models.Message, {
-      as: 'messages',
+  Message.associate = function(models) {
+    Message.belongsTo(models.Notification, {
+      as: 'singleMmessage',
       foreignKey: 'subectId'
     });
   };
-  return Notification;
+  return Message;
 };

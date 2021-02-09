@@ -13,7 +13,8 @@ const {
   findByKey
 } = GeneralService;
 const {
-  Notification
+  Notification,
+  Subject
 } = database;
 
 const NotificationMiddleware = {
@@ -30,9 +31,9 @@ const NotificationMiddleware = {
       let notification;
       if (req.body) validateParameters(req.body);
       if (req.query.subjectId) {
-        notification = await findByKey(Notification, { id: req.query.subjectId });
-        if (!notification) return errorResponse(res, { code: 409, message: 'Notification with subject does not exist' });
-        req.notification = notification;
+        const subject = await findByKey(Subject, { id: req.query.subjectId });
+        if (!subject) return errorResponse(res, { code: 409, message: 'Subject does not exist' });
+        req.subject = subject;
       }
       if (req.query.id) {
         const { id } = req.query;

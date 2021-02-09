@@ -26,7 +26,8 @@ const {
 const {
   User,
   VendorDetail,
-  Notification
+  Notification,
+  Subject
 } = database;
 const {
   CLIENT_URL
@@ -43,7 +44,7 @@ const AuthController = {
    */
   async signup(req, res) {
     try {
-      let body, user, vendorDetails, emailSent;
+      let body, user, vendorDetails, emailSent, subject;
       if (req.body.vendorId) {
         body = {
           vendorId: req.body.vendorId,
@@ -57,11 +58,12 @@ const AuthController = {
           vendorId: req.body.vendorId
         });
         if (vendorDetails){
+          subject = await addEntity(Subject, { subject: 'Welcome to IB Vendor Central' });
           await addEntity(Notification, {
             to: vendorDetails.companyName || req.body.vendorId,
             from: 'admin',
             userId: user.id,
-            subject: 'Welcome to IB Vendor Central',
+            subjectId: subject.id,
             message: 'A big welcome to you. Please ensure to fill in your details in the company profile tab and submit for approval.\nWe will definitely get back to you as soon as possible.\nHappy doing business with you.'
           });
         }

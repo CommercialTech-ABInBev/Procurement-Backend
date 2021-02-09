@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId'
     });
     Notification.belongsTo(models.Subject, {
-      as: 'subject',
+      as: 'messages',
       foreignKey: 'subjectId'
     });
   };

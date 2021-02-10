@@ -25,10 +25,10 @@ const NotificationService = {
           {
             model: Notification,
             as: 'message',
-            where: key
+            where: key,
+            attributes: []
           }
         ],
-        attributes: ['id', 'subject'],
         order: [
           ['updatedAt', 'Desc']
         ]
@@ -55,7 +55,6 @@ const NotificationService = {
             as: 'message',
           }
         ],
-        attributes: ['id', 'subject'],
         where: { id: key.id },
         order: [
           ['updatedAt', 'Desc']

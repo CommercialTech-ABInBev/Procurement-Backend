@@ -403,12 +403,17 @@ const SupplierController = {
       const user = await findByKey(User, { id: vendor.userId });
       let notification;
       if (vendor){
-        subject = await addEntity(Subject, { subject: req.body.subject ?? `${vendor.companyName} details is ${approvalStatus.toUpperCase()}` });
+        subject = await addEntity(Subject, { 
+          subject: req.body.subject ?? `${vendor.companyName} details is ${approvalStatus.toUpperCase()}`,
+          vendor: vendor.companyName || user.vendorId,
+          vendorRead: false
+        });
         notification = await addEntity(Notification, {
           to: vendor.companyName || user.vendorId,
           from: 'admin',
           userId: user.id,
           subjectId: subject.id,
+          read: true,
           message: req.body.message ? req.body.message
             : approvalStatus == "approved"
               ? 'Thank You for registering with us, your request is hereby approved'
@@ -436,7 +441,11 @@ const SupplierController = {
       const vendor = await findByKey(VendorDetail, { userId: id });
       let notification;
       if (vendor){
-        subject = await addEntity(Subject, { subject: `Vendor Approval Request (${vendorId})` });
+        subject = await addEntity(Subject, { 
+          subject: `Vendor Approval Request (${vendorId})`, 
+          vendor: vendor.companyName || vendorId,
+          adminRead: false
+        });
         notification = await addEntity(Notification, {
           to: 'admin',
           from: vendor.companyName || vendorId,

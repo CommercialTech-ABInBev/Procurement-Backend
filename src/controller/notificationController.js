@@ -37,16 +37,20 @@ const NotificationController = {
    */
   async addNotification(req, res) {
     try {
-      // let subject;
-      const { id, vendorId } = req.tokenData;
+      const { id, vendorId, role } = req.tokenData;
       const vendor = await findByKey(VendorDetail, { userId: id })
       if(vendor.companyName === null || vendorId === null) return errorResponse(res, { code: 409, message: 'Please update your details before contacting admin' });
-      const subject = await addEntity(Subject, { ...req.body.subject });
+      const subject = await addEntity(Subject, { 
+        ...req.body.subject, 
+        vendor: vendor.companyName || vendorId,
+        adminRead: false
+      });
       const notification = await addEntity(Notification, {
         to: 'admin',
         from: vendor.companyName || vendorId,
         userId: id,
         subjectId: subject.id,
+        read: true,
         message: req.body.message
       });
       return successResponse(res, { notification });
@@ -75,6 +79,8 @@ const NotificationController = {
         subjectId: subjectId,
         userId: user.id
       });
+
+      if (notification) await updateByKey(Subject, { vendor: vendor.companyName || vendorId, vendorRead: false }, { id: subjectId });
       return successResponse(res, { notification });
     } catch (error) {
       console.error(error);
@@ -101,6 +107,7 @@ const NotificationController = {
         subjectId: subjectId,
         userId: id
       });
+      if (notification) await updateByKey(Subject, { vendor: companyName || vendorId, adminRead: false }, { id: subjectId });
       return successResponse(res, { notification });
     } catch (error) {
       console.error(error);
@@ -120,10 +127,11 @@ const NotificationController = {
       const { id, role } = req.tokenData;
       let notifications;
       if (req.query.subjectId) {
-        notifications = await singlenotificationsBykey({ id: req.query.subjectId });
-        const ids = notifications[0].message.map(item => item.id );
-        notifications = await updateByKey(Notification, { read: true }, { id: ids });
-        notifications = await singlenotificationsBykey({ id: req.query.subjectId, userId: id });
+        const { subjectId } = req.query;
+        if (role === 'supplier') await updateByKey(Subject, { vendorRead: true }, { id: subjectId });
+        else await updateByKey(Subject, { adminRead: true }, { id: subjectId });
+        notifications = await singlenotificationsBykey({ id: subjectId });
+        notifications[0].vendorId = notifications[0].message[0].users.vendorId;
       } else {
         if (role === "supplier") notifications = await notificationsBykey({ userId: id });
         else notifications = await notificationsBykey({});

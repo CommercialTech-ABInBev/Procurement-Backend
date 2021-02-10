@@ -25,7 +25,7 @@ module.exports = {
   ]),
 
   down: (queryInterface) => Promise.all([
-    queryInterface.removeColumn('Notifications', 'verifiedCompany'),
-    queryInterface.removeColumn('Notifications', 'companyPhoneNumber'),
+    queryInterface.removeColumn('Notifications', 'imageUrl'),
+    queryInterface.removeColumn('Notifications', 'subjectId'),
   ])
 };

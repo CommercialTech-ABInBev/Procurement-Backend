@@ -25,10 +25,17 @@ const NotificationService = {
           {
             model: Notification,
             as: 'message',
-            where: key
+            where: key,
+            attributes: [],
+            // include: [
+            //   {
+            //     model: User,
+            //     as: 'users',
+            //     attributes: ['vendorId'],
+            //   }
+            // ],
           }
         ],
-        attributes: ['id', 'subject'],
         order: [
           ['updatedAt', 'Desc']
         ]
@@ -53,9 +60,15 @@ const NotificationService = {
           {
             model: Notification,
             as: 'message',
+            include: [
+              {
+                model: User,
+                as: 'users',
+                attributes: ['vendorId'],
+              }
+            ],
           }
         ],
-        attributes: ['id', 'subject'],
         where: { id: key.id },
         order: [
           ['updatedAt', 'Desc']

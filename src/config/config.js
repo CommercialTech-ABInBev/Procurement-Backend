@@ -16,8 +16,6 @@ module.exports = {
      }
   },
   development: {
-    // url: env.DATABASE_URL_DEV || env.LOCAL_URL,
-    // dialect: 'mysql'
     host: process.env.DB_HOST,
     database: process.env.DB_NAME,
     username: process.env.DB_USER,

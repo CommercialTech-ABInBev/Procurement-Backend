@@ -408,6 +408,7 @@ const SupplierController = {
           vendor: vendor.companyName || user.vendorId,
           vendorRead: false
         });
+
         notification = await addEntity(Notification, {
           to: vendor.companyName || user.vendorId,
           from: 'admin',

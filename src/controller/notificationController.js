@@ -37,7 +37,6 @@ const NotificationController = {
    */
   async addNotification(req, res) {
     try {
-      // let subject;
       const { id, vendorId, role } = req.tokenData;
       const vendor = await findByKey(VendorDetail, { userId: id })
       if(vendor.companyName === null || vendorId === null) return errorResponse(res, { code: 409, message: 'Please update your details before contacting admin' });
@@ -80,6 +79,7 @@ const NotificationController = {
         subjectId: subjectId,
         userId: user.id
       });
+
       if (notification) await updateByKey(Subject, { vendor: vendor.companyName || vendorId, vendorRead: false }, { id: subjectId });
       return successResponse(res, { notification });
     } catch (error) {

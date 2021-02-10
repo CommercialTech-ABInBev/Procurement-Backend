@@ -80,7 +80,7 @@ const NotificationController = {
         subjectId: subjectId,
         userId: user.id
       });
-      if (notification) await updateByKey(Subject, { vendor: 'companyName || vendorId', vendorRead: false }, { id: subjectId });
+      if (notification) await updateByKey(Subject, { vendor: vendor.companyName || vendorId, vendorRead: false }, { id: subjectId });
       return successResponse(res, { notification });
     } catch (error) {
       console.error(error);
@@ -107,7 +107,7 @@ const NotificationController = {
         subjectId: subjectId,
         userId: id
       });
-      if (notification) await updateByKey(Subject, { vendor: 'companyName || vendorId', adminRead: false }, { id: subjectId });
+      if (notification) await updateByKey(Subject, { vendor: companyName || vendorId, adminRead: false }, { id: subjectId });
       return successResponse(res, { notification });
     } catch (error) {
       console.error(error);
@@ -124,7 +124,6 @@ const NotificationController = {
    */
   async getNotifications(req, res) {
     try {
-      let unReadArray;
       const { id, role } = req.tokenData;
       let notifications;
       if (req.query.subjectId) {
@@ -132,6 +131,7 @@ const NotificationController = {
         if (role === 'supplier') await updateByKey(Subject, { vendorRead: true }, { id: subjectId });
         else await updateByKey(Subject, { adminRead: true }, { id: subjectId });
         notifications = await singlenotificationsBykey({ id: subjectId });
+        notifications[0].vendorId = notifications[0].message[0].users.vendorId;
       } else {
         if (role === "supplier") notifications = await notificationsBykey({ userId: id });
         else notifications = await notificationsBykey({});

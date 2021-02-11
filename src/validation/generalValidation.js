@@ -35,7 +35,7 @@ const GeneralValidation = {
         .label('Please input a valid userName \n It must only contain alphabets and/underscore ("-")'),
       description: joi.string().min(2).max(500)
         .label('Please enter a valid description \n the field must not be empty and it must be more than 10 letters'),
-      message: joi.string().min(10).max(500)
+      message: joi.string().min(1).max(500)
         .label('Please enter a valid message \n the field must not be empty and it must be more than 10 letters'),
       mediaUrls: joi.array().items(joi.string().uri())
         .label('Please upload urls of media images in the right format'),

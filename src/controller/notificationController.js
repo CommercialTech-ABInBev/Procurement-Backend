@@ -38,11 +38,11 @@ const NotificationController = {
   async addNotification(req, res) {
     try {
       // let subject;
-      const { id, vendorId, role } = req.tokenData;
+      const { id, vendorId } = req.tokenData;
       const vendor = await findByKey(VendorDetail, { userId: id })
       if(vendor.companyName === null || vendorId === null) return errorResponse(res, { code: 409, message: 'Please update your details before contacting admin' });
       const subject = await addEntity(Subject, { 
-        ...req.body.subject, 
+        subject: req.body.subject, 
         vendor: vendor.companyName || vendorId,
         adminRead: false
       });
@@ -56,6 +56,37 @@ const NotificationController = {
       });
       return successResponse(res, { notification });
     } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * admin create conversation
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON } A JSON response with the user's profile details.
+   * @memberof NotificationController
+   */
+  async adminNotification(req, res) {
+    try {
+      const { vendorId } = req.query;
+      const vendor = await findByKey(VendorDetail, { vendorId })
+      const subject = await addEntity(Subject, { 
+        subject: req.body.subject, 
+        vendor: vendor.companyName || vendorId,
+        vendorRead: false
+      });
+      const notification = await addEntity(Notification, {
+        to:  vendor.companyName || vendorId,
+        from: 'admin',
+        userId: vendor.userId,
+        subjectId: subject.id,
+        read: true,
+        message: req.body.message
+      });
+      return successResponse(res, { notification });
+    } catch (error) {
+      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -83,7 +114,6 @@ const NotificationController = {
       if (notification) await updateByKey(Subject, { vendor: vendor.companyName || vendorId, vendorRead: false }, { id: subjectId });
       return successResponse(res, { notification });
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -110,7 +140,6 @@ const NotificationController = {
       if (notification) await updateByKey(Subject, { vendor: companyName || vendorId, adminRead: false }, { id: subjectId });
       return successResponse(res, { notification });
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -125,7 +154,7 @@ const NotificationController = {
   async getNotifications(req, res) {
     try {
       const { id, role } = req.tokenData;
-      let notifications;
+      let notifications, notificationCount;
       if (req.query.subjectId) {
         const { subjectId } = req.query;
         if (role === 'supplier') await updateByKey(Subject, { vendorRead: true }, { id: subjectId });
@@ -137,9 +166,10 @@ const NotificationController = {
         else notifications = await notificationsBykey({});
       }
       if (!notifications.length) return errorResponse(res, { code: 404, message: 'No Notifications Yet' });
-      return successResponse(res, { notifications });
+      notificationCount = notifications.filter((item) => role === 'supplier' ? item.vendorRead === false : item.adminRead === false);
+      notificationCount = notificationCount.length;
+      return successResponse(res, { notificationCount, notifications });
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -153,11 +183,11 @@ const NotificationController = {
    */
   async deleteNotification(req, res) {
     try {
-      if (!req.query.id) {
-        return errorResponse(res, { code: 409, message: 'Please select a notification to delete.' });
+      if (!req.query.subjectId) {
+        return errorResponse(res, { code: 409, message: 'Please select a subject thread to delete.' });
       }
-      const image = await deleteByKey(Notification, { id: req.query.id });
-      successResponse(res, { message: 'Notification deleted successfully.', image });
+      const deleted = await deleteByKey(Subject, { id: req.query.subjectId });
+      successResponse(res, { message: 'Thread deleted successfully.', deleted });
     } catch (error) {
       errorResponse(res, {});
     }

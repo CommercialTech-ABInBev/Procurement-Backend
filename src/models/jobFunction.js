@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     directorEmail: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     }
   }, {});
   JobFunction.associate = function(models) {

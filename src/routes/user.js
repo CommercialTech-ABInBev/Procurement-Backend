@@ -7,9 +7,13 @@ const {
   userBouncers
 } = Bouncers;
 const {
-  registerVendor
+  registerVendor,
+  addJob,
+  getJobFunction
 } = UserController;
 
-router.get('/', userBouncers, registerVendor);
+router.post('/register', userBouncers, registerVendor);
+router.post('/jobs', userBouncers, addJob);
+router.get('/jobs', userBouncers, getJobFunction);
 
 export default router;

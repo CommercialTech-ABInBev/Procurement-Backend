@@ -92,9 +92,9 @@ const Mailer = {
 
   /**
    * send email verification to user after signup
-   * @param {object} req
    * @param {object} vendor - new vendor,
    * @param {object} email - email the mail is sent to
+   * @param {object} userEmail - email the mail is sent to
    * @returns {Promise<boolean>} - Returns true if mail is sent, false if not
    * @memberof Mailer
    */
@@ -104,11 +104,15 @@ const Mailer = {
       to: email,
       from: ADMIN_EMAIL,
       subject: `IB VENDOR CENTRAL, VENDOR REGISTRATION APPROVAL REQUEST (${vendorType.toUpperCase()})`,
-      html: `<p>${vendorName} is a/an ${industry} company which offers ${services} serives. Please review vendor,
+      html: `
+      <h4>Dear Director/Supervisor</h4><br>
+
+      <p>${vendorName} is a/an ${industry} company which offers ${services} serives. Please review vendor,
       and give approval. Immediately this vendor is approved, the VendorId will be created and sent to the developers
-      to add to IB Vendor Central so that the vendor can create their profile. \n\n\n\n
-      Best Regards,\n
-      ${userEmail.split('.')[0]}
+      to add to IB Vendor Central so that the vendor can create their profile. </p><br>
+
+      <p>Best Regards,</p>\n
+      <p>${userEmail.split('@')[0]}<p>
       `
     };
     try {

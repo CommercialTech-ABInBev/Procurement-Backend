@@ -1,21 +1,21 @@
 import { GeneralValidation } from '../validation';
 import { Toolbox } from '../util';
-import { GeneralService } from '../services';
-import database from '../models';
+// import { GeneralService } from '../services';
+// import database from '../models';
 
 const {
   errorResponse
 } = Toolbox;
 const {
-  validateParameters
+  validateVendor
 } = GeneralValidation;
-const {
-  findByKey
-} = GeneralService;
-const {
-  Notification,
-  Subject
-} = database;
+// const {
+//   findByKey
+// } = GeneralService;
+// const {
+//   Notification,
+//   Subject
+// } = database;
 
 const UserMiddleware = {
   /**
@@ -28,8 +28,7 @@ const UserMiddleware = {
    */
   async verifyVendor(req, res, next) {
     try {
-      let notification;
-      if (req.body) validateParameters(req.body);
+      validateVendor(req.body);
       next();
     } catch (error) {
       console.error(error);

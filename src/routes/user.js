@@ -1,15 +1,15 @@
 import { Router } from 'express';
 import { Bouncers } from '../middleware';
-import { CategoryController } from '../controller';
+import { UserController } from '../controller';
 
 const router = Router();
 const {
   userBouncers
 } = Bouncers;
 const {
-    getCategories
-} = CategoryController;
+  registerVendor
+} = UserController;
 
-router.get('/', userBouncers, getCategories);
+router.get('/', userBouncers, registerVendor);
 
 export default router;

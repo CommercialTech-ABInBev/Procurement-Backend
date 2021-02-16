@@ -54,7 +54,7 @@ const Mailer = {
     }
   },
 
-   /**
+  /**
    * send email verification to user after signup
    * @param {object} req
    * @param {object} user - { id, email, firstName ...etc}
@@ -80,6 +80,39 @@ const Mailer = {
           font-size: 16px;
           margin: 4px 2px;
           cursor: pointer;">Verify Email</a>
+      `
+    };
+    try {
+      await sendgrid.send(mail);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  },
+
+  /**
+   * send email verification to user after signup
+   * @param {object} vendor - new vendor,
+   * @param {object} email - email the mail is sent to
+   * @param {object} userEmail - email the mail is sent to
+   * @returns {Promise<boolean>} - Returns true if mail is sent, false if not
+   * @memberof Mailer
+   */
+  async sendApprovalRequest(vendor, email, userEmail) {
+    const { vendorType, industry, vendorName, services } = vendor;
+    const mail = {
+      to: email,
+      from: ADMIN_EMAIL,
+      subject: `IB VENDOR CENTRAL, VENDOR REGISTRATION APPROVAL REQUEST (${vendorType.toUpperCase()})`,
+      html: `
+      <h4>Dear Director/Supervisor</h4><br>
+
+      <p>${vendorName} is a/an ${industry} company which offers ${services} serives. Please review vendor,
+      and give approval. Immediately this vendor is approved, the VendorId will be created and sent to the developers
+      to add to IB Vendor Central so that the vendor can create their profile. </p><br>
+
+      <p>Best Regards,</p>\n
+      <p>${userEmail.split('@')[0]}<p>
       `
     };
     try {

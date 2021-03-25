@@ -15,6 +15,7 @@ const {
 const {
   addEntity,
   findByKey,
+  updateByKey,
   allEntities
 } = GeneralService;
 const {
@@ -22,7 +23,8 @@ const {
 } = UserService;
 const {
   VendorRegistration,
-  JobFunction
+  JobFunction,
+  User
 } = database;
 const {
   FEMI_EMAIL,
@@ -42,10 +44,12 @@ const UserController = {
     try {
 
       const sendEmails = [];
+      let adminAccounts = '';
       const { id, email } = req.tokenData;
       const job = await findByKey(JobFunction, { id: req.body.jobId });
       const vendor = await addEntity(VendorRegistration, { ...req.body, userId: id });
       if (vendor.vendorType === 'capex') {
+        // adminAccounts = await findByKey(User, { email: FEMI_EMAIL });
         sendEmails.push({ email: FEMI_EMAIL });
         sendEmails.push({ email: MADAM_FLORENCE_EMAIL });
       } if (vendor.vendorType === 'opex') {
@@ -109,6 +113,47 @@ const UserController = {
       else vendorRequest = await getVendorRegistrationRquest({});
       if (!vendorRequest.length) return errorResponse(res, { code: 404, message: 'No Vendor Registration Request Yet!' });
       return successResponse(res, { message: 'Vendor Registration Request Gotten', vendorRequest });
+    } catch (error) {
+      console.error(error);
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+ * get vendor request by super admins
+ * @param {object} req
+ * @param {object} res
+ * @returns {JSON } A JSON response with the user's profile details.
+ * @memberof UserController
+ */
+  async updateVendorRegistrationRequest(req, res) {
+    try {
+      let subject;
+      const { requestId, approvalStatus } = req.query;
+      await updateByKey(VendorRegistration, { approvalStatus, approvedBy: req.tokenData.id }, { id: requestId });
+      const VendorRegistrationDetails = await findByKey(VendorRegistration, { id: requestId });
+      // const vendor = await findByKey(VendorDetail, { id });
+      // const user = await findByKey(User, { id: vendor.userId });
+      // let notification;
+      // if (vendor){
+      //   subject = await addEntity(Subject, { 
+      //     subject: req.body.subject ?? `${vendor.companyName} details is ${approvalStatus.toUpperCase()}`,
+      //     vendor: vendor.companyName || user.vendorId,
+      //     vendorRead: false
+      //   });
+      //   notification = await addEntity(Notification, {
+      //     to: vendor.companyName || user.vendorId,
+      //     from: 'admin',
+      //     userId: user.id,
+      //     subjectId: subject.id,
+      //     read: true,
+      //     message: req.body.message ? req.body.message
+      //       : approvalStatus == "approved"
+      //         ? 'Thank You for registering with us, your request is hereby approved'
+      //         : 'Please kindly review your details and add all neccessary information.\nThank You.'
+      //   });
+      // }
+      return successResponse(res, { message: `Vendor is ${approvalStatus}`, VendorRegistrationDetails });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

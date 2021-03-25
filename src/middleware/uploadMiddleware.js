@@ -31,7 +31,7 @@ const upload = multer({
 	},
 
 	fileFilter(req, file, cb) {
-		if (!file.originalname.match(/\.(jpg|jpeg|png|svg|PNG)$/)) {
+		if (!file.originalname.match(/\.(jpg|jpeg|png|svg|PNG|JFIF|jfif|SVG|JPEG)$/)) {
 			return errorResponse(404, 'File is not a valid');
 		}
 

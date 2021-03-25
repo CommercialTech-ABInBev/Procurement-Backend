@@ -72,6 +72,14 @@ const AuthController = {
             message: 'A big welcome to you. Please ensure to fill in your details in the company profile tab and submit for approval.\nWe will definitely get back to you as soon as possible.\nHappy doing business with you.'
           });
         }
+      } else if (req.body.role === 'super_admin'){
+        body = {
+          email: req.body.email,
+          password: hashPassword(req.body.password),
+          role: 'super_admin',
+          verified: true
+        };
+        user = await addEntity(User, { ...body });
       } else {
         body = {
           email: req.body.email,

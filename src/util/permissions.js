@@ -1,5 +1,6 @@
 export default {
-  admins: ['admin'],
-  suppliers: ['admin', 'supplier'],
-  user: ['admin', 'supplier', 'staff'],
+  super_admin: ['super_admin', 'admin'],
+  admins: ['super_admin', 'admin'],
+  suppliers: ['super_admin', 'admin', 'supplier'],
+  user: ['super_admin', 'admin', 'supplier', 'staff'],
 };

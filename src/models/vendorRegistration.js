@@ -41,9 +41,35 @@ module.exports = (sequelize, DataTypes) => {
       onUpdate: 'CASCADE',
       onDelete: 'CASCADE'
     },
+    approvalStatus: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'pending',
+    },
+    comment: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    approvedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'Users',
+        key: 'id'
+      },
+      onUpdate: 'CASCADE',
+      onDelete: 'CASCADE'
+    }
   }, {});
   VendorRegistration.associate = function(models) {
-    // associations can be defined here
+    VendorRegistration.belongsTo(models.User, {
+      as: 'user4',
+      foreignKey: 'userId'
+    });
+    VendorRegistration.belongsTo(models.User, {
+      as: 'manager',
+      foreignKey: 'approvedBy'
+    });
   };
   return VendorRegistration;
 };

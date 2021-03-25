@@ -63,12 +63,16 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   VendorRegistration.associate = function(models) {
     VendorRegistration.belongsTo(models.User, {
-      as: 'user4',
+      as: 'user',
       foreignKey: 'userId'
     });
     VendorRegistration.belongsTo(models.User, {
       as: 'manager',
       foreignKey: 'approvedBy'
+    });
+    VendorRegistration.belongsTo(models.JobFunction, {
+      as: 'units',
+      foreignKey: 'jobId'
     });
   };
   return VendorRegistration;

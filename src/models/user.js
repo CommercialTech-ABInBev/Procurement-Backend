@@ -38,6 +38,14 @@ module.exports = (sequelize, DataTypes) => {
       as: 'notification',
       foreignKey: 'userId'
     });
+    User.hasMany(models.VendorRegistration, {
+      as: 'registration',
+      foreignKey: 'userId'
+    });
+    User.hasMany(models.VendorRegistration, {
+      as: 'vendorRequests',
+      foreignKey: 'approvedBy'
+    });
   };
   return User;
 };

@@ -4,6 +4,7 @@ import { GeneralService, UserService } from '../services';
 import { Toolbox, Mailer } from '../util';
 import database from '../models';
 import { env } from '../config';
+import vendorRegistration from '../models/vendorRegistration';
 
 const {
   successResponse,
@@ -48,18 +49,8 @@ const UserController = {
       const { id, email } = req.tokenData;
       const job = await findByKey(JobFunction, { id: req.body.jobId });
       const vendor = await addEntity(VendorRegistration, { ...req.body, userId: id });
-      if (vendor.vendorType === 'capex') {
-        // adminAccounts = await findByKey(User, { email: FEMI_EMAIL });
-        sendEmails.push({ email: FEMI_EMAIL });
-        sendEmails.push({ email: MADAM_FLORENCE_EMAIL });
-      } if (vendor.vendorType === 'opex') {
-        sendEmails.push({ email: MADAM_FLORENCE_EMAIL });
-        sendEmails.push({ email: job.dataValues.directorEmail });
-      }
-      const emailSent = await sendApprovalRequest(vendor, sendEmails, email);
-      return successResponse(res, { vendor, emailSent });
+      return successResponse(res, { vendor });
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -109,8 +100,12 @@ const UserController = {
   async getVendorRequest(req, res) {
     try {
       let vendorRequest;
+      const { email } = req.tokenData;
       if (req.query.requestId) vendorRequest = await getVendorRegistrationRquest({ id: req.query.requestId });
-      else vendorRequest = await getVendorRegistrationRquest({});
+      else {
+        if (email === FEMI_EMAIL) vendorRequest = await getVendorRegistrationRquest({ vendorType: 'capex' });
+        else vendorRequest = await getVendorRegistrationRquest({});
+      }
       if (!vendorRequest.length) return errorResponse(res, { code: 404, message: 'No Vendor Registration Request Yet!' });
       return successResponse(res, { message: 'Vendor Registration Request Gotten', vendorRequest });
     } catch (error) {
@@ -128,32 +123,19 @@ const UserController = {
  */
   async updateVendorRegistrationRequest(req, res) {
     try {
-      let subject;
+      let emailSent;
+      const { email } = req.tokenData;
       const { requestId, approvalStatus } = req.query;
-      await updateByKey(VendorRegistration, { approvalStatus, approvedBy: req.tokenData.id }, { id: requestId });
+      const payload = { 
+        approvalStatus, 
+        approvedBy: req.tokenData.id,
+        comment: approvalStatus === 'approved' ? 'Vendor Is Approved' : 'Vendor Is Rejected'
+      };
+      await updateByKey(VendorRegistration, payload, { id: requestId });
       const VendorRegistrationDetails = await findByKey(VendorRegistration, { id: requestId });
-      // const vendor = await findByKey(VendorDetail, { id });
-      // const user = await findByKey(User, { id: vendor.userId });
-      // let notification;
-      // if (vendor){
-      //   subject = await addEntity(Subject, { 
-      //     subject: req.body.subject ?? `${vendor.companyName} details is ${approvalStatus.toUpperCase()}`,
-      //     vendor: vendor.companyName || user.vendorId,
-      //     vendorRead: false
-      //   });
-      //   notification = await addEntity(Notification, {
-      //     to: vendor.companyName || user.vendorId,
-      //     from: 'admin',
-      //     userId: user.id,
-      //     subjectId: subject.id,
-      //     read: true,
-      //     message: req.body.message ? req.body.message
-      //       : approvalStatus == "approved"
-      //         ? 'Thank You for registering with us, your request is hereby approved'
-      //         : 'Please kindly review your details and add all neccessary information.\nThank You.'
-      //   });
-      // }
-      return successResponse(res, { message: `Vendor is ${approvalStatus}`, VendorRegistrationDetails });
+      const requesterUser = await findByKey(User, { id: VendorRegistrationDetails.userId });
+      if (VendorRegistrationDetails) emailSent = await sendApprovalRequest(VendorRegistrationDetails, requesterUser.email, email);
+      return successResponse(res, { message: `Vendor is ${approvalStatus}`, VendorRegistrationDetails, emailSent });
     } catch (error) {
       console.error(error);
       errorResponse(res, {});

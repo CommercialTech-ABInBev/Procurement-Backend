@@ -35,12 +35,39 @@ const GeneralValidation = {
         .label('Please input a valid userName \n It must only contain alphabets and/underscore ("-")'),
       description: joi.string().min(2).max(500)
         .label('Please enter a valid description \n the field must not be empty and it must be more than 10 letters'),
-      message: joi.string().min(10).max(500)
+      message: joi.string().min(1).max(500)
         .label('Please enter a valid message \n the field must not be empty and it must be more than 10 letters'),
       mediaUrls: joi.array().items(joi.string().uri())
         .label('Please upload urls of media images in the right format'),
       subCategories: joi.array().items(joi.string())
         .label('Please subcategories should be an array'),
+    };
+    const { error } = joi.validate({ ...payload }, schema);
+    if (error) throw error.details[0].context.label;
+    return true;
+  },
+
+  /**
+   * validate vendor parameters
+   * @param {object} payload - user object
+   * @returns {object | boolean} - returns a boolean or an error object
+   * @memberof GeneralValidation
+   */
+  validateVendor(payload) {
+    const schema = {
+      jobFunction: joi.string().required()
+        .label('Please enter a Job Function Name'),
+      vendorType: joi.string().valid('opex', 'capex').label('parameter must be Capex/Opex'),
+      userId: joi.number().positive()
+        .label('id parameter must be a positive number'),
+      vendorName: joi.string().min(3).max(30).required()
+        .label('Please enter a valid name \n the field must not be empty and it must be more than 2 letters'),
+      industry: joi.string().min(1).max(50).required()
+        .label('Please enter a valid industry name'),
+      services: joi.string().min(1).max(50).required()
+        .label('Please enter a valid service name'),
+      vendorJustification: joi.string().min(2).max(500)
+        .label('Please enter a valid vendor justification')
     };
     const { error } = joi.validate({ ...payload }, schema);
     if (error) throw error.details[0].context.label;

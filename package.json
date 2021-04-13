@@ -13,6 +13,7 @@
     "migrate": "sequelize db:migrate ",
     "migrate:reset": "sequelize db:migrate:undo:all",
     "seed": "sequelize db:seed:all",
+    "seed:reset": "sequelize db:seed:undo:all",
     "migrate:seed": "npm run migrate && npm run seed",
     "pretest": "cross-env NODE_ENV=test npm run migrate:reset && cross-env NODE_ENV=test npm run migrate && cross-env NODE_ENV=test npm run seed",
     "prestart": "npm run migrate",
@@ -27,7 +28,7 @@
     "Backend",
     "ab-inbev"
   ],
-  "author": "Tochuwu Ozurumba",
+  "author": "Tochukwu Ozurumba",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CommercialTech-ABInBev/Procurement-Backend/issues"

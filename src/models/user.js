@@ -38,11 +38,15 @@ module.exports = (sequelize, DataTypes) => {
       as: 'notification',
       foreignKey: 'userId'
     });
-    // User.belongsToMany(models.Subject, {
-    //   as: 'subjects',
-    //   through: 'Notification',
-    //   foreignKey: 'userId'
-    // });
+    User.hasMany(models.VendorRegistration, {
+      as: 'registration',
+      foreignKey: 'userId'
+    });
+    User.hasMany(models.VendorRegistration, {
+      as: 'vendorRequests',
+      foreignKey: 'approvedBy'
+    });
+
   };
   return User;
 };

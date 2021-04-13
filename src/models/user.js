@@ -46,6 +46,7 @@ module.exports = (sequelize, DataTypes) => {
       as: 'vendorRequests',
       foreignKey: 'approvedBy'
     });
+
   };
   return User;
 };

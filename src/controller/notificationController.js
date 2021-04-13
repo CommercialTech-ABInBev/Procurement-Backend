@@ -111,6 +111,7 @@ const NotificationController = {
         subjectId: subjectId,
         userId: user.id
       });
+
       if (notification) await updateByKey(Subject, { vendor: vendor.companyName || vendorId, vendorRead: false }, { id: subjectId });
       return successResponse(res, { notification });
     } catch (error) {

@@ -32,6 +32,7 @@ if (environ === 'test') config.logging = false;
 //   );
 // }
 
+
 fs.readdirSync(__dirname)
   .filter(
     (file) => file.indexOf('.') !== 0

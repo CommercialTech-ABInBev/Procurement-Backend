@@ -17,7 +17,7 @@ const {
 } = GeneralValidation;
 const {
   Vendor,
-  VendorDetail, 
+  VendorDetail,
   Category,
   Location
 } = database;
@@ -45,10 +45,10 @@ const SupplierMiddleware = {
         const locationState = await findMultipleByKey(Location, { vendorDetailsId: vendor.id });
         req.body.locations.forEach((item, index) => {
           locationState.forEach((loc) => {
-            if (item === loc.label) {
+            if (item === loc.value) {
               req.body.locations.splice(index, 1);
             }
-          })
+          });
         });
 
         if (!req.body.locations.length) return errorResponse(res, { code: 409, message: 'States already added' });
@@ -77,13 +77,12 @@ const SupplierMiddleware = {
           if (item === loc.vendorId) {
             req.body.vendorId.splice(index, 1);
           }
-        })
+        });
       });
 
       if (!req.body.vendorId.length) return errorResponse(res, { code: 409, message: 'vendorIds already added' });
       next();
     } catch (error) {
-      console.error(error);
       errorResponse(res, { code: 400, message: error });
     }
   },
@@ -102,13 +101,12 @@ const SupplierMiddleware = {
       // const { categoryId, vendorId } = req.body;
       // const category = await findByKey(Category, { id: categoryId });
       // if (!category) return errorResponse(res, { code: 404, message: 'Category does not exist' });
-      const body = req.body;
+      const { body } = req;
       const vendor = await findByKey(VendorDetail, { vendorId: body[0].vendorId });
       // if (!vendor) return errorResponse(res, { code: 404, message: 'Vendor does not exist' });
       req.vendorDetails = vendor;
       next();
     } catch (error) {
-      console.error(error);
       errorResponse(res, { code: 400, message: error });
     }
   },
@@ -135,7 +133,6 @@ const SupplierMiddleware = {
       }
       next();
     } catch (error) {
-      console.error(error);
       errorResponse(res, { code: 400, message: error });
     }
   },
@@ -158,7 +155,6 @@ const SupplierMiddleware = {
       }
       next();
     } catch (error) {
-      console.error(error);
       errorResponse(res, { code: 400, message: error });
     }
   },

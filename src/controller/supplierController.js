@@ -72,14 +72,14 @@ const SupplierController = {
           label: item, value: item, vendorDetailsId: vendor.id,
         }));
         states = await Location.bulkCreate(stateDetails);
-        await delete req.body.locations;
+        delete req.body.locations;
       }
       if (req.files) {
         let mediaUrls = [...req.files];
         mediaUrls = await uploadImage(mediaUrls);
         mediaUrls = mediaUrls.map((item) => ({ imageUrl: item, vendorDetailsId: vendor.id }));
         images = await Media.bulkCreate(mediaUrls);
-        await delete req.body.file;
+        delete req.body.file;
         await updateByKey(VendorDetail,{ ...req.body }, { userId: id });
         if (images.length > 0 && vendor.approvalStatus !== 'pending') await updateByKey(VendorDetail, { approvalStatus: 'pending' }, { userId: id });
       } else await updateByKey(VendorDetail, { ...req.body }, { userId: id });

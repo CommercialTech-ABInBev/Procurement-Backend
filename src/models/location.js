@@ -8,10 +8,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    label: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     vendorDetailsId: {
       type: DataTypes.INTEGER,
       allowNull: false,

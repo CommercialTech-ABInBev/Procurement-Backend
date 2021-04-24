@@ -1,4 +1,3 @@
-'use strict';
 module.exports = (sequelize, DataTypes) => {
   const JobFunction = sequelize.define('JobFunction', {
     name: {
@@ -10,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     }
   }, {});
-  JobFunction.associate = function(models) {
+  JobFunction.associate = (models) => {
     // associations can be defined here
   };
   return JobFunction;

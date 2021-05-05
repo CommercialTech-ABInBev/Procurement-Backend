@@ -18,5 +18,4 @@ const upload = multer({
     cb(undefined, true);
   }
 });
-
 export default upload;

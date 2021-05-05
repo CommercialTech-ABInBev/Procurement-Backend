@@ -42,10 +42,8 @@ const UserController = {
    */
   async registerVendor(req, res) {
     try {
-      const sendEmails = [];
-      const adminAccounts = '';
-      const { id, email } = req.tokenData;
-      const job = await findByKey(JobFunction, { id: req.body.jobId });
+      const { id } = req.tokenData;
+      await findByKey(JobFunction, { id: req.body.jobId });
       const vendor = await addEntity(VendorRegistration, { ...req.body, userId: id });
       return successResponse(res, { vendor });
     } catch (error) {

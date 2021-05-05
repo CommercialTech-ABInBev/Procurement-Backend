@@ -1,8 +1,5 @@
 /* eslint-disable valid-jsdoc */
-// import { ApiError } from '../utils';
-import { Op, QueryTypes } from 'sequelize';
 import database from '../models';
-import GeneralService from './generalService';
 
 const {
   VendorDetail,
@@ -28,43 +25,43 @@ const CategoryService = {
     try {
       const entities = await VendorDetail.findAll({
         include: [
-          (key.categoryId || key.subCategory) ?
-            {
+          (key.categoryId || key.subCategory)
+            ? {
               model: VendorCategory,
               as: 'vendorCategories',
               where: key,
               include: [
-                  {
-                      model: Category,
-                      as: 'category',
-                  },
+                {
+                  model: Category,
+                  as: 'category',
+                },
               ]
-            } :  {
+            } : {
               model: VendorCategory,
               as: 'vendorCategories',
               include: [
                 {
-                    model: Category,
-                    as: 'category',
+                  model: Category,
+                  as: 'category',
                 },
               ]
-          },
+            },
           {
             model: Media,
             as: 'vendorDetailImage',
             attributes: ['id', 'imageUrl'],
           },
-          key2.label ?
-          {
-            model: Location,
-            as: 'locations',
-            attributes: ['label', 'value'],
-            where: key2
-          } :  {
-            model: Location,
-            as: 'locations',
-            attributes: ['label', 'value']
-          },
+          key2.label
+            ? {
+              model: Location,
+              as: 'locations',
+              attributes: ['label', 'value'],
+              where: key2
+            } : {
+              model: Location,
+              as: 'locations',
+              attributes: ['label', 'value']
+            },
         ],
         where: { approvalStatus: 'approved' }
       }).map((values) => values.get({ plain: true }));
@@ -87,21 +84,21 @@ const CategoryService = {
     try {
       const entities = await VendorDetail.findAll({
         include: [
-            {
-                model: VendorCategory,
-                as: 'vendorCategories',
-                required: true,
-                include: [
-                    {
-                        model: Category,
-                        as: 'category',
-                    },
-                ]
-            },
-            {
-              model: Media,
-              as: 'vendorDetailImage',
-              attributes: ['id', 'imageUrl'],
+          {
+            model: VendorCategory,
+            as: 'vendorCategories',
+            required: true,
+            include: [
+              {
+                model: Category,
+                as: 'category',
+              },
+            ]
+          },
+          {
+            model: Media,
+            as: 'vendorDetailImage',
+            attributes: ['id', 'imageUrl'],
           },
           {
             model: Location,
@@ -129,9 +126,9 @@ const CategoryService = {
       const entities = await VendorDetail.findOne({
         include: [
           {
-              model: Media,
-              as: 'vendorDetailImage',
-              attributes: ['id', 'imageUrl'],
+            model: Media,
+            as: 'vendorDetailImage',
+            attributes: ['id', 'imageUrl'],
           },
           {
             model: Location,
@@ -142,12 +139,12 @@ const CategoryService = {
             model: VendorCategory,
             as: 'vendorCategories',
             include: [
-                {
-                    model: Category,
-                    as: 'category',
-                },
+              {
+                model: Category,
+                as: 'category',
+              },
             ]
-        },
+          },
         ],
         where: key
       });
@@ -157,7 +154,7 @@ const CategoryService = {
     }
   },
 
-   /**
+  /**
    * search products with keys
    * @async
    * @param {object} key - inputs like names or tags
@@ -172,7 +169,7 @@ const CategoryService = {
             model: VendorCategory,
             as: 'vendorCategories',
             required: true,
-            where: { 
+            where: {
               [Op.or]: [
                 { subCategory: { [Op.like]: `%${key}%` } },
               ],
@@ -189,7 +186,7 @@ const CategoryService = {
     }
   },
 
-   /**
+  /**
    * search products with keys
    * @async
    * @param {object} key - inputs like names or tags
@@ -205,15 +202,15 @@ const CategoryService = {
             as: 'vendorCategories',
             required: true,
             include: [
-                {
-                    model: Category,
-                    as: 'category',
-                    where: { 
-                      [Op.or]: [
-                        { name: { [Op.like]: `%${key}%` } },
-                      ],
-                    },
+              {
+                model: Category,
+                as: 'category',
+                where: {
+                  [Op.or]: [
+                    { name: { [Op.like]: `%${key}%` } },
+                  ],
                 },
+              },
             ]
           }
         ],
@@ -227,7 +224,7 @@ const CategoryService = {
     }
   },
 
-   /**
+  /**
    * search products with keys
    * @async
    * @param {object} key - inputs like names or tags
@@ -239,31 +236,11 @@ const CategoryService = {
       const entities = await VendorDetail.findAll({
         where: {
           approvalStatus: 'approved',
-            [Op.or]: [
-                { companyName: { [Op.like]: `%${key}%` } },
-            ]
+          [Op.or]: [
+            { companyName: { [Op.like]: `%${key}%` } },
+          ]
         }
       });
-      return entities;
-    } catch (error) {
-      throw new Error(error);
-    }
-  },
-
-  /**
-   * user gets how many categories a product has
-   * @async
-   * @param {object} key - object containing category key and value
-   * e.g { id: 5 }
-   * @param {object} status - object containing approval status of product
-   * @returns {promise-Object} - A promise object with entity details
-   * @memberof CategoryService
-   */
-  async getProductCategory(key) {
-    try {
-      const entities = await ProductCategory.findAll({
-        where: key,
-      }).map((values) => values.get({ plain: true }));
       return entities;
     } catch (error) {
       throw new Error(error);

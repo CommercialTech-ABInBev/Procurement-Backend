@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-unused-vars */
 import AuthMiddleware from './authMiddleware';
 import Permissions from '../util/permissions';
 

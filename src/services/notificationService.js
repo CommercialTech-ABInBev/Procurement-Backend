@@ -1,8 +1,5 @@
 /* eslint-disable valid-jsdoc */
-// import { ApiError } from '../utils';
-import Sequelize from 'sequelize';
 import database from '../models';
-import GeneralService from './generalService';
 
 const {
   User,

@@ -100,6 +100,7 @@ const SupplierMiddleware = {
       // validateParameters(req.body);
       // const { categoryId, vendorId } = req.body;
       // const category = await findByKey(Category, { id: categoryId });
+      // eslint-disable-next-line max-len
       // if (!category) return errorResponse(res, { code: 404, message: 'Category does not exist' });
       const { body } = req;
       const vendor = await findByKey(VendorDetail, { vendorId: body[0].vendorId });

@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import joi from '@hapi/joi';
 // import validationData from './validationData';
 

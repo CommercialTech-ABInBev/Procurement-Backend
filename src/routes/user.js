@@ -9,6 +9,7 @@ const {
 const {
   registerVendor,
   addJob,
+  addJobs,
   getJobFunction,
   getVendorRequest,
   updateVendorRegistrationRequest
@@ -16,6 +17,7 @@ const {
 
 router.post('/register', userBouncers, registerVendor);
 router.post('/jobs', userBouncers, addJob);
+router.post('/jobs/all', userBouncers, addJobs);
 router.get('/jobs', userBouncers, getJobFunction);
 router.get('/vendor/requests', superAdminBouncers, getVendorRequest);
 router.patch('/vendor/requests', superAdminBouncers, updateVendorRegistrationRequest); // ?requestId=[]&approvalStatus=[]

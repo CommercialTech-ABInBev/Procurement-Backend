@@ -42,7 +42,7 @@ const UserController = {
    */
   async registerVendor(req, res) {
     try {
-      const { id } = req.tokenData;
+      const { id, email } = req.tokenData;
       await findByKey(JobFunction, { id: req.body.jobId });
       const vendor = await addEntity(VendorRegistration, { ...req.body, userId: id });
       return successResponse(res, { vendor });
@@ -62,6 +62,23 @@ const UserController = {
   async addJob(req, res) {
     try {
       const job = await addEntity(JobFunction, { ...req.body });
+      return successResponse(res, { job });
+    } catch (error) {
+      errorResponse(res, {});
+    }
+  },
+
+  /**
+   * add job
+   * @async
+   * @param {object} req
+   * @param {object} res
+   * @returns {JSON} a JSON response with user details and Token
+   * @memberof UserController
+   */
+  async addJobs(req, res) {
+    try {
+      const job = await JobFunction.bulkCreate(req.body);
       return successResponse(res, { job });
     } catch (error) {
       errorResponse(res, {});

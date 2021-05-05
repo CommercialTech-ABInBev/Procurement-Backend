@@ -1,4 +1,5 @@
 /* eslint-disable valid-jsdoc */
+import { Op } from 'sequelize';
 import database from '../models';
 
 const {

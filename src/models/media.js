@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     },
   }, {});
-  Media.associate = function(models) {
+  Media.associate = (models) => {
     Media.belongsTo(models.VendorDetail, {
       as: 'vendorDetailImages',
       foreignKey: 'vendorDetailsId'

@@ -41,6 +41,6 @@ router.post('/reset-password/email', verifyPasswordReset, resetPasswordEmailLink
 router.get('/reset-password/email', verifyResetPasswordLink);
 router.post('/set-password', authenticate, verifyPasswordReset, setPassword);
 router.post('/logout', authenticate, logoutUser);
-router.delete('/deactivate', adminBouncers, verifyInactiveUser, deactivateUsers);//email=[]&id=[]&vendorId=[]
+router.delete('/deactivate', adminBouncers, verifyInactiveUser, deactivateUsers); // email=[]&id=[]&vendorId=[]
 
 export default router;

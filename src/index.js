@@ -54,7 +54,6 @@ if (!production) {
   });
 }
 
-
 // routes
 // app.use(routes);/
 app.get('/', (req, res) => res.status(200).send({

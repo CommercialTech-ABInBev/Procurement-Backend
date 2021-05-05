@@ -1,4 +1,3 @@
-'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Subject = sequelize.define('Subject', {
     subject: {
@@ -20,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: true,
     }
   }, {});
-  Subject.associate = function(models) {
+  Subject.associate = (models) => {
     Subject.hasMany(models.Notification, {
       as: 'message',
       foreignKey: 'subjectId'

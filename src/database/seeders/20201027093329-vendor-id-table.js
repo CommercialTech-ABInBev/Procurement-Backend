@@ -1,7877 +1,7877 @@
 module.exports = {
   up: (queryInterface) => queryInterface.bulkInsert('Vendors', [
     {
-      vendorId: 'NigeriaOAAC0002',
+      vendorId: 'OAAC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAAC0001',
+      vendorId: 'OAAC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSHO0002',
+      vendorId: 'OSHO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGUL0001',
+      vendorId: 'BGUL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOVIZ0001',
+      vendorId: 'OVIZ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCOR0001',
+      vendorId: 'BCOR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGRA0001',
+      vendorId: 'BGRA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAVO0001',
+      vendorId: 'BAVO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPOL0001',
+      vendorId: 'BPOL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGOL0003',
+      vendorId: 'BGOL0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOERN5001',
+      vendorId: 'OERN5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKRO0001',
+      vendorId: 'OKRO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSON0001',
+      vendorId: 'OSON0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONIG0001',
+      vendorId: 'ONIG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBEMP0002',
+      vendorId: 'BEMP0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCUM0001',
+      vendorId: 'HCUM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFOO0001',
+      vendorId: 'OFOO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSTA0004',
+      vendorId: 'BSTA0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKRO0003',
+      vendorId: 'OKRO0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFOO0001',
+      vendorId: 'HFOO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNIP0001',
+      vendorId: 'BNIP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNIP0001',
+      vendorId: 'BNIP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCFA0004',
+      vendorId: 'BCFA0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBASL0001',
+      vendorId: 'BASL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKRO0005',
+      vendorId: 'BKRO0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAR0003',
+      vendorId: 'OMAR0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCEN0003',
+      vendorId: 'HCEN0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKRO0002',
+      vendorId: 'OKRO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBUBE0002',
+      vendorId: 'BUBE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKRO0004',
+      vendorId: 'BKRO0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWMT0001',
+      vendorId: 'OWMT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTAR0001',
+      vendorId: 'BTAR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNIK0001',
+      vendorId: 'HNIK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAN0004',
+      vendorId: 'OMAN0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPOI0001',
+      vendorId: 'BPOI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKON0001',
+      vendorId: 'BKON0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBUA0001',
+      vendorId: 'OBUA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAVO0001',
+      vendorId: 'OAVO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOZCL0001',
+      vendorId: 'OZCL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLIQ0001',
+      vendorId: 'BLIQ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCET0001',
+      vendorId: 'HCET0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBROC0002',
+      vendorId: 'BROC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAXA0001',
+      vendorId: 'BAXA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCUL0001',
+      vendorId: 'BCUL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAFR0005',
+      vendorId: 'OAFR0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOLA0001',
+      vendorId: 'OOLA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEXC0001',
+      vendorId: 'OEXC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGMT0002',
+      vendorId: 'OGMT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBABB0003',
+      vendorId: 'BABB0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCET0001',
+      vendorId: 'OCET0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOLU0004',
+      vendorId: 'BOLU0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBERI0003',
+      vendorId: 'BERI0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBIPS0001',
+      vendorId: 'BIPS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNYS0001',
+      vendorId: 'BNYS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHPT1500',
+      vendorId: 'HHPT1500',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMIC0005',
+      vendorId: 'OMIC0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHAS0001',
+      vendorId: 'OHAS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEBO0002',
+      vendorId: 'OEBO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOABA0001',
+      vendorId: 'OABA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGRO0001',
+      vendorId: 'OGRO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEZE0001',
+      vendorId: 'OEZE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHANI0005',
+      vendorId: 'HANI0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPOL0002',
+      vendorId: 'OPOL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBINT0009',
+      vendorId: 'BINT0009',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMAX0002',
+      vendorId: 'BMAX0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMTA1500',
+      vendorId: 'HMTA1500',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPAS0001',
+      vendorId: 'OPAS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBEN0006',
+      vendorId: 'OBEN0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaORAB0001',
+      vendorId: 'ORAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSUN0009',
+      vendorId: 'BSUN0009',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBRA0003',
+      vendorId: 'BBRA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMAN0002',
+      vendorId: 'BMAN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPWC0001',
+      vendorId: 'OPWC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFOO0003',
+      vendorId: 'OFOO0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSCI0001',
+      vendorId: 'BSCI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWIC0001',
+      vendorId: 'OWIC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKRO0002',
+      vendorId: 'HKRO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAS0002',
+      vendorId: 'OMAS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCSS0001',
+      vendorId: 'OCSS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMUL0004',
+      vendorId: 'BMUL0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGLA0001',
+      vendorId: 'HGLA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMET0003',
+      vendorId: 'BMET0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaORMS0001',
+      vendorId: 'ORMS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHUR0001',
+      vendorId: 'OHUR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBIRO0002',
+      vendorId: 'BIRO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCFA0003',
+      vendorId: 'BCFA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAME0001',
+      vendorId: 'OAME0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAXA0002',
+      vendorId: 'BAXA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFIN0002',
+      vendorId: 'HFIN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKAG0001',
+      vendorId: 'OKAG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOUCH0001',
+      vendorId: 'OUCH0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHLI00002',
+      vendorId: 'HLI00002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGSS5001',
+      vendorId: 'OGSS5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEVE0002',
+      vendorId: 'OEVE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCRO0001',
+      vendorId: 'OCRO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMAN0001',
+      vendorId: 'BMAN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBVOD0001',
+      vendorId: 'BVOD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOISO0003',
+      vendorId: 'OISO0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONKE0001',
+      vendorId: 'ONKE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOZCL0002',
+      vendorId: 'OZCL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBESS0001',
+      vendorId: 'BESS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSOL0004',
+      vendorId: 'BSOL0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSOL0003',
+      vendorId: 'BSOL0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCRA0002',
+      vendorId: 'OCRA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKRO0005',
+      vendorId: 'HKRO0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEMO0003',
+      vendorId: 'HEMO0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLAT0003',
+      vendorId: 'BLAT0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCOB0001',
+      vendorId: 'HCOB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPMC0001',
+      vendorId: 'OPMC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOVIA0001',
+      vendorId: 'OVIA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGEA0002',
+      vendorId: 'BGEA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBROB0003',
+      vendorId: 'BROB0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFAF0001',
+      vendorId: 'HFAF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMTN0001',
+      vendorId: 'BMTN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHUR0003',
+      vendorId: 'BHUR0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSBA0001',
+      vendorId: 'BSBA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMAN0004',
+      vendorId: 'BMAN0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBAY0002',
+      vendorId: 'BBAY0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCIH0001',
+      vendorId: 'HCIH0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHRAB0001',
+      vendorId: 'HRAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSTM0002',
+      vendorId: 'HSTM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSUP0001',
+      vendorId: 'OSUP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKON5001',
+      vendorId: 'OKON5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBOM0002',
+      vendorId: 'OBOM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCEL0001',
+      vendorId: 'BCEL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODEF0001',
+      vendorId: 'ODEF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOACL0002',
+      vendorId: 'OACL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHYU0001',
+      vendorId: 'BHYU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLOS0001',
+      vendorId: 'BLOS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFAB0001',
+      vendorId: 'BFAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSTA0002',
+      vendorId: 'HSTA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOSD0001',
+      vendorId: 'BOSD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTOY0001',
+      vendorId: 'HTOY0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKES0001',
+      vendorId: 'OKES0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFRI0001',
+      vendorId: 'BFRI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGEA0004',
+      vendorId: 'OGEA0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCOR0002',
+      vendorId: 'BCOR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOADA5001',
+      vendorId: 'OADA5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGEA0001',
+      vendorId: 'OGEA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAFA0001',
+      vendorId: 'BAFA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOINT0006',
+      vendorId: 'OINT0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPOC0001',
+      vendorId: 'HPOC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHIN00002',
+      vendorId: 'HIN00002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBRP0001',
+      vendorId: 'OBRP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHUC00001',
+      vendorId: 'HUC00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHENG0002',
+      vendorId: 'HENG0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHACA0002',
+      vendorId: 'HACA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKOG0001',
+      vendorId: 'OKOG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOBJ0001',
+      vendorId: 'OOBJ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOINT0010',
+      vendorId: 'OINT0010',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCHI0001',
+      vendorId: 'OCHI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTEM0003',
+      vendorId: 'HTEM0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGLA0003',
+      vendorId: 'HGLA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONSO0002',
+      vendorId: 'ONSO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHETE0001',
+      vendorId: 'HETE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOACH0001',
+      vendorId: 'OACH0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHA00001',
+      vendorId: 'HHA00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGRE0004',
+      vendorId: 'BGRE0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSO00001',
+      vendorId: 'HSO00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEBE0001',
+      vendorId: 'OEBE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFRE0001',
+      vendorId: 'BFRE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPOL0002',
+      vendorId: 'HPOL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMAN0003',
+      vendorId: 'BMAN0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWID0001',
+      vendorId: 'OWID0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCFA0002',
+      vendorId: 'BCFA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCOR0004',
+      vendorId: 'OCOR0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAZC0001',
+      vendorId: 'OAZC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOERI0001',
+      vendorId: 'OERI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFAB0002',
+      vendorId: 'OFAB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOVE0002',
+      vendorId: 'BOVE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAVE0001',
+      vendorId: 'BAVE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFAB0002',
+      vendorId: 'BFAB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFID0001',
+      vendorId: 'BFID0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBRA0005',
+      vendorId: 'OBRA0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOILW0002',
+      vendorId: 'OILW0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTUS0001',
+      vendorId: 'OTUS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHOAC0001',
+      vendorId: 'HOAC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBROB0002',
+      vendorId: 'BROB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHRIC0001',
+      vendorId: 'HRIC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMUN0001',
+      vendorId: 'OMUN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCPU0001',
+      vendorId: 'OCPU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNAB0001',
+      vendorId: 'HNAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAMA0001',
+      vendorId: 'HAMA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCON0001',
+      vendorId: 'OCON0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHINT0003',
+      vendorId: 'HINT0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSTA0006',
+      vendorId: 'OSTA0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMAN5002',
+      vendorId: 'HMAN5002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFOT0002',
+      vendorId: 'BFOT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMIN0001',
+      vendorId: 'OMIN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOLL0001',
+      vendorId: 'OOLL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNSO0001',
+      vendorId: 'HNSO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCRA0002',
+      vendorId: 'BCRA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOATL0001',
+      vendorId: 'OATL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCOR0001',
+      vendorId: 'OCOR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBODU0001',
+      vendorId: 'BODU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBORI0002',
+      vendorId: 'BORI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSEC0002',
+      vendorId: 'OSEC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSHA0001',
+      vendorId: 'BSHA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOUGO0001',
+      vendorId: 'OUGO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAFR0006',
+      vendorId: 'OAFR0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBANE0002',
+      vendorId: 'BANE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSCA0001',
+      vendorId: 'BSCA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEOH0002',
+      vendorId: 'OEOH0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPIP0002',
+      vendorId: 'BPIP0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOCT0001',
+      vendorId: 'BOCT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBOU0003',
+      vendorId: 'BBOU0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFEL0001',
+      vendorId: 'OFEL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOXLR0001',
+      vendorId: 'OXLR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHIG0003',
+      vendorId: 'BHIG0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKHS0002',
+      vendorId: 'BKHS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEMO0002',
+      vendorId: 'OEMO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJOF0001',
+      vendorId: 'OJOF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTRA0005',
+      vendorId: 'HTRA0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOZO0001',
+      vendorId: 'OOZO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOURB0001',
+      vendorId: 'OURB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSUN0004',
+      vendorId: 'BSUN0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHJEM0001',
+      vendorId: 'HJEM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHIKE0001',
+      vendorId: 'HIKE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOARC0001',
+      vendorId: 'OARC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSOU0003',
+      vendorId: 'BSOU0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBATL0001',
+      vendorId: 'BATL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMYB0001',
+      vendorId: 'BMYB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWMT0002',
+      vendorId: 'OWMT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHAS0002',
+      vendorId: 'OHAS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHRTB0002',
+      vendorId: 'HRTB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTOT0003',
+      vendorId: 'HTOT0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOANI0006',
+      vendorId: 'OANI0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBEXC0003',
+      vendorId: 'BEXC0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMER0002',
+      vendorId: 'BMER0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBAB0001',
+      vendorId: 'BBAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONWA0001',
+      vendorId: 'ONWA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEME0002',
+      vendorId: 'OEME0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBOC0001',
+      vendorId: 'HBOC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBE10001',
+      vendorId: 'HBE10001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOROY0003',
+      vendorId: 'OROY0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOILW0001',
+      vendorId: 'OILW0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPIT0001',
+      vendorId: 'OPIT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJAN0001',
+      vendorId: 'OJAN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBARC0001',
+      vendorId: 'BARC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHJJW0001',
+      vendorId: 'HJJW0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNOV0003',
+      vendorId: 'HNOV0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTHE0010',
+      vendorId: 'OTHE0010',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDED0002',
+      vendorId: 'BDED0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNOV0002',
+      vendorId: 'BNOV0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBADE0004',
+      vendorId: 'BADE0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSEA0001',
+      vendorId: 'OSEA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLOE0001',
+      vendorId: 'BLOE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBARI0003',
+      vendorId: 'BARI0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGRE0005',
+      vendorId: 'BGRE0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLAW0005',
+      vendorId: 'BLAW0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAN0005',
+      vendorId: 'OMAN0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCUS0001',
+      vendorId: 'BCUS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGEA0002',
+      vendorId: 'HGEA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMIL0001',
+      vendorId: 'BMIL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBLU0005',
+      vendorId: 'OBLU0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSU00001',
+      vendorId: 'HSU00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKAR0001',
+      vendorId: 'BKAR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOJA0001',
+      vendorId: 'OOJA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMAR0002',
+      vendorId: 'BMAR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONOV0002',
+      vendorId: 'ONOV0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCCN0001',
+      vendorId: 'OCCN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNIF0001',
+      vendorId: 'BNIF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODEP0001',
+      vendorId: 'ODEP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEVA0002',
+      vendorId: 'HEVA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJOD0002',
+      vendorId: 'OJOD0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOENY0002',
+      vendorId: 'OENY0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOACA0001',
+      vendorId: 'OACA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTNS0001',
+      vendorId: 'BTNS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGLO0001',
+      vendorId: 'OGLO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFAB0001',
+      vendorId: 'HFAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTUR0001',
+      vendorId: 'OTUR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOREC5001',
+      vendorId: 'OREC5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBLU0001',
+      vendorId: 'OBLU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCON0008',
+      vendorId: 'OCON0008',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSUV0001',
+      vendorId: 'BSUV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLEN0002',
+      vendorId: 'OLEN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBUH0002',
+      vendorId: 'OBUH0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBRA0006',
+      vendorId: 'OBRA0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBVIC0002',
+      vendorId: 'BVIC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBYAN0001',
+      vendorId: 'BYAN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSAO5001',
+      vendorId: 'OSAO5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBUH0001',
+      vendorId: 'OBUH0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHZEN0004',
+      vendorId: 'HZEN0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOZEN0001',
+      vendorId: 'OZEN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAFA0001',
+      vendorId: 'OAFA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOSY0001',
+      vendorId: 'OOSY0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBJAA0001',
+      vendorId: 'BJAA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBUTO0001',
+      vendorId: 'BUTO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFIN0001',
+      vendorId: 'HFIN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHWIN0005',
+      vendorId: 'HWIN0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTER0002',
+      vendorId: 'HTER0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCSS0002',
+      vendorId: 'OCSS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKAN0003',
+      vendorId: 'OKAN0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAMA0001',
+      vendorId: 'OAMA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEUW5001',
+      vendorId: 'OEUW5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBIRO0001',
+      vendorId: 'BIRO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHJON0001',
+      vendorId: 'HJON0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOPE0001',
+      vendorId: 'OOPE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMEZ0002',
+      vendorId: 'OMEZ0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBAL0001',
+      vendorId: 'OBAL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLPS0001',
+      vendorId: 'OLPS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSUN5002',
+      vendorId: 'OSUN5002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFEM0003',
+      vendorId: 'BFEM0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHJY00001',
+      vendorId: 'HJY00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMAN0001',
+      vendorId: 'HMAN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTOY0001',
+      vendorId: 'OTOY0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSIR0002',
+      vendorId: 'OSIR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMEZ0001',
+      vendorId: 'OMEZ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBET0001',
+      vendorId: 'OBET0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFRI0002',
+      vendorId: 'BFRI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTRA0001',
+      vendorId: 'BTRA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFAB0001',
+      vendorId: 'OFAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHALA0001',
+      vendorId: 'HALA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTAL0002',
+      vendorId: 'OTAL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONDE0001',
+      vendorId: 'ONDE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaO3SB0001',
+      vendorId: 'O3SB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODOL5001',
+      vendorId: 'ODOL5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONPF0002',
+      vendorId: 'ONPF0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJTG0001',
+      vendorId: 'OJTG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHWIN0004',
+      vendorId: 'HWIN0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSIG0001',
+      vendorId: 'OSIG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDHL0001',
+      vendorId: 'BDHL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKEN0002',
+      vendorId: 'OKEN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBIL0001',
+      vendorId: 'BBIL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTOT0002',
+      vendorId: 'OTOT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGLA0001',
+      vendorId: 'BGLA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFUM0001',
+      vendorId: 'BFUM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOACL0001',
+      vendorId: 'OACL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBRAB0002',
+      vendorId: 'BRAB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBRA0005',
+      vendorId: 'BBRA0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEMI5001',
+      vendorId: 'OEMI5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBRA0002',
+      vendorId: 'OBRA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEUN0003',
+      vendorId: 'OEUN0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAZC5001',
+      vendorId: 'OAZC5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDEC0001',
+      vendorId: 'BDEC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOROB0001',
+      vendorId: 'OROB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEML0001',
+      vendorId: 'OEML0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOADI0001',
+      vendorId: 'OADI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMOO0001',
+      vendorId: 'OMOO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONON0006',
+      vendorId: 'ONON0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBEDI0001',
+      vendorId: 'BEDI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSUV0002',
+      vendorId: 'BSUV0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOGU0001',
+      vendorId: 'BOGU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLOB0001',
+      vendorId: 'OLOB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFRA0001',
+      vendorId: 'BFRA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCAR0002',
+      vendorId: 'OCAR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOABI0003',
+      vendorId: 'OABI0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDEB0001',
+      vendorId: 'BDEB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTOT0001',
+      vendorId: 'BTOT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHJOD0001',
+      vendorId: 'HJOD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBIG0001',
+      vendorId: 'BBIG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODIV0002',
+      vendorId: 'ODIV0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSAM0006',
+      vendorId: 'BSAM0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSOL0003',
+      vendorId: 'OSOL0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBROB0001',
+      vendorId: 'BROB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOIYK0001',
+      vendorId: 'OIYK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAGB0001',
+      vendorId: 'HAGB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAGF0001',
+      vendorId: 'BAGF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTRO0001',
+      vendorId: 'HTRO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTPI0001',
+      vendorId: 'OTPI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHAM0002',
+      vendorId: 'OHAM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMIC0001',
+      vendorId: 'OMIC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAPE0002',
+      vendorId: 'BAPE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPRE0003',
+      vendorId: 'BPRE0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTRE0001',
+      vendorId: 'HTRE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOVE0001',
+      vendorId: 'OOVE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBEXC0001',
+      vendorId: 'BEXC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSYN0002',
+      vendorId: 'BSYN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOISO0001',
+      vendorId: 'OISO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOMO0001',
+      vendorId: 'BOMO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODHL0001',
+      vendorId: 'ODHL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPRE0002',
+      vendorId: 'BPRE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBOC0001',
+      vendorId: 'BBOC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCHA0002',
+      vendorId: 'OCHA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJOV5001',
+      vendorId: 'OJOV5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOATT0001',
+      vendorId: 'OATT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBIO0001',
+      vendorId: 'HBIO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHZUT0003',
+      vendorId: 'HZUT0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBOC0001',
+      vendorId: 'OBOC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLXB0001',
+      vendorId: 'BLXB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBUPW0001',
+      vendorId: 'BUPW0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTRA0001',
+      vendorId: 'OTRA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBWSP0002',
+      vendorId: 'BWSP0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAI0001',
+      vendorId: 'OMAI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAMS0002',
+      vendorId: 'HAMS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTHE0007',
+      vendorId: 'OTHE0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSOU0007',
+      vendorId: 'BSOU0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGRL0001',
+      vendorId: 'OGRL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOREG0002',
+      vendorId: 'OREG0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGAB0001',
+      vendorId: 'OGAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSBA0003',
+      vendorId: 'BSBA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCEA0001',
+      vendorId: 'OCEA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCRL0001',
+      vendorId: 'OCRL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPU00001',
+      vendorId: 'HPU00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGHC0001',
+      vendorId: 'OGHC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTOA0002',
+      vendorId: 'BTOA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWAN0001',
+      vendorId: 'OWAN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOERN0001',
+      vendorId: 'OERN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDEL0001',
+      vendorId: 'BDEL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMMI1500',
+      vendorId: 'HMMI1500',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSTA0002',
+      vendorId: 'OSTA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBABB0002',
+      vendorId: 'BABB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOECA0001',
+      vendorId: 'OECA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHAS0003',
+      vendorId: 'OHAS0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBRA0007',
+      vendorId: 'OBRA0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOUNI0007',
+      vendorId: 'OUNI0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSFL1500',
+      vendorId: 'HSFL1500',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCNA0001',
+      vendorId: 'OCNA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFUM0002',
+      vendorId: 'BFUM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBLU0002',
+      vendorId: 'HBLU0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEXC0003',
+      vendorId: 'OEXC0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTHE5001',
+      vendorId: 'OTHE5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTAJ0003',
+      vendorId: 'BTAJ0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSTR0001',
+      vendorId: 'OSTR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBOA0001',
+      vendorId: 'BBOA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOAK5001',
+      vendorId: 'OOAK5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGLO0005',
+      vendorId: 'OGLO0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBLU0002',
+      vendorId: 'BBLU0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCIA0002',
+      vendorId: 'OCIA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTEE0001',
+      vendorId: 'BTEE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMDO0001',
+      vendorId: 'OMDO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPIL0001',
+      vendorId: 'BPIL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPET0002',
+      vendorId: 'HPET0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSTA0001',
+      vendorId: 'OSTA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBAB0002',
+      vendorId: 'OBAB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLXB0002',
+      vendorId: 'BLXB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBINT0015',
+      vendorId: 'BINT0015',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPER0002',
+      vendorId: 'BPER0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONIR0001',
+      vendorId: 'ONIR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHREA0001',
+      vendorId: 'HREA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHOST0002',
+      vendorId: 'HOST0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHOVA0001',
+      vendorId: 'HOVA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAR0004',
+      vendorId: 'OMAR0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKRO0003',
+      vendorId: 'BKRO0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOXTO0001',
+      vendorId: 'OXTO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCAL0001',
+      vendorId: 'OCAL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPER0001',
+      vendorId: 'BPER0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDEB0002',
+      vendorId: 'BDEB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSHO0001',
+      vendorId: 'BSHO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCEA5001',
+      vendorId: 'OCEA5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGRE0001',
+      vendorId: 'OGRE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSHO0001',
+      vendorId: 'HSHO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMED0002',
+      vendorId: 'OMED0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSIR0003',
+      vendorId: 'OSIR0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaO3SB0002',
+      vendorId: 'O3SB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBB200001',
+      vendorId: 'BB200001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSYS0001',
+      vendorId: 'BSYS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSAM0002',
+      vendorId: 'BSAM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSOU0002',
+      vendorId: 'OSOU0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFET0001',
+      vendorId: 'BFET0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOANI0001',
+      vendorId: 'OANI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBLU0003',
+      vendorId: 'BBLU0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSTR0001',
+      vendorId: 'BSTR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNWA0001',
+      vendorId: 'BNWA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCOR0003',
+      vendorId: 'OCOR0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEXC0002',
+      vendorId: 'HEXC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFRA0002',
+      vendorId: 'HFRA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCON0001',
+      vendorId: 'BCON0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBRA0001',
+      vendorId: 'BBRA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLAI0001',
+      vendorId: 'OLAI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONSO0001',
+      vendorId: 'ONSO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGKO0001',
+      vendorId: 'BGKO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHJAL0001',
+      vendorId: 'HJAL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPIP0001',
+      vendorId: 'BPIP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTOP0003',
+      vendorId: 'BTOP0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAME5002',
+      vendorId: 'OAME5002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBJOV0001',
+      vendorId: 'BJOV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBEGO0001',
+      vendorId: 'BEGO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOIVO0001',
+      vendorId: 'OIVO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOIDE0001',
+      vendorId: 'OIDE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSOU0001',
+      vendorId: 'OSOU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTUV0001',
+      vendorId: 'HTUV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSUN0002',
+      vendorId: 'HSUN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBWIN0003',
+      vendorId: 'BWIN0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCRA5001',
+      vendorId: 'OCRA5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSAI0001',
+      vendorId: 'OSAI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOXON0002',
+      vendorId: 'OXON0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOARA0001',
+      vendorId: 'OARA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLEN0001',
+      vendorId: 'OLEN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFA00001',
+      vendorId: 'HFA00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGOZ0001',
+      vendorId: 'OGOZ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSAM0004',
+      vendorId: 'OSAM0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFUN0003',
+      vendorId: 'BFUN0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODEE0001',
+      vendorId: 'ODEE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONIG0009',
+      vendorId: 'ONIG0009',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSW00001',
+      vendorId: 'HSW00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJAN0002',
+      vendorId: 'OJAN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPW50001',
+      vendorId: 'HPW50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMRS0002',
+      vendorId: 'BMRS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMOS0001',
+      vendorId: 'OMOS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSET0002',
+      vendorId: 'OSET0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSIR0004',
+      vendorId: 'OSIR0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAVE0001',
+      vendorId: 'OAVE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBRA5001',
+      vendorId: 'OBRA5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGKO0001',
+      vendorId: 'OGKO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBANE0001',
+      vendorId: 'BANE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAR0002',
+      vendorId: 'OMAR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONET0002',
+      vendorId: 'ONET0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWOS0001',
+      vendorId: 'OWOS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOVEN0001',
+      vendorId: 'OVEN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODHA5001',
+      vendorId: 'ODHA5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHLUS0001',
+      vendorId: 'HLUS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHYB0001',
+      vendorId: 'BHYB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBMS0001',
+      vendorId: 'OBMS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMET0001',
+      vendorId: 'OMET0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFS00001',
+      vendorId: 'HFS00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLAW0003',
+      vendorId: 'OLAW0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDTO0002',
+      vendorId: 'BDTO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGOO0001',
+      vendorId: 'OGOO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNEO0001',
+      vendorId: 'HNEO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKPM0001',
+      vendorId: 'OKPM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFED0001',
+      vendorId: 'OFED0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSMI0001',
+      vendorId: 'OSMI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHRAB0002',
+      vendorId: 'HRAB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEMA0001',
+      vendorId: 'OEMA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBUNI0001',
+      vendorId: 'BUNI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSET0001',
+      vendorId: 'OSET0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBAR0002',
+      vendorId: 'OBAR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGEA0003',
+      vendorId: 'BGEA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONNA0001',
+      vendorId: 'ONNA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBYAB0001',
+      vendorId: 'BYAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBIO0002',
+      vendorId: 'BBIO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWIN0004',
+      vendorId: 'OWIN0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSCH0003',
+      vendorId: 'BSCH0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFEM0001',
+      vendorId: 'BFEM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTEE0002',
+      vendorId: 'OTEE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHYB0001',
+      vendorId: 'OHYB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAUT0003',
+      vendorId: 'OAUT0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLXB0003',
+      vendorId: 'BLXB0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEGO0001',
+      vendorId: 'OEGO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTEK0001',
+      vendorId: 'HTEK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOINS0002',
+      vendorId: 'OINS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTRA0002',
+      vendorId: 'OTRA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSIK0001',
+      vendorId: 'BSIK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSIR0001',
+      vendorId: 'OSIR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNAD0002',
+      vendorId: 'HNAD0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSAG0001',
+      vendorId: 'BSAG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaNBAZ0001',
+      vendorId: 'NBAZ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHABA0003',
+      vendorId: 'HABA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTEK0001',
+      vendorId: 'OTEK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOSU0001',
+      vendorId: 'OOSU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTHE0006',
+      vendorId: 'OTHE0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLOG0001',
+      vendorId: 'OLOG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOREA0001',
+      vendorId: 'OREA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSSC0001',
+      vendorId: 'OSSC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAUD0001',
+      vendorId: 'BAUD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHANY0002',
+      vendorId: 'HANY0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOADI0002',
+      vendorId: 'OADI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOANA5001',
+      vendorId: 'OANA5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFLU0001',
+      vendorId: 'OFLU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPAR0001',
+      vendorId: 'OPAR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOADF0001',
+      vendorId: 'OADF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNMR0001',
+      vendorId: 'BNMR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAAE0001',
+      vendorId: 'BAAE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMIK0001',
+      vendorId: 'OMIK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBUS0001',
+      vendorId: 'HBUS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBIO0001',
+      vendorId: 'OBIO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFA00002',
+      vendorId: 'HFA00002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHZE50001',
+      vendorId: 'HZE50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBROA0001',
+      vendorId: 'BROA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTOA0001',
+      vendorId: 'BTOA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHOST0001',
+      vendorId: 'HOST0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSID0003',
+      vendorId: 'HSID0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBAB0002',
+      vendorId: 'BBAB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHOM0001',
+      vendorId: 'BHOM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONPS0001',
+      vendorId: 'ONPS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSOA0001',
+      vendorId: 'HSOA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMUF0001',
+      vendorId: 'BMUF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTEK0001',
+      vendorId: 'BTEK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJOD0001',
+      vendorId: 'OJOD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHATL0001',
+      vendorId: 'HATL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODEL0001',
+      vendorId: 'ODEL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODOZ0001',
+      vendorId: 'ODOZ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSTA0005',
+      vendorId: 'OSTA0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPEI0002',
+      vendorId: 'OPEI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTOO0001',
+      vendorId: 'OTOO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHACA0001',
+      vendorId: 'HACA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFLO0004',
+      vendorId: 'BFLO0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaORAB0002',
+      vendorId: 'ORAB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDAB0001',
+      vendorId: 'BDAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONAN0001',
+      vendorId: 'ONAN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKEN5001',
+      vendorId: 'OKEN5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMON0002',
+      vendorId: 'BMON0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBVOR0002',
+      vendorId: 'BVOR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAVO0001',
+      vendorId: 'HAVO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHIND0001',
+      vendorId: 'HIND0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBRAB0001',
+      vendorId: 'BRAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODIV0001',
+      vendorId: 'ODIV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEUO0001',
+      vendorId: 'OEUO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONNA0002',
+      vendorId: 'ONNA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPRE0004',
+      vendorId: 'BPRE0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBLU0001',
+      vendorId: 'HBLU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGKO0002',
+      vendorId: 'BGKO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCAS0001',
+      vendorId: 'OCAS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBQUA0001',
+      vendorId: 'BQUA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSAM0003',
+      vendorId: 'OSAM0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOGI0001',
+      vendorId: 'BOGI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBALF0005',
+      vendorId: 'BALF0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJOE0001',
+      vendorId: 'OJOE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTER0001',
+      vendorId: 'HTER0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBELK0001',
+      vendorId: 'BELK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODOL0001',
+      vendorId: 'ODOL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCHI0002',
+      vendorId: 'OCHI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFRE0003',
+      vendorId: 'OFRE0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBJSK0001',
+      vendorId: 'BJSK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHIH0001',
+      vendorId: 'OHIH0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCSR0001',
+      vendorId: 'OCSR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMOM0001',
+      vendorId: 'HMOM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBOA0002',
+      vendorId: 'BBOA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAIR0002',
+      vendorId: 'BAIR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEVA0001',
+      vendorId: 'HEVA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSGS0001',
+      vendorId: 'BSGS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNAK0002',
+      vendorId: 'BNAK0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSEI0002',
+      vendorId: 'OSEI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBABD0001',
+      vendorId: 'BABD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOZTF5001',
+      vendorId: 'OZTF5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSYN0001',
+      vendorId: 'BSYN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMAX0002',
+      vendorId: 'HMAX0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBAS0001',
+      vendorId: 'BBAS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHAC0002',
+      vendorId: 'HHAC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSOU0006',
+      vendorId: 'BSOU0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWSP0001',
+      vendorId: 'OWSP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSHI0002',
+      vendorId: 'BSHI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSAG0002',
+      vendorId: 'BSAG0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMEP0001',
+      vendorId: 'OMEP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBINT0007',
+      vendorId: 'BINT0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMCI0001',
+      vendorId: 'HMCI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHVIC0006',
+      vendorId: 'HVIC0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCHR0002',
+      vendorId: 'OCHR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPRO0005',
+      vendorId: 'BPRO0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBERI0001',
+      vendorId: 'BERI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSAM0004',
+      vendorId: 'BSAM0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHABA0002',
+      vendorId: 'HABA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSAB0013',
+      vendorId: 'HSAB0013',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHVIT0001',
+      vendorId: 'HVIT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOATL0002',
+      vendorId: 'OATL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWIN0005',
+      vendorId: 'OWIN0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAJI0001',
+      vendorId: 'BAJI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGRE0006',
+      vendorId: 'OGRE0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPEA0001',
+      vendorId: 'HPEA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSYN0002',
+      vendorId: 'HSYN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNUR0001',
+      vendorId: 'BNUR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOUNI0006',
+      vendorId: 'OUNI0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCEE0003',
+      vendorId: 'HCEE0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPER0003',
+      vendorId: 'BPER0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGOL0003',
+      vendorId: 'HGOL0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCYS0001',
+      vendorId: 'OCYS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSTR0001',
+      vendorId: 'HSTR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMAT0001',
+      vendorId: 'BMAT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCRE5001',
+      vendorId: 'OCRE5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHAR0001',
+      vendorId: 'OHAR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBEE0002',
+      vendorId: 'BBEE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGEN0001',
+      vendorId: 'OGEN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHWIN0002',
+      vendorId: 'HWIN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOROC5001',
+      vendorId: 'OROC5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTHY0001',
+      vendorId: 'OTHY0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNIG0006',
+      vendorId: 'BNIG0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGEO0006',
+      vendorId: 'HGEO0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTOO0002',
+      vendorId: 'OTOO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCRE0001',
+      vendorId: 'OCRE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGEA0004',
+      vendorId: 'HGEA0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGEN0002',
+      vendorId: 'HGEN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCOJ0001',
+      vendorId: 'OCOJ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAVE0001',
+      vendorId: 'HAVE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCRE0004',
+      vendorId: 'BCRE0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNEO0002',
+      vendorId: 'HNEO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTOM0002',
+      vendorId: 'BTOM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNIP0002',
+      vendorId: 'BNIP0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNMR0001',
+      vendorId: 'HNMR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONUE0002',
+      vendorId: 'ONUE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHJDI0002',
+      vendorId: 'HJDI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDNM0002',
+      vendorId: 'BDNM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDEE0002',
+      vendorId: 'BDEE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAUS0002',
+      vendorId: 'OAUS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCE00002',
+      vendorId: 'HCE00002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBIS0001',
+      vendorId: 'BBIS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBLU0003',
+      vendorId: 'OBLU0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKAK0001',
+      vendorId: 'BKAK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAUT0002',
+      vendorId: 'OAUT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMUL0003',
+      vendorId: 'BMUL0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODEE0002',
+      vendorId: 'ODEE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHUNI0004',
+      vendorId: 'HUNI0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGRI0001',
+      vendorId: 'OGRI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBEQU0001',
+      vendorId: 'BEQU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTGT0001',
+      vendorId: 'OTGT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBGI0001',
+      vendorId: 'HBGI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSWE0001',
+      vendorId: 'BSWE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBVOR0001',
+      vendorId: 'BVOR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKOE0001',
+      vendorId: 'BKOE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHDEM0001',
+      vendorId: 'HDEM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKET0001',
+      vendorId: 'OKET0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLCL0001',
+      vendorId: 'OLCL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBXNE0002',
+      vendorId: 'BXNE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHOAC0002',
+      vendorId: 'HOAC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBWAL0001',
+      vendorId: 'BWAL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSWI0002',
+      vendorId: 'HSWI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHRU00001',
+      vendorId: 'HRU00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSOU0004',
+      vendorId: 'BSOU0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMIL0005',
+      vendorId: 'BMIL0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCAM0002',
+      vendorId: 'OCAM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBRA0002',
+      vendorId: 'BBRA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSTA0003',
+      vendorId: 'HSTA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSH00001',
+      vendorId: 'HSH00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMIT0002',
+      vendorId: 'OMIT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBEME0001',
+      vendorId: 'BEME0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHLUS0002',
+      vendorId: 'HLUS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOIBE0002',
+      vendorId: 'OIBE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHOXF0001',
+      vendorId: 'HOXF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKAR0002',
+      vendorId: 'BKAR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOANS0001',
+      vendorId: 'OANS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHDHA0002',
+      vendorId: 'HDHA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOYCA0001',
+      vendorId: 'OYCA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLAD0001',
+      vendorId: 'OLAD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKAZ0001',
+      vendorId: 'BKAZ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAVE0002',
+      vendorId: 'BAVE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHVWE0002',
+      vendorId: 'HVWE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHABC0001',
+      vendorId: 'HABC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONIF0001',
+      vendorId: 'ONIF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGU00001',
+      vendorId: 'HGU00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPIL0001',
+      vendorId: 'HPIL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMAN0003',
+      vendorId: 'HMAN0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOADV0004',
+      vendorId: 'OADV0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPAU0001',
+      vendorId: 'BPAU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCEN0002',
+      vendorId: 'HCEN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMHF0001',
+      vendorId: 'OMHF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDIJ0001',
+      vendorId: 'BDIJ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBEVE0001',
+      vendorId: 'BEVE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBMA0001',
+      vendorId: 'HBMA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMOD0001',
+      vendorId: 'OMOD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFUL0001',
+      vendorId: 'OFUL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOVER0001',
+      vendorId: 'OVER0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMIC0003',
+      vendorId: 'OMIC0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOALL0002',
+      vendorId: 'OALL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHINT0015',
+      vendorId: 'HINT0015',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaORAY0001',
+      vendorId: 'ORAY0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEFE0002',
+      vendorId: 'HEFE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHIK50001',
+      vendorId: 'HIK50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAAE0002',
+      vendorId: 'BAAE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONAN0002',
+      vendorId: 'ONAN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSIM0003',
+      vendorId: 'BSIM0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBARR0001',
+      vendorId: 'BARR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPRO0002',
+      vendorId: 'BPRO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMV50001',
+      vendorId: 'HMV50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCNE0001',
+      vendorId: 'OCNE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDEE0003',
+      vendorId: 'BDEE0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCYS0002',
+      vendorId: 'OCYS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFEL0001',
+      vendorId: 'BFEL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOSE0001',
+      vendorId: 'BOSE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPFR0002',
+      vendorId: 'HPFR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSAA0002',
+      vendorId: 'BSAA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSTJ0001',
+      vendorId: 'BSTJ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJON0001',
+      vendorId: 'OJON0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCOR0004',
+      vendorId: 'HCOR0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHJEC0001',
+      vendorId: 'HJEC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGTA0002',
+      vendorId: 'HGTA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHADE0001',
+      vendorId: 'HADE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSYN0001',
+      vendorId: 'OSYN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGEO0001',
+      vendorId: 'HGEO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMUF0002',
+      vendorId: 'OMUF0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOBO0002',
+      vendorId: 'BOBO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOBI0002',
+      vendorId: 'BOBI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONEM0001',
+      vendorId: 'ONEM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSES0001',
+      vendorId: 'BSES0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFIN0001',
+      vendorId: 'OFIN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAEM0001',
+      vendorId: 'HAEM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMIL0001',
+      vendorId: 'OMIL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTEO0001',
+      vendorId: 'OTEO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAVE0002',
+      vendorId: 'OAVE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCAD0001',
+      vendorId: 'OCAD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAGF0002',
+      vendorId: 'BAGF0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTES0001',
+      vendorId: 'OTES0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBRTB0002',
+      vendorId: 'BRTB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHVAL0001',
+      vendorId: 'HVAL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSCN0001',
+      vendorId: 'OSCN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCLA0002',
+      vendorId: 'HCLA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHUNI0007',
+      vendorId: 'HUNI0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBUDO0001',
+      vendorId: 'BUDO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTHE0009',
+      vendorId: 'BTHE0009',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKCR0002',
+      vendorId: 'HKCR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaORHL0001',
+      vendorId: 'ORHL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOIDE0002',
+      vendorId: 'OIDE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOIMA0001',
+      vendorId: 'OIMA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBEI0001',
+      vendorId: 'HBEI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPFR0001',
+      vendorId: 'HPFR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBUE0002',
+      vendorId: 'HBUE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHRAY0002',
+      vendorId: 'HRAY0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAMS0001',
+      vendorId: 'HAMS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOCK0001',
+      vendorId: 'OOCK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBOL0002',
+      vendorId: 'BBOL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBALP0001',
+      vendorId: 'BALP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOIVO5001',
+      vendorId: 'OIVO5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCUL0001',
+      vendorId: 'OCUL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHVIK0002',
+      vendorId: 'HVIK0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMFI0001',
+      vendorId: 'BMFI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSYC0001',
+      vendorId: 'HSYC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCSK0001',
+      vendorId: 'HCSK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKBC0002',
+      vendorId: 'HKBC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTHE0008',
+      vendorId: 'BTHE0008',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBADE002',
+      vendorId: 'BADE002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODHL0002',
+      vendorId: 'ODHL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGBO0002',
+      vendorId: 'OGBO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGIL0001',
+      vendorId: 'OGIL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLAI0002',
+      vendorId: 'OLAI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSHE0001',
+      vendorId: 'BSHE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHROL0001',
+      vendorId: 'HROL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOMA0001',
+      vendorId: 'OOMA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSE00001',
+      vendorId: 'HSE00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOROY0002',
+      vendorId: 'OROY0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBUE0001',
+      vendorId: 'HBUE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBUL0001',
+      vendorId: 'OBUL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBVOI0001',
+      vendorId: 'BVOI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGRE0002',
+      vendorId: 'BGRE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHLEN0001',
+      vendorId: 'HLEN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBUS0002',
+      vendorId: 'BBUS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONAT0003',
+      vendorId: 'ONAT0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTON0002',
+      vendorId: 'HTON0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONKY0001',
+      vendorId: 'ONKY0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTAJ0004',
+      vendorId: 'BTAJ0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOBO0001',
+      vendorId: 'OOBO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTRO0001',
+      vendorId: 'OTRO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODED0001',
+      vendorId: 'ODED0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBWIN0001',
+      vendorId: 'BWIN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBADE0001',
+      vendorId: 'BADE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFRA5001',
+      vendorId: 'BFRA5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNTL1500',
+      vendorId: 'HNTL1500',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGBO0001',
+      vendorId: 'OGBO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAKI0004',
+      vendorId: 'BAKI0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEZE5001',
+      vendorId: 'OEZE5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBEN0002',
+      vendorId: 'OBEN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOELO0001',
+      vendorId: 'OELO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAVE0003',
+      vendorId: 'OAVE0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBELI0002',
+      vendorId: 'BELI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHUST0001',
+      vendorId: 'HUST0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODAN0002',
+      vendorId: 'ODAN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMIC0004',
+      vendorId: 'OMIC0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAZE0002',
+      vendorId: 'HAZE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBJOT0002',
+      vendorId: 'BJOT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJOE0002',
+      vendorId: 'OJOE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSOL0002',
+      vendorId: 'OSOL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCIA0001',
+      vendorId: 'OCIA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODBE0001',
+      vendorId: 'ODBE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHROB0002',
+      vendorId: 'HROB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMIL0002',
+      vendorId: 'HMIL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDEN0005',
+      vendorId: 'BDEN0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEAS0005',
+      vendorId: 'HEAS0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHOT0001',
+      vendorId: 'HHOT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBEL0001',
+      vendorId: 'OBEL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHRAN0001',
+      vendorId: 'HRAN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHJAW0001',
+      vendorId: 'HJAW0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOINS0005',
+      vendorId: 'OINS0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSA00001',
+      vendorId: 'HSA00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCOX0001',
+      vendorId: 'HCOX0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBINT0008',
+      vendorId: 'BINT0008',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMON0001',
+      vendorId: 'OMON0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGIF0001',
+      vendorId: 'OGIF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSUJ0001',
+      vendorId: 'HSUJ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKER0002',
+      vendorId: 'HKER0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGRD0001',
+      vendorId: 'OGRD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAN0003',
+      vendorId: 'OMAN0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGMI0001',
+      vendorId: 'BGMI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJUV0001',
+      vendorId: 'OJUV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKET0002',
+      vendorId: 'OKET0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSYN0004',
+      vendorId: 'OSYN0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCLE0001',
+      vendorId: 'HCLE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLAR0001',
+      vendorId: 'BLAR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKUN0001',
+      vendorId: 'HKUN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBDN0001',
+      vendorId: 'OBDN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAKI0003',
+      vendorId: 'BAKI0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOARC0002',
+      vendorId: 'OARC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLOR0003',
+      vendorId: 'OLOR0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOQMP0001',
+      vendorId: 'OQMP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBUO0001',
+      vendorId: 'OBUO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHYEM0001',
+      vendorId: 'HYEM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJOS0002',
+      vendorId: 'OJOS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMUS0001',
+      vendorId: 'OMUS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDES0002',
+      vendorId: 'BDES0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJYP0001',
+      vendorId: 'OJYP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAA0001',
+      vendorId: 'OMAA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTWI0001',
+      vendorId: 'OTWI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCA00001',
+      vendorId: 'HCA00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCOR0006',
+      vendorId: 'HCOR0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFED0001',
+      vendorId: 'BFED0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBRTB0001',
+      vendorId: 'BRTB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBINT0012',
+      vendorId: 'BINT0012',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHVIV0002',
+      vendorId: 'HVIV0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMUL0001',
+      vendorId: 'OMUL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEUN0001',
+      vendorId: 'OEUN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHJOS0002',
+      vendorId: 'HJOS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCEE0004',
+      vendorId: 'HCEE0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWHE0001',
+      vendorId: 'OWHE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNUR0002',
+      vendorId: 'BNUR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCEL0005',
+      vendorId: 'HCEL0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBIBI0002',
+      vendorId: 'BIBI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSES0001',
+      vendorId: 'OSES0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPAU0002',
+      vendorId: 'BPAU0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDTO0001',
+      vendorId: 'BDTO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCON0006',
+      vendorId: 'OCON0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBLU5004',
+      vendorId: 'OBLU5004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGOD0001',
+      vendorId: 'OGOD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTWI0003',
+      vendorId: 'BTWI0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAVA0002',
+      vendorId: 'OAVA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBWIN0002',
+      vendorId: 'BWIN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFOT0001',
+      vendorId: 'BFOT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLAW0002',
+      vendorId: 'OLAW0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFAC0002',
+      vendorId: 'HFAC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHDHL0002',
+      vendorId: 'HDHL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOIPE0001',
+      vendorId: 'OIPE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBVIN0002',
+      vendorId: 'BVIN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEMM0003',
+      vendorId: 'OEMM0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHADE0002',
+      vendorId: 'HADE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKEV0001',
+      vendorId: 'HKEV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSCI0002',
+      vendorId: 'OSCI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOCE0001',
+      vendorId: 'OOCE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBJOA0001',
+      vendorId: 'BJOA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHRU00002',
+      vendorId: 'HRU00002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFRA0001',
+      vendorId: 'HFRA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOROB0003',
+      vendorId: 'OROB0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOINT0009',
+      vendorId: 'OINT0009',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCAM0003',
+      vendorId: 'OCAM0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHALL0002',
+      vendorId: 'HALL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOLU0003',
+      vendorId: 'BOLU0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOASJ0001',
+      vendorId: 'OASJ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCOJ0002',
+      vendorId: 'OCOJ0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGE00001',
+      vendorId: 'HGE00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHACA0003',
+      vendorId: 'HACA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTIO0001',
+      vendorId: 'BTIO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTES0003',
+      vendorId: 'OTES0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDEN0003',
+      vendorId: 'BDEN0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBIBI0001',
+      vendorId: 'BIBI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMOS0001',
+      vendorId: 'BMOS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTAM0001',
+      vendorId: 'HTAM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAPP0001',
+      vendorId: 'BAPP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSAF0001',
+      vendorId: 'HSAF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSTR0003',
+      vendorId: 'OSTR0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDAT0001',
+      vendorId: 'BDAT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOINS0003',
+      vendorId: 'OINS0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBUE0001',
+      vendorId: 'OBUE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLAD0003',
+      vendorId: 'OLAD0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHVIC0001',
+      vendorId: 'HVIC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGRO0001',
+      vendorId: 'BGRO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNIG0004',
+      vendorId: 'BNIG0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOIMC0001',
+      vendorId: 'OIMC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDAY0001',
+      vendorId: 'BDAY0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOADO0002',
+      vendorId: 'OADO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTTC0001',
+      vendorId: 'OTTC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOOL0002',
+      vendorId: 'OOOL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKAY0002',
+      vendorId: 'BKAY0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAXO0002',
+      vendorId: 'OAXO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTEE0003',
+      vendorId: 'OTEE0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOBO0001',
+      vendorId: 'BOBO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOUTL0001',
+      vendorId: 'OUTL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAXA0001',
+      vendorId: 'HAXA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTEM0001',
+      vendorId: 'HTEM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCEL0003',
+      vendorId: 'HCEL0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBJOT0001',
+      vendorId: 'BJOT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONIG0007',
+      vendorId: 'ONIG0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBOB0001',
+      vendorId: 'BBOB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTWI0001',
+      vendorId: 'BTWI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAE0001',
+      vendorId: 'OMAE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMIK0001',
+      vendorId: 'BMIK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJOM0001',
+      vendorId: 'OJOM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBOS0001',
+      vendorId: 'OBOS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBUY0001',
+      vendorId: 'BBUY0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMM50001',
+      vendorId: 'HMM50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOANA0001',
+      vendorId: 'OANA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSTA0001',
+      vendorId: 'HSTA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNMR0002',
+      vendorId: 'BNMR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPET0003',
+      vendorId: 'OPET0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAJE0001',
+      vendorId: 'BAJE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHENT0002',
+      vendorId: 'HENT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOINT0014',
+      vendorId: 'OINT0014',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHUR0002',
+      vendorId: 'HHUR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLAD0002',
+      vendorId: 'OLAD0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLSP0001',
+      vendorId: 'OLSP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKON0001',
+      vendorId: 'OKON0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGIN0001',
+      vendorId: 'HGIN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFUN0002',
+      vendorId: 'HFUN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLAR0004',
+      vendorId: 'BLAR0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTOG0002',
+      vendorId: 'BTOG0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODON0003',
+      vendorId: 'ODON0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHWIN0001',
+      vendorId: 'HWIN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHDEY0001',
+      vendorId: 'HDEY0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCAC0001',
+      vendorId: 'HCAC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAJI0002',
+      vendorId: 'BAJI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKEL0001',
+      vendorId: 'OKEL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHUR0001',
+      vendorId: 'BHUR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEMA0001',
+      vendorId: 'HEMA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBAZ0001',
+      vendorId: 'HBAZ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHORC0001',
+      vendorId: 'HORC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHUL0002',
+      vendorId: 'HHUL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTEN0002',
+      vendorId: 'OTEN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGIA0001',
+      vendorId: 'BGIA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOUTL0002',
+      vendorId: 'OUTL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMIK0003',
+      vendorId: 'HMIK0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHWES0003',
+      vendorId: 'HWES0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBUPS0001',
+      vendorId: 'BUPS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOANI0005',
+      vendorId: 'OANI0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAUT0001',
+      vendorId: 'BAUT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMAB0002',
+      vendorId: 'HMAB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBAB0005',
+      vendorId: 'BBAB0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBADE0010',
+      vendorId: 'BADE0010',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBIGE0001',
+      vendorId: 'BIGE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHWAL0002',
+      vendorId: 'HWAL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHABC0002',
+      vendorId: 'HABC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHIND0006',
+      vendorId: 'HIND0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSOU0001',
+      vendorId: 'BSOU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTAL0003',
+      vendorId: 'HTAL0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKAN0002',
+      vendorId: 'HKAN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONAT0001',
+      vendorId: 'ONAT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCFA0002',
+      vendorId: 'HCFA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMOD5001',
+      vendorId: 'OMOD5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPRO0007',
+      vendorId: 'HPRO0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSTA0011',
+      vendorId: 'BSTA0011',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHOT0001',
+      vendorId: 'OHOT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKER0002',
+      vendorId: 'BKER0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBALP0002',
+      vendorId: 'BALP0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGHC0002',
+      vendorId: 'OGHC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMOL0003',
+      vendorId: 'BMOL0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaB4TS0001',
+      vendorId: 'B4TS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOODI0001',
+      vendorId: 'OODI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODOL0002',
+      vendorId: 'ODOL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHUNI0008',
+      vendorId: 'HUNI0008',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTTL0001',
+      vendorId: 'OTTL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHENG0001',
+      vendorId: 'HENG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHVIR0001',
+      vendorId: 'HVIR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOELI0002',
+      vendorId: 'OELI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBAB0001',
+      vendorId: 'OBAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGAL0001',
+      vendorId: 'HGAL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOBA0001',
+      vendorId: 'BOBA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAKU0001',
+      vendorId: 'HAKU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSAB0011',
+      vendorId: 'BSAB0011',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMOR0001',
+      vendorId: 'BMOR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHORJ0001',
+      vendorId: 'HORJ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPPM0002',
+      vendorId: 'OPPM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCHR0003',
+      vendorId: 'HCHR0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOORO0001',
+      vendorId: 'OORO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHJUA0002',
+      vendorId: 'HJUA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMAT0002',
+      vendorId: 'BMAT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTAT0002',
+      vendorId: 'OTAT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMAS0003',
+      vendorId: 'BMAS0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOKE0001',
+      vendorId: 'OOKE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOLL0002',
+      vendorId: 'BOLL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNOB0001',
+      vendorId: 'HNOB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDAB0002',
+      vendorId: 'BDAB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCOM0001',
+      vendorId: 'HCOM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBAS0001',
+      vendorId: 'HBAS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKA00001',
+      vendorId: 'HKA00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTOF0001',
+      vendorId: 'BTOF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAAN0001',
+      vendorId: 'BAAN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBABA0001',
+      vendorId: 'BABA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBABF0002',
+      vendorId: 'BABF0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBACH0001',
+      vendorId: 'BACH0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBACT0001',
+      vendorId: 'BACT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBADE0002',
+      vendorId: 'BADE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBADE0011',
+      vendorId: 'BADE0011',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBADE0012',
+      vendorId: 'BADE0012',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBADE0014',
+      vendorId: 'BADE0014',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBADE0015',
+      vendorId: 'BADE0015',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAFO0001',
+      vendorId: 'BAFO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAIP0001',
+      vendorId: 'BAIP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAJU0002',
+      vendorId: 'BAJU0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAKI0001',
+      vendorId: 'BAKI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAKI0005',
+      vendorId: 'BAKI0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBALF0001',
+      vendorId: 'BALF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBALZ0001',
+      vendorId: 'BALZ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAMA0001',
+      vendorId: 'BAMA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAMO0001',
+      vendorId: 'BAMO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBANI0001',
+      vendorId: 'BANI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBAUT0002',
+      vendorId: 'BAUT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBB200002',
+      vendorId: 'BB200002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBAB0004',
+      vendorId: 'BBAB0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBAK0001',
+      vendorId: 'BBAK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBAM0001',
+      vendorId: 'BBAM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBAS0002',
+      vendorId: 'BBAS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBOL0003',
+      vendorId: 'BBOL0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBBOU0001',
+      vendorId: 'BBOU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCAB0001',
+      vendorId: 'BCAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCAR0005',
+      vendorId: 'BCAR0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCCI0001',
+      vendorId: 'BCCI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCEN0002',
+      vendorId: 'BCEN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCHA0001',
+      vendorId: 'BCHA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCIT0002',
+      vendorId: 'BCIT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCLO0001',
+      vendorId: 'BCLO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCLO0002',
+      vendorId: 'BCLO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCOM0002',
+      vendorId: 'BCOM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCRA0001',
+      vendorId: 'BCRA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCRO0002',
+      vendorId: 'BCRO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBCRO0003',
+      vendorId: 'BCRO0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDAB0003',
+      vendorId: 'BDAB0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDEE0001',
+      vendorId: 'BDEE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDEE0004',
+      vendorId: 'BDEE0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDEN0001',
+      vendorId: 'BDEN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDES0001',
+      vendorId: 'BDES0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDIM0002',
+      vendorId: 'BDIM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBDNM0001',
+      vendorId: 'BDNM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBEDG0001',
+      vendorId: 'BEDG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBESS0002',
+      vendorId: 'BESS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBEVE0005',
+      vendorId: 'BEVE0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFED0002',
+      vendorId: 'BFED0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFIN0002',
+      vendorId: 'BFIN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFIR0001',
+      vendorId: 'BFIR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFLO0001',
+      vendorId: 'BFLO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFLO0005',
+      vendorId: 'BFLO0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFOR0001',
+      vendorId: 'BFOR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGAB0001',
+      vendorId: 'BGAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGBA0003',
+      vendorId: 'BGBA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGBE0002',
+      vendorId: 'BGBE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGLO0001',
+      vendorId: 'BGLO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGLO0002',
+      vendorId: 'BGLO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGOL0002',
+      vendorId: 'BGOL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBGRE0001',
+      vendorId: 'BGRE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHAC0001',
+      vendorId: 'BHAC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHAF0001',
+      vendorId: 'BHAF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHAL0002',
+      vendorId: 'BHAL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHAM0001',
+      vendorId: 'BHAM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHIN0001',
+      vendorId: 'BHIN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHUR0002',
+      vendorId: 'BHUR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBHYB0002',
+      vendorId: 'BHYB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBIBE0001',
+      vendorId: 'BIBE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBIJA0001',
+      vendorId: 'BIJA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBIJA0002',
+      vendorId: 'BIJA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBINS0003',
+      vendorId: 'BINS0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBINT0002',
+      vendorId: 'BINT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBINT0003',
+      vendorId: 'BINT0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBINT0011',
+      vendorId: 'BINT0011',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBISO0001',
+      vendorId: 'BISO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBJAA0003',
+      vendorId: 'BJAA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBJMG0001',
+      vendorId: 'BJMG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBJOA0004',
+      vendorId: 'BJOA0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKAN0001',
+      vendorId: 'BKAN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKOE0002',
+      vendorId: 'BKOE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKOL0001',
+      vendorId: 'BKOL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKRO0006',
+      vendorId: 'BKRO0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBKUG0001',
+      vendorId: 'BKUG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLAG0002',
+      vendorId: 'BLAG0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLAR0003',
+      vendorId: 'BLAR0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLAT0002',
+      vendorId: 'BLAT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLAW0001',
+      vendorId: 'BLAW0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLIM0001',
+      vendorId: 'BLIM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLIT0001',
+      vendorId: 'BLIT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLOC0001',
+      vendorId: 'BLOC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBLOG0001',
+      vendorId: 'BLOG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMAN0005',
+      vendorId: 'BMAN0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMEG0001',
+      vendorId: 'BMEG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMEU0001',
+      vendorId: 'BMEU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMIL0004',
+      vendorId: 'BMIL0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMIN0001',
+      vendorId: 'BMIN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMOB0003',
+      vendorId: 'BMOB0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMOL0002',
+      vendorId: 'BMOL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMRW0001',
+      vendorId: 'BMRW0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBMYB0002',
+      vendorId: 'BMYB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNAC0001',
+      vendorId: 'BNAC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNAF0002',
+      vendorId: 'BNAF0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNAK0001',
+      vendorId: 'BNAK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNES0001',
+      vendorId: 'BNES0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNIB0002',
+      vendorId: 'BNIB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNIR0001',
+      vendorId: 'BNIR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNOB0001',
+      vendorId: 'BNOB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBNUD0001',
+      vendorId: 'BNUD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOAO0003',
+      vendorId: 'BOAO0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOBU0001',
+      vendorId: 'BOBU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOGO0001',
+      vendorId: 'BOGO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOLA0012',
+      vendorId: 'BOLA0012',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOLL0001',
+      vendorId: 'BOLL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOLU0002',
+      vendorId: 'BOLU0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOLU0005',
+      vendorId: 'BOLU0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOPT0002',
+      vendorId: 'BOPT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOSE0002',
+      vendorId: 'BOSE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOSU0001',
+      vendorId: 'BOSU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOWO0001',
+      vendorId: 'BOWO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPAG0001',
+      vendorId: 'BPAG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPAT0001',
+      vendorId: 'BPAT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPIL0002',
+      vendorId: 'BPIL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPOI0002',
+      vendorId: 'BPOI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPRE0007',
+      vendorId: 'BPRE0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPRI0004',
+      vendorId: 'BPRI0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPRO0007',
+      vendorId: 'BPRO0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPRO0008',
+      vendorId: 'BPRO0008',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBPYL0001',
+      vendorId: 'BPYL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBQCS0001',
+      vendorId: 'BQCS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBQCS0002',
+      vendorId: 'BQCS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBQUA0002',
+      vendorId: 'BQUA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBQUA0003',
+      vendorId: 'BQUA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBQUA0004',
+      vendorId: 'BQUA0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBRAD0001',
+      vendorId: 'BRAD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBRAD0004',
+      vendorId: 'BRAD0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSAA0003',
+      vendorId: 'BSAA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSAA0004',
+      vendorId: 'BSAA0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSAM0001',
+      vendorId: 'BSAM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSAM0003',
+      vendorId: 'BSAM0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSAM0005',
+      vendorId: 'BSAM0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSCO0001',
+      vendorId: 'BSCO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSEI0001',
+      vendorId: 'BSEI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSES0002',
+      vendorId: 'BSES0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSHE0005',
+      vendorId: 'BSHE0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSIP0001',
+      vendorId: 'BSIP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSLO0001',
+      vendorId: 'BSLO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSLO0002',
+      vendorId: 'BSLO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSTA0001',
+      vendorId: 'BSTA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSTA0010',
+      vendorId: 'BSTA0010',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSUN0005',
+      vendorId: 'BSUN0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSUN0006',
+      vendorId: 'BSUN0006',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBSUN0008',
+      vendorId: 'BSUN0008',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTAL0001',
+      vendorId: 'BTAL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTBW0001',
+      vendorId: 'BTBW0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTHE0004',
+      vendorId: 'BTHE0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTOG0001',
+      vendorId: 'BTOG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTOR0001',
+      vendorId: 'BTOR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTRI0002',
+      vendorId: 'BTRI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBTRU0001',
+      vendorId: 'BTRU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBUHU0001',
+      vendorId: 'BUHU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBUNI0004',
+      vendorId: 'BUNI0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBVIB0001',
+      vendorId: 'BVIB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBVIN0001',
+      vendorId: 'BVIN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBWAT0001',
+      vendorId: 'BWAT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBWSP0004',
+      vendorId: 'BWSP0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBXIM0001',
+      vendorId: 'BXIM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBXNE0001',
+      vendorId: 'BXNE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGACA0001',
+      vendorId: 'GACA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGACS0001',
+      vendorId: 'GACS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGAGB0001',
+      vendorId: 'GAGB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGALA0001',
+      vendorId: 'GALA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGAMS0001',
+      vendorId: 'GAMS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGANY0001',
+      vendorId: 'GANY0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGAVE0001',
+      vendorId: 'GAVE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGBET0001',
+      vendorId: 'GBET0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGDHL0001',
+      vendorId: 'GDHL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGDRO0001',
+      vendorId: 'GDRO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGEBI0001',
+      vendorId: 'GEBI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGEDI0001',
+      vendorId: 'GEDI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGFAC0001',
+      vendorId: 'GFAC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGFIL0001',
+      vendorId: 'GFIL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGFSS0001',
+      vendorId: 'GFSS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGGAL0001',
+      vendorId: 'GGAL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGHAL0001',
+      vendorId: 'GHAL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGMAN0001',
+      vendorId: 'GMAN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGPER0001',
+      vendorId: 'GPER0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGROL0001',
+      vendorId: 'GROL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGSTM0001',
+      vendorId: 'GSTM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGSUN0001',
+      vendorId: 'GSUN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGVEE0001',
+      vendorId: 'GVEE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGVIK0001',
+      vendorId: 'GVIK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaGVWE0001',
+      vendorId: 'GVWE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHADV0002',
+      vendorId: 'HADV0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAEM0002',
+      vendorId: 'HAEM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAER0001',
+      vendorId: 'HAER0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAJE0001',
+      vendorId: 'HAJE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAKE0001',
+      vendorId: 'HAKE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAKH0001',
+      vendorId: 'HAKH0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAKU0002',
+      vendorId: 'HAKU0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAME0001',
+      vendorId: 'HAME0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAME0004',
+      vendorId: 'HAME0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAP50001',
+      vendorId: 'HAP50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHART0001',
+      vendorId: 'HART0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHARU0001',
+      vendorId: 'HARU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHASG0001',
+      vendorId: 'HASG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHATL0002',
+      vendorId: 'HATL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAVE0002',
+      vendorId: 'HAVE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAW00001',
+      vendorId: 'HAW00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAW50001',
+      vendorId: 'HAW50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAW50002',
+      vendorId: 'HAW50002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHAZE0001',
+      vendorId: 'HAZE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBE50001',
+      vendorId: 'HBE50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBEB0001',
+      vendorId: 'HBEB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBEN0004',
+      vendorId: 'HBEN0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBET0001',
+      vendorId: 'HBET0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBET0002',
+      vendorId: 'HBET0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBOM0002',
+      vendorId: 'HBOM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBRA0001',
+      vendorId: 'HBRA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBRE0002',
+      vendorId: 'HBRE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHBRE0005',
+      vendorId: 'HBRE0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCCI0001',
+      vendorId: 'HCCI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCCS0001',
+      vendorId: 'HCCS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCEI1500',
+      vendorId: 'HCEI1500',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCEL0004',
+      vendorId: 'HCEL0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCLA0001',
+      vendorId: 'HCLA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCOL0004',
+      vendorId: 'HCOL0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCP00001',
+      vendorId: 'HCP00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHCUL0001',
+      vendorId: 'HCUL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHDEL0001',
+      vendorId: 'HDEL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHDES0004',
+      vendorId: 'HDES0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHDHA0001',
+      vendorId: 'HDHA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHDI00001',
+      vendorId: 'HDI00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEAS0003',
+      vendorId: 'HEAS0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEDL0001',
+      vendorId: 'HEDL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEH00001',
+      vendorId: 'HEH00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHELV0001',
+      vendorId: 'HELV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEME0001',
+      vendorId: 'HEME0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEMO0001',
+      vendorId: 'HEMO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEMO0002',
+      vendorId: 'HEMO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHES50001',
+      vendorId: 'HES50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEXC0001',
+      vendorId: 'HEXC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEXP0001',
+      vendorId: 'HEXP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHEXP0002',
+      vendorId: 'HEXP0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFER0001',
+      vendorId: 'HFER0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHFI00001',
+      vendorId: 'HFI00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGN50001',
+      vendorId: 'HGN50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGOL0001',
+      vendorId: 'HGOL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGOT0001',
+      vendorId: 'HGOT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGOT0002',
+      vendorId: 'HGOT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGPS0001',
+      vendorId: 'HGPS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHGRO0003',
+      vendorId: 'HGRO0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHA50001',
+      vendorId: 'HHA50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHAL0001',
+      vendorId: 'HHAL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHAR0001',
+      vendorId: 'HHAR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHE50001',
+      vendorId: 'HHE50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHER0001',
+      vendorId: 'HHER0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHGM0001',
+      vendorId: 'HHGM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHHUR0001',
+      vendorId: 'HHUR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHIND0004',
+      vendorId: 'HIND0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHIND0005',
+      vendorId: 'HIND0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHINE0001',
+      vendorId: 'HINE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHING0001',
+      vendorId: 'HING0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHINS0003',
+      vendorId: 'HINS0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKA00002',
+      vendorId: 'HKA00002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKA50001',
+      vendorId: 'HKA50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKER0001',
+      vendorId: 'HKER0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKHI0001',
+      vendorId: 'HKHI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKIV0001',
+      vendorId: 'HKIV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKMA0001',
+      vendorId: 'HKMA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKNI0001',
+      vendorId: 'HKNI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKRO0001',
+      vendorId: 'HKRO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKRO0003',
+      vendorId: 'HKRO0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHKY00001',
+      vendorId: 'HKY00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHLAR0001',
+      vendorId: 'HLAR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHLI00001',
+      vendorId: 'HLI00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHLIQ0001',
+      vendorId: 'HLIQ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMAN0002',
+      vendorId: 'HMAN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMAN0004',
+      vendorId: 'HMAN0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMD50001',
+      vendorId: 'HMD50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMED0002',
+      vendorId: 'HMED0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMEG0001',
+      vendorId: 'HMEG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMEH0001',
+      vendorId: 'HMEH0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMEY0001',
+      vendorId: 'HMEY0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMFI0001',
+      vendorId: 'HMFI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMGL0001',
+      vendorId: 'HMGL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMIK0001',
+      vendorId: 'HMIK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMNO0001',
+      vendorId: 'HMNO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMT00001',
+      vendorId: 'HMT00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMT00002',
+      vendorId: 'HMT00002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHMTN0002',
+      vendorId: 'HMTN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNES0001',
+      vendorId: 'HNES0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNIB0001',
+      vendorId: 'HNIB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNIG0001',
+      vendorId: 'HNIG0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNIT0001',
+      vendorId: 'HNIT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNOV0001',
+      vendorId: 'HNOV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNTL1501',
+      vendorId: 'HNTL1501',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHNWO0001',
+      vendorId: 'HNWO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHOBI0004',
+      vendorId: 'HOBI0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHORA0001',
+      vendorId: 'HORA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHOVE0001',
+      vendorId: 'HOVE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHOZO0001',
+      vendorId: 'HOZO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPA00001',
+      vendorId: 'HPA00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPE00001',
+      vendorId: 'HPE00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPEA0002',
+      vendorId: 'HPEA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPNT0002',
+      vendorId: 'HPNT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPOI0001',
+      vendorId: 'HPOI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPR00001',
+      vendorId: 'HPR00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPRO0004',
+      vendorId: 'HPRO0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHPZC0001',
+      vendorId: 'HPZC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHQUA0001',
+      vendorId: 'HQUA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHRAY0001',
+      vendorId: 'HRAY0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHRIV0001',
+      vendorId: 'HRIV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSAB0007',
+      vendorId: 'HSAB0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSCH0001',
+      vendorId: 'HSCH0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSIG0002',
+      vendorId: 'HSIG0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSIN0001',
+      vendorId: 'HSIN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSOU0002',
+      vendorId: 'HSOU0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSR50001',
+      vendorId: 'HSR50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSSL1500',
+      vendorId: 'HSSL1500',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSTM0001',
+      vendorId: 'HSTM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSUN0001',
+      vendorId: 'HSUN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSUV0001',
+      vendorId: 'HSUV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHSYS0002',
+      vendorId: 'HSYS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTA50001',
+      vendorId: 'HTA50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTAL0001',
+      vendorId: 'HTAL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTAR0001',
+      vendorId: 'HTAR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTEC0002',
+      vendorId: 'HTEC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTEE0001',
+      vendorId: 'HTEE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHTOT0002',
+      vendorId: 'HTOT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHUGO0001',
+      vendorId: 'HUGO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHUN00001',
+      vendorId: 'HUN00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHUNI0002',
+      vendorId: 'HUNI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHUNI0003',
+      vendorId: 'HUNI0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHVIB0001',
+      vendorId: 'HVIB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHVIB0002',
+      vendorId: 'HVIB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHVIN0001',
+      vendorId: 'HVIN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHWI50001',
+      vendorId: 'HWI50001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHWSP0001',
+      vendorId: 'HWSP0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaHXN00001',
+      vendorId: 'HXN00001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaO3PE0001',
+      vendorId: 'O3PE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOACC0004',
+      vendorId: 'OACC0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOACO0001',
+      vendorId: 'OACO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOACO0002',
+      vendorId: 'OACO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOACS0004',
+      vendorId: 'OACS0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOADE0005',
+      vendorId: 'OADE0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAFR0002',
+      vendorId: 'OAFR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAFR0004',
+      vendorId: 'OAFR0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAGF0001',
+      vendorId: 'OAGF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAJE0001',
+      vendorId: 'OAJE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAKE0001',
+      vendorId: 'OAKE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAKI0002',
+      vendorId: 'OAKI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAMA0003',
+      vendorId: 'OAMA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAMS0001',
+      vendorId: 'OAMS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOANI0004',
+      vendorId: 'OANI0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAQA0001',
+      vendorId: 'OAQA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOARI0001',
+      vendorId: 'OARI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOASA0001',
+      vendorId: 'OASA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOASH0001',
+      vendorId: 'OASH0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOASL0001',
+      vendorId: 'OASL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAVI0001',
+      vendorId: 'OAVI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAWR0001',
+      vendorId: 'OAWR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOAXO0001',
+      vendorId: 'OAXO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBAR0001',
+      vendorId: 'OBAR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBCI0001',
+      vendorId: 'OBCI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBEF0001',
+      vendorId: 'OBEF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBEL0002',
+      vendorId: 'OBEL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBER0001',
+      vendorId: 'OBER0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBET0002',
+      vendorId: 'OBET0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBEV0001',
+      vendorId: 'OBEV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBIG0002',
+      vendorId: 'OBIG0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBMS0002',
+      vendorId: 'OBMS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBOA0001',
+      vendorId: 'OBOA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBOC0002',
+      vendorId: 'OBOC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBOE0001',
+      vendorId: 'OBOE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBRA0003',
+      vendorId: 'OBRA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBRA0004',
+      vendorId: 'OBRA0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOBUI0001',
+      vendorId: 'OBUI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCCI0001',
+      vendorId: 'OCCI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCCM0001',
+      vendorId: 'OCCM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCFA0002',
+      vendorId: 'OCFA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCLA0002',
+      vendorId: 'OCLA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCNA0002',
+      vendorId: 'OCNA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCON0007',
+      vendorId: 'OCON0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCRA0001',
+      vendorId: 'OCRA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCUM0001',
+      vendorId: 'OCUM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOCWS0001',
+      vendorId: 'OCWS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODAB0001',
+      vendorId: 'ODAB0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODBL0001',
+      vendorId: 'ODBL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODEF0003',
+      vendorId: 'ODEF0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODEJ0001',
+      vendorId: 'ODEJ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODEM0001',
+      vendorId: 'ODEM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODHA0001',
+      vendorId: 'ODHA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODIJ0001',
+      vendorId: 'ODIJ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODLE0001',
+      vendorId: 'ODLE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODMS0002',
+      vendorId: 'ODMS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODNM0001',
+      vendorId: 'ODNM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODNM0002',
+      vendorId: 'ODNM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODON0001',
+      vendorId: 'ODON0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaODUR0002',
+      vendorId: 'ODUR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEAT0001',
+      vendorId: 'OEAT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEBC0002',
+      vendorId: 'OEBC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEFE0001',
+      vendorId: 'OEFE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEMO0001',
+      vendorId: 'OEMO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOESS0001',
+      vendorId: 'OESS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEUN0002',
+      vendorId: 'OEUN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOEXC0002',
+      vendorId: 'OEXC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFIE0001',
+      vendorId: 'OFIE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFIR0003',
+      vendorId: 'OFIR0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFON0002',
+      vendorId: 'OFON0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFRI0001',
+      vendorId: 'OFRI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOFUM0002',
+      vendorId: 'OFUM0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGAB0002',
+      vendorId: 'OGAB0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGEA0002',
+      vendorId: 'OGEA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGEA0003',
+      vendorId: 'OGEA0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGIL0002',
+      vendorId: 'OGIL0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGLO0002',
+      vendorId: 'OGLO0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGOC0001',
+      vendorId: 'OGOC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGOL0004',
+      vendorId: 'OGOL0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGRA0001',
+      vendorId: 'OGRA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGRE0004',
+      vendorId: 'OGRE0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOGUL0001',
+      vendorId: 'OGUL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHAC0002',
+      vendorId: 'OHAC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHOT0002',
+      vendorId: 'OHOT0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHUR0002',
+      vendorId: 'OHUR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOHYD0001',
+      vendorId: 'OHYD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOIBU0001',
+      vendorId: 'OIBU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOIMA0002',
+      vendorId: 'OIMA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOINF0001',
+      vendorId: 'OINF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOINS0001',
+      vendorId: 'OINS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOINS0004',
+      vendorId: 'OINS0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOINT0003',
+      vendorId: 'OINT0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOINT0012',
+      vendorId: 'OINT0012',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJAD0001',
+      vendorId: 'OJAD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJEM0001',
+      vendorId: 'OJEM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJOK0001',
+      vendorId: 'OJOK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJOS0001',
+      vendorId: 'OJOS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJPS0001',
+      vendorId: 'OJPS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOJUL0001',
+      vendorId: 'OJUL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKCM0001',
+      vendorId: 'OKCM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKHI0001',
+      vendorId: 'OKHI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKIM0001',
+      vendorId: 'OKIM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKRO0004',
+      vendorId: 'OKRO0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOKUV0001',
+      vendorId: 'OKUV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLAT0001',
+      vendorId: 'OLAT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLEE0001',
+      vendorId: 'OLEE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLIQ0001',
+      vendorId: 'OLIQ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLOR0002',
+      vendorId: 'OLOR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOLWA0001',
+      vendorId: 'OLWA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAC0002',
+      vendorId: 'OMAC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAC0003',
+      vendorId: 'OMAC0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAG0002',
+      vendorId: 'OMAG0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAR0001',
+      vendorId: 'OMAR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMAS0001',
+      vendorId: 'OMAS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMDC0001',
+      vendorId: 'OMDC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMEU0001',
+      vendorId: 'OMEU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMFI0001',
+      vendorId: 'OMFI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMIZ0001',
+      vendorId: 'OMIZ0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMTN0001',
+      vendorId: 'OMTN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOMUF0001',
+      vendorId: 'OMUF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONAM0003',
+      vendorId: 'ONAM0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONET0001',
+      vendorId: 'ONET0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONIG0005',
+      vendorId: 'ONIG0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONIG0008',
+      vendorId: 'ONIG0008',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONIK0001',
+      vendorId: 'ONIK0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONMR0001',
+      vendorId: 'ONMR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaONOV0001',
+      vendorId: 'ONOV0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOCT0001',
+      vendorId: 'OOCT0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOODI0002',
+      vendorId: 'OODI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOGI0001',
+      vendorId: 'OOGI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOMO0001',
+      vendorId: 'OOMO0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOPH0001',
+      vendorId: 'OOPH0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOPS0001',
+      vendorId: 'OOPS0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOPS0002',
+      vendorId: 'OOPS0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOSE0001',
+      vendorId: 'OOSE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOOST0001',
+      vendorId: 'OOST0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPCL0001',
+      vendorId: 'OPCL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPER0001',
+      vendorId: 'OPER0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPET0002',
+      vendorId: 'OPET0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPHI0001',
+      vendorId: 'OPHI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPIL0001',
+      vendorId: 'OPIL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPON0001',
+      vendorId: 'OPON0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPPM0001',
+      vendorId: 'OPPM0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPRE0002',
+      vendorId: 'OPRE0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPRE5001',
+      vendorId: 'OPRE5001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPRU0001',
+      vendorId: 'OPRU0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOPZC0002',
+      vendorId: 'OPZC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaORAD0001',
+      vendorId: 'ORAD0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaORIC0002',
+      vendorId: 'ORIC0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaORIE0004',
+      vendorId: 'ORIE0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaORIF0001',
+      vendorId: 'ORIF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSAN0001',
+      vendorId: 'OSAN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSAN0003',
+      vendorId: 'OSAN0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSCI0001',
+      vendorId: 'OSCI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSEA0002',
+      vendorId: 'OSEA0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSIE0001',
+      vendorId: 'OSIE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSNL0001',
+      vendorId: 'OSNL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSTA0004',
+      vendorId: 'OSTA0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSTR0002',
+      vendorId: 'OSTR0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSUN0002',
+      vendorId: 'OSUN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOSVL0001',
+      vendorId: 'OSVL0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTAR0001',
+      vendorId: 'OTAR0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTEE0001',
+      vendorId: 'OTEE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTHA0001',
+      vendorId: 'OTHA0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTHE0009',
+      vendorId: 'OTHE0009',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTOD0002',
+      vendorId: 'OTOD0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTOT0003',
+      vendorId: 'OTOT0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTRI0001',
+      vendorId: 'OTRI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOTRI0002',
+      vendorId: 'OTRI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOUNI0001',
+      vendorId: 'OUNI0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOUNI0002',
+      vendorId: 'OUNI0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOVIC0001',
+      vendorId: 'OVIC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWAT0003',
+      vendorId: 'OWAT0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWIN0002',
+      vendorId: 'OWIN0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWSP0002',
+      vendorId: 'OWSP0002',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWSP0005',
+      vendorId: 'OWSP0005',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOZEN0003',
+      vendorId: 'OZEN0003',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOZIE0001',
+      vendorId: 'OZIE0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOZTF0001',
+      vendorId: 'OZTF0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaSPZC1500',
+      vendorId: 'SPZC1500',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBOLA0007',
+      vendorId: 'BOLA0007',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOWIN0001',
+      vendorId: 'OWIN0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaBFRI0004',
+      vendorId: 'BFRI0004',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOANC0001',
+      vendorId: 'OANC0001',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      vendorId: 'NigeriaOVCU0002',
+      vendorId: 'OVCU0002',
       createdAt: new Date(),
       updatedAt: new Date()
     }

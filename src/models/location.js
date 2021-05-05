@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     },
   }, {});
-  Location.associate = function(models) {
+  Location.associate = (models) => {
     Location.belongsTo(models.VendorDetail, {
       as: 'location',
       foreignKey: 'vendorDetailsId'

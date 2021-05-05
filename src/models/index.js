@@ -32,6 +32,7 @@ const sequelize = new Sequelize(env.DB_NAME, env.DB_USER, env.DB_PASSWORD, {
 // );
 // }
 
+
 fs.readdirSync(__dirname)
   .filter(
     (file) => file.indexOf('.') !== 0

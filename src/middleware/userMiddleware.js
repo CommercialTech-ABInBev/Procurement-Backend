@@ -1,7 +1,5 @@
 import { GeneralValidation } from '../validation';
 import { Toolbox } from '../util';
-// import { GeneralService } from '../services';
-// import database from '../models';
 
 const {
   errorResponse
@@ -9,13 +7,6 @@ const {
 const {
   validateVendor
 } = GeneralValidation;
-// const {
-//   findByKey
-// } = GeneralService;
-// const {
-//   Notification,
-//   Subject
-// } = database;
 
 const UserMiddleware = {
   /**
@@ -31,7 +22,6 @@ const UserMiddleware = {
       validateVendor(req.body);
       next();
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   }

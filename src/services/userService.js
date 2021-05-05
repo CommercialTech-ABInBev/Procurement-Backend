@@ -5,7 +5,9 @@ import database from '../models';
 const {
   User,
   VendorRegistration,
-  JobFunction
+  JobFunction,
+  Subject,
+  Notification
 } = database;
 
 const UserService = {

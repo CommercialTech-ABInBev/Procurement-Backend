@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable linebreak-style */
 import { BlobServiceClient } from '@azure/storage-blob';
 import sharp from 'sharp';
@@ -19,8 +20,7 @@ const {
 const AzureUpload = {
   /**
    * send email verification to user after signup
-   * @param {object} req
-   * @param {object} user - { id, email, firstName ...etc}
+   * @param {object} file - { id, email, firstName ...etc}
    * @returns {Promise<boolean>} - Returns true if mail is sent, false if not
    * @memberof AzureUpload
    */
@@ -29,8 +29,11 @@ const AzureUpload = {
       const blobServiceClient = BlobServiceClient.fromConnectionString(STORAGE_CONNECTION_STRING);
       let i = 1;
       for await (const container of blobServiceClient.listContainers()) {
+        // eslint-disable-next-line no-plusplus
+        // eslint-disable-next-line no-console
         console.log(`Container ${i++}: ${container.name}`);
       }
+      // eslint-disable-next-line no-underscore-dangle
       const blobService__ = azure.createBlobService(BUCKET_NAME, AZURE_KEY);
       // console.log('Hi');
       const result = [];
@@ -46,7 +49,7 @@ const AzureUpload = {
               if (err) {
                 console.log(err);
               } else {
-                return await resultImage;
+                return resultImage;
               }
             });
             // console.log(data);

@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import joi from '@hapi/joi';
 // import validationData from './validationData';
 
@@ -193,9 +194,9 @@ const GeneralValidation = {
       companyLocation: joi.string().min(2).max(12)
         .label('Please enter a valid company location'),
       locations: joi.array().items(joi.string())
-      .label('Please input a company Location'),
+        .label('Please input a company Location'),
       file: joi.any()
-      .label('Please upload an image'),
+        .label('Please upload an image'),
       // eslint-disable-next-line no-useless-escape
       companyPhoneNumber: joi.string().regex(/^[0-9+\(\)#\.\s\/ext-]+$/).label('Please input a valid phone number'),
     };

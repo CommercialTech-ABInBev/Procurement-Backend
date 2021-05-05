@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     }
   }, {});
-  Notification.associate = function(models) {
+  Notification.associate = (models) => {
     Notification.belongsTo(models.User, {
       as: 'users',
       foreignKey: 'userId'

@@ -1,4 +1,3 @@
-'use strict';
 module.exports = (sequelize, DataTypes) => {
   const VendorRegistration = sequelize.define('VendorRegistration', {
     jobId: {
@@ -61,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     }
   }, {});
-  VendorRegistration.associate = function(models) {
+  VendorRegistration.associate = (models) => {
     VendorRegistration.belongsTo(models.User, {
       as: 'user',
       foreignKey: 'userId'

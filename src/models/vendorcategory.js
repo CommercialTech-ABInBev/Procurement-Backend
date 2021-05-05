@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     },
   }, {});
-  VendorCategory.associate = function(models) {
+  VendorCategory.associate = (models) => {
     VendorCategory.belongsTo(models.VendorDetail, {
       as: 'vendorDetail',
       foreignKey: 'vendorId',

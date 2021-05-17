@@ -12,7 +12,6 @@ const {
 
 sendgrid.setApiKey(SENDGRID_KEY);
 
-
 const Mailer = {
   /**
    * send email for password reset

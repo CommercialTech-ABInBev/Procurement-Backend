@@ -6,9 +6,9 @@ import database from '../models';
 // import { env } from '../config';
 
 const {
-    successResponse,
-    errorResponse
-} = Toolbox
+  successResponse,
+  errorResponse
+} = Toolbox;
 const {
   allEntities
 } = GeneralService;

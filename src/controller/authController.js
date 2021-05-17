@@ -53,13 +53,13 @@ const AuthController = {
           verified: true
         };
         user = await addEntity(User, { ...body });
-        vendorDetails = await addEntity(VendorDetail, { 
-          userId: user.id, 
+        vendorDetails = await addEntity(VendorDetail, {
+          userId: user.id,
           vendorId: req.body.vendorId
         });
-        if (vendorDetails){
-          subject = await addEntity(Subject, { 
-            subject: 'Welcome to IB Vendor Central', 
+        if (vendorDetails) {
+          subject = await addEntity(Subject, {
+            subject: 'Welcome to IB Vendor Central',
             vendor: vendorDetails.companyName || req.body.vendorId,
             vendorRead: false
           });
@@ -72,7 +72,7 @@ const AuthController = {
             message: 'A big welcome to you. Please ensure to fill in your details in the company profile tab and submit for approval.\nWe will definitely get back to you as soon as possible.\nHappy doing business with you.'
           });
         }
-      } else if (req.body.role === 'super_admin'){
+      } else if (req.body.role === 'super_admin') {
         body = {
           email: req.body.email,
           password: hashPassword(req.body.password),
@@ -85,7 +85,7 @@ const AuthController = {
           email: req.body.email,
           password: hashPassword(req.body.password),
           role: req.body.admin ? 'admin' : 'staff',
-          verified: req.body.admin ? true : false
+          verified: !!req.body.admin
         };
         user = await addEntity(User, { ...body });
       }
@@ -105,7 +105,6 @@ const AuthController = {
       res.cookie('token', user.token, { maxAge: 70000000, httpOnly: true });
       return successResponse(res, { user, vendorDetails, emailSent }, 201);
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -123,7 +122,8 @@ const AuthController = {
       const { password } = req.body;
       const user = req.userData;
       if (!comparePassword(password, user.password)) return errorResponse(res, { code: 401, message: 'incorrect password or email' });
-      if (user.role === 'staff' && !user.verified)  return errorResponse(res, { code: 409, message: 'Not Verified, Please check your email and verify your account.' });
+      // eslint-disable-next-line max-len
+      // if (user.role === 'staff' && !user.verified) return errorResponse(res, { code: 409, message: 'Not Verified, Please check your email and verify your account.' });
       const vendorDetails = await findByKey(VendorDetail, { userId: user.id });
       user.token = createToken({
         email: user.email,
@@ -144,7 +144,7 @@ const AuthController = {
     }
   },
 
-   /**
+  /**
    * verify user email
    * @param {object} req
    * @param {object} res
@@ -157,7 +157,7 @@ const AuthController = {
       const tokenData = verifyToken(token);
       const { id } = tokenData;
       await updateByKey(User, { verified: true }, { id });
-      const user =  await findByKey(User, { id });
+      const user = await findByKey(User, { id });
       const newToken = createToken({
         email: user.email,
         id: user.id,
@@ -177,7 +177,7 @@ const AuthController = {
     }
   },
 
-   /**
+  /**
    * user gets a new email verification link
    * @param {object} req
    * @param {object} res
@@ -189,7 +189,7 @@ const AuthController = {
       const { email } = req.body;
       const user = await findByKey(User, { email });
       if (!user) return errorResponse(res, { code: 404, message: `user with email ${email} does not exist` });
-      if (user.role !== "staff") return errorResponse(res, { code: 409, message: `This user is not a staff and does not need to be verified to access the platform` });
+      if (user.role !== 'staff') return errorResponse(res, { code: 409, message: 'This user is not a staff and does not need to be verified to access the platform' });
       // TODO: uncomment for production
       const emailSent = await sendVerificationEmail(req, user);
       // TODO: delete bottom line for production
@@ -199,7 +199,6 @@ const AuthController = {
       errorResponse(res, {});
     }
   },
-
 
   /**
    * get user profile
@@ -218,7 +217,7 @@ const AuthController = {
     }
   },
 
-   /**
+  /**
    * reset user password
    * @param {object} req
    * @param {object} res
@@ -240,7 +239,7 @@ const AuthController = {
     }
   },
 
-   /**
+  /**
    * user reset password email
    * @param {object} req
    * @param {object} res
@@ -263,12 +262,11 @@ const AuthController = {
       // const emailSent = true;
       if (emailSent) return successResponse(res, { message: 'A password reset link has been sent to your email' });
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   },
 
-    /**
+  /**
    * verify reset password link
    * @param {object} req
    * @param {object} res
@@ -282,7 +280,6 @@ const AuthController = {
       if (tokenData) {
         res.cookie('token', token, { maxAge: 70000000, httpOnly: true });
         // const url = `${req.protocol}s://${req.get('host')}/v1.0/api/auth/set-password`;
-        // successResponse(res, { message: `success, redirect to api route ${url} with password objects` });
         return res.redirect(`${CLIENT_URL}/set-password?token=${token}`);
       }
     } catch (error) {
@@ -314,7 +311,6 @@ const AuthController = {
       errorResponse(res, {});
     }
   },
-
 
   /**
    * logs user out

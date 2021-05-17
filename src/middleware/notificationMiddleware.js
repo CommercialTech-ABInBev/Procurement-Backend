@@ -44,7 +44,6 @@ const NotificationMiddleware = {
       }
       next();
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   }

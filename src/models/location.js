@@ -8,10 +8,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    label: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     vendorDetailsId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -23,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     },
   }, {});
-  Location.associate = function(models) {
+  Location.associate = (models) => {
     Location.belongsTo(models.VendorDetail, {
       as: 'location',
       foreignKey: 'vendorDetailsId'

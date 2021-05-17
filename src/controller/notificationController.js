@@ -6,9 +6,9 @@ import database from '../models';
 // import { env } from '../config';
 
 const {
-    successResponse,
-    errorResponse
-} = Toolbox
+  successResponse,
+  errorResponse
+} = Toolbox;
 const {
   addEntity,
   findByKey,
@@ -39,10 +39,10 @@ const NotificationController = {
     try {
       // let subject;
       const { id, vendorId } = req.tokenData;
-      const vendor = await findByKey(VendorDetail, { userId: id })
-      if(vendor.companyName === null || vendorId === null) return errorResponse(res, { code: 409, message: 'Please update your details before contacting admin' });
-      const subject = await addEntity(Subject, { 
-        subject: req.body.subject, 
+      const vendor = await findByKey(VendorDetail, { userId: id });
+      if (vendor.companyName === null || vendorId === null) return errorResponse(res, { code: 409, message: 'Please update your details before contacting admin' });
+      const subject = await addEntity(Subject, {
+        subject: req.body.subject,
         vendor: vendor.companyName || vendorId,
         adminRead: false
       });
@@ -70,14 +70,14 @@ const NotificationController = {
   async adminNotification(req, res) {
     try {
       const { vendorId } = req.query;
-      const vendor = await findByKey(VendorDetail, { vendorId })
-      const subject = await addEntity(Subject, { 
-        subject: req.body.subject, 
+      const vendor = await findByKey(VendorDetail, { vendorId });
+      const subject = await addEntity(Subject, {
+        subject: req.body.subject,
         vendor: vendor.companyName || vendorId,
         vendorRead: false
       });
       const notification = await addEntity(Notification, {
-        to:  vendor.companyName || vendorId,
+        to: vendor.companyName || vendorId,
         from: 'admin',
         userId: vendor.userId,
         subjectId: subject.id,
@@ -86,7 +86,6 @@ const NotificationController = {
       });
       return successResponse(res, { notification });
     } catch (error) {
-      console.error(error);
       errorResponse(res, {});
     }
   },
@@ -108,11 +107,15 @@ const NotificationController = {
         from: 'admin',
         to: vendor.companyName || vendorId,
         message: req.body.message,
-        subjectId: subjectId,
+        subjectId,
         userId: user.id
       });
 
-      if (notification) await updateByKey(Subject, { vendor: vendor.companyName || vendorId, vendorRead: false }, { id: subjectId });
+      if (notification) {
+        await updateByKey(Subject, {
+          vendor: vendor.companyName || vendorId, vendorRead: false
+        }, { id: subjectId });
+      }
       return successResponse(res, { notification });
     } catch (error) {
       errorResponse(res, {});
@@ -130,15 +133,19 @@ const NotificationController = {
     try {
       const { subjectId } = req.query;
       const { id } = req.tokenData;
-      const { vendorId, companyName } = await findByKey(VendorDetail, { userId: id })
+      const { vendorId, companyName } = await findByKey(VendorDetail, { userId: id });
       const notification = await addEntity(Notification, {
         to: 'admin',
         from: companyName || vendorId,
         message: req.body.message,
-        subjectId: subjectId,
+        subjectId,
         userId: id
       });
-      if (notification) await updateByKey(Subject, { vendor: companyName || vendorId, adminRead: false }, { id: subjectId });
+      if (notification) {
+        await updateByKey(Subject, {
+          vendor: companyName || vendorId, adminRead: false
+        }, { id: subjectId });
+      }
       return successResponse(res, { notification });
     } catch (error) {
       errorResponse(res, {});
@@ -162,12 +169,10 @@ const NotificationController = {
         else await updateByKey(Subject, { adminRead: true }, { id: subjectId });
         notifications = await singlenotificationsBykey({ id: subjectId });
         notifications[0].vendorId = notifications[0].message[0].users.vendorId;
-      } else {
-        if (role === "supplier") notifications = await notificationsBykey({ userId: id });
-        else notifications = await notificationsBykey({});
-      }
+      } else if (role === 'supplier') notifications = await notificationsBykey({ userId: id });
+      else notifications = await notificationsBykey({});
       if (!notifications.length) return errorResponse(res, { code: 404, message: 'No Notifications Yet' });
-      notificationCount = notifications.filter((item) => role === 'supplier' ? item.vendorRead === false : item.adminRead === false);
+      notificationCount = notifications.filter((item) => (role === 'supplier' ? item.vendorRead === false : item.adminRead === false));
       notificationCount = notificationCount.length;
       return successResponse(res, { notificationCount, notifications });
     } catch (error) {

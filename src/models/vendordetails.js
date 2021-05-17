@@ -75,7 +75,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     },
   }, {});
-  VendorDetail.associate = function(models) {
+  VendorDetail.associate = (models) => {
     VendorDetail.belongsTo(models.User, {
       as: 'vendorDetails',
       foreignKey: 'userId'

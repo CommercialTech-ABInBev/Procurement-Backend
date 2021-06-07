@@ -140,7 +140,7 @@ const GeneralValidation = {
     return true;
   },
 
-    /**
+  /**
    * validate images
    * @param {object} payload - user object
    * @returns {object | boolean} - returns a boolean or an error object

@@ -85,7 +85,7 @@ const AuthController = {
           email: req.body.email,
           password: hashPassword(req.body.password),
           role: req.body.admin ? 'admin' : 'staff',
-          verified: !!req.body.admin
+          verified: true
         };
         user = await addEntity(User, { ...body });
       }

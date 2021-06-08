@@ -38,11 +38,11 @@ const AuthMiddleware = {
         validateEmail(req.body);
         user = await findByKey(User, { email });
         if (!user) return successResponse(res, { message: 'User Valid for signup' });
-        return errorResponse(res, { code: 409, message: 'Sorry, that email address seems to be invalid, kindly review the address' });
+        return errorResponse(res, { code: 409, message: 'Sorry, Email already exist, kindly review the address' });
       }
       validateSignup(req.body);
       user = await findByKey(User, { email });
-      if (user) return errorResponse(res, { code: 409, message: 'Sorry, that email address seems to be invalid, kindly review the address' });
+      if (user) return errorResponse(res, { code: 409, message: 'Sorry, Email already exist, kindly review the address' });
       next();
     } catch (error) {
       errorResponse(res, { code: 400, message: error });
@@ -65,16 +65,16 @@ const AuthMiddleware = {
       if (req.path === '/signup/supplier/check') {
         validateVendorId(req.body);
         const vendor = await findByKey(Vendor, { vendorId });
-        if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, the vendor id seems to be invalid, kindly review the ID' });
+        if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID already exist, kindly review the ID' });
         user = await findByKey(User, { vendorId });
-        if (user) return errorResponse(res, { code: 409, message: 'Sorry, the vendor id seems to be invalid, kindly review the ID' });
+        if (user) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID already exist, kindly review the ID' });
         return successResponse(res, { message: 'Vendor Id Valid for signup' });
       }
       validateSupplierSignup(req.body);
       const vendor = await findByKey(Vendor, { vendorId });
-      if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, the vendor id seems to be invalid, kindly review the ID' });
+      if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID already exist, kindly review the ID' });
       user = await findByKey(User, { vendorId });
-      if (user) return errorResponse(res, { code: 409, message: 'Sorry, the vendor id seems to be invalid, kindly review the ID' });
+      if (user) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID already exist, kindly review the ID' });
       next();
     } catch (error) {
       errorResponse(res, { code: 400, message: error });
@@ -96,7 +96,7 @@ const AuthMiddleware = {
       const { vendorIdOrEmail } = req.body;
       let user = await findByKey(User, { email: vendorIdOrEmail });
       if (!user) user = await findByKey(User, { vendorId: vendorIdOrEmail });
-      if (!user) return errorResponse(res, { code: 404, message: 'email or vendorId does not match anything in our database' });
+      if (!user) return errorResponse(res, { code: 404, message: 'Email or Vendor ID does not match anything in our database' });
       req.userData = user;
       next();
     } catch (error) {

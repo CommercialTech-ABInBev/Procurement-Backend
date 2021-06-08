@@ -63,9 +63,9 @@ const AuthValidation = {
   validateLogin(payload) {
     const schema = {
       vendorIdOrEmail: joi.string().min(3).max(50).required()
-        .label('incorrect vendorId or email'),
+        .label('Incorrect VendorId or Email'),
       password: new passwordComplexity(complexityOptions).required()
-        .label('incorrect password or email')
+        .label('Incorrect Password')
     };
     const { error } = joi.validate({ ...payload }, schema);
     if (error) throw error.details[0].context.label;

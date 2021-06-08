@@ -85,7 +85,7 @@ const AuthController = {
           email: req.body.email,
           password: hashPassword(req.body.password),
           role: req.body.admin ? 'admin' : 'staff',
-          verified: !!req.body.admin
+          verified: true
         };
         user = await addEntity(User, { ...body });
       }
@@ -187,7 +187,7 @@ const AuthController = {
     try {
       const { email } = req.body;
       const user = await findByKey(User, { email });
-      if (!user) return errorResponse(res, { code: 404, message: `user with email ${email} does not exist` });
+      if (!user) return errorResponse(res, { code: 404, message: `User with email ${email} does not exist` });
       if (user.role !== 'staff') return errorResponse(res, { code: 409, message: 'This user is not a staff and does not need to be verified to access the platform' });
       // TODO: uncomment for production
       const emailSent = await sendVerificationEmail(req, user);
@@ -254,7 +254,7 @@ const AuthController = {
         user = await findByKey(User, { vendorId: vendorIdOrEmail });
         vendor = await findByKey(VendorDetail, { vendorId: vendorIdOrEmail });
       }
-      if (!user) return errorResponse(res, { code: 404, message: 'email or vendorId does not match anything in our database' });
+      if (!user) return errorResponse(res, { code: 404, message: 'Email or VendorId does not match anything in our database' });
       // TODO: uncomment for production
       const emailSent = await sendPasswordResetEmail(req, user, vendor);
       // TODO: delete bottom line for production

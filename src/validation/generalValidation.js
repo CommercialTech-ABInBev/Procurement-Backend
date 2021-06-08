@@ -15,7 +15,7 @@ const GeneralValidation = {
     const schema = {
       email: joi.string().email()
         .label('Please enter a valid email address'),
-      approvalStatus: joi.string().valid('pending', 'approved', 'rejected').label('parameter must be approved/rejected'),
+      approvalStatus: joi.string().valid('pending', 'approved', 'rejected').label('approval status must be either approved/rejected'),
       id: joi.number().positive()
         .label('id parameter must be a positive number'),
       vendorDetailsId: joi.number().positive()
@@ -139,7 +139,7 @@ const GeneralValidation = {
     return true;
   },
 
-    /**
+  /**
    * validate images
    * @param {object} payload - user object
    * @returns {object | boolean} - returns a boolean or an error object
@@ -193,9 +193,9 @@ const GeneralValidation = {
       companyLocation: joi.string().min(2).max(12)
         .label('Please enter a valid company location'),
       locations: joi.array().items(joi.string())
-      .label('Please input a company Location'),
+        .label('Please input a company Location'),
       file: joi.any()
-      .label('Please upload an image'),
+        .label('Please upload an image'),
       // eslint-disable-next-line no-useless-escape
       companyPhoneNumber: joi.string().regex(/^[0-9+\(\)#\.\s\/ext-]+$/).label('Please input a valid phone number'),
     };

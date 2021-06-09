@@ -9,7 +9,7 @@ const {
   errorResponse, checkToken, verifyToken, validate, successResponse
 } = Toolbox;
 const {
-  validateSignup, validateLogin, validateSupplierSignup
+  validateSignup, validateLogin, validateSupplierSignup, validateVendorLogin
 } = AuthValidation;
 const {
   validateEmail, validateVendorId
@@ -92,11 +92,18 @@ const AuthMiddleware = {
    */
   async verifyLogin(req, res, next) {
     try {
-      validateLogin(req.body);
-      const { vendorIdOrEmail } = req.body;
-      let user = await findByKey(User, { email: vendorIdOrEmail });
-      if (!user) user = await findByKey(User, { vendorId: vendorIdOrEmail });
-      if (!user) return errorResponse(res, { code: 404, message: 'Email or Vendor ID does not match anything in our database' });
+      let user;
+      if (req.body.email) {
+        validateLogin(req.body);
+        const { email } = req.body;
+        user = await findByKey(User, { email });
+        if (!user) return errorResponse(res, { code: 404, message: 'Email does not match anything in our database' });
+      } else {
+        validateVendorLogin(req.body);
+        const { vendorId } = req.body;
+        user = await findByKey(User, { vendorId });
+        if (!user) return errorResponse(res, { code: 404, message: 'Vendor ID does not match anything in our database' });
+      }
       req.userData = user;
       next();
     } catch (error) {

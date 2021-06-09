@@ -62,8 +62,8 @@ const AuthValidation = {
    */
   validateLogin(payload) {
     const schema = {
-      vendorIdOrEmail: joi.string().min(3).max(50).required()
-        .label('Incorrect VendorId or Email'),
+      email: joi.string().email().required()
+        .label('Incorrect Email'),
       password: new passwordComplexity(complexityOptions).required()
         .label('Incorrect Password')
     };
@@ -71,6 +71,26 @@ const AuthValidation = {
     if (error) throw error.details[0].context.label;
     return true;
   },
+
+  /**
+   * validate user parameters during login
+   * @function
+   * @param {object} payload - user object
+   * @returns {boolean | object} - returns a boolean or an error object
+   * @memberof AuthValidation
+   */
+  validateVendorLogin(payload) {
+    const schema = {
+      vendorId: joi.string().min(3).max(50).required()
+        .label('Incorrect VendorId'),
+      password: new passwordComplexity(complexityOptions).required()
+        .label('Incorrect Password')
+    };
+    const { error } = joi.validate({ ...payload }, schema);
+    if (error) throw error.details[0].context.label;
+    return true;
+  },
+
   /**
    * validate username credentials
    * @function

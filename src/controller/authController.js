@@ -121,7 +121,7 @@ const AuthController = {
     try {
       const { password } = req.body;
       const user = req.userData;
-      if (!comparePassword(password, user.password)) return errorResponse(res, { code: 401, message: 'incorrect password or email' });
+      if (!comparePassword(password, user.password)) return errorResponse(res, { code: 401, message: 'Incorrect password' });
       // eslint-disable-next-line max-len
       // if (user.role === 'staff' && !user.verified) return errorResponse(res, { code: 409, message: 'Not Verified, Please check your email and verify your account.' });
       const vendorDetails = await findByKey(VendorDetail, { userId: user.id });

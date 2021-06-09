@@ -25,7 +25,7 @@ const {
   logoutUser,
   verifyEmail,
   resendEmailVerificationLink,
-  deactivateUsers
+  deactivateUsers,
 } = AuthController;
 
 router.post('/signup/check', verifySignup);
@@ -33,6 +33,7 @@ router.post('/signup', verifySignup, signup);
 router.post('/signup/supplier/check', verifySupplierSignup);
 router.post('/signup/supplier', verifySupplierSignup, signup);
 router.post('/login', verifyLogin, login);
+router.post('/vendor/login', verifyLogin, login);
 router.get('/verify', verifyEmail);
 router.post('/resend-verification/email', resendEmailVerificationLink);
 router.get('/profile', userBouncers, getProfile);

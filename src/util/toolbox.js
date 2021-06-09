@@ -143,7 +143,7 @@ const Toolbox = {
   }) {
     const token = Toolbox.createToken({
       id, email, verified, roleId
-    }, '5h');
+    }, '2d');
     return `${req.protocol}://${req.get('host')}/v1.0/api/auth/reset-password/email?token=${token}`;
   },
 

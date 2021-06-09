@@ -16,7 +16,7 @@ const GeneralValidation = {
     const schema = {
       email: joi.string().email()
         .label('Please enter a valid email address'),
-      approvalStatus: joi.string().valid('pending', 'approved', 'rejected').label('parameter must be approved/rejected'),
+      approvalStatus: joi.string().valid('pending', 'approved', 'rejected').label('approval status must be either approved/rejected'),
       id: joi.number().positive()
         .label('id parameter must be a positive number'),
       vendorDetailsId: joi.number().positive()
@@ -140,7 +140,7 @@ const GeneralValidation = {
     return true;
   },
 
-    /**
+  /**
    * validate images
    * @param {object} payload - user object
    * @returns {object | boolean} - returns a boolean or an error object

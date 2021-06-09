@@ -110,6 +110,7 @@ const NotificationController = {
         subjectId,
         userId: user.id
       });
+
       if (notification) {
         await updateByKey(Subject, {
           vendor: vendor.companyName || vendorId, vendorRead: false

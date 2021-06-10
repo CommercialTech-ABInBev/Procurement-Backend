@@ -23,7 +23,7 @@ const AuthValidation = {
   validateSignup(payload) {
     const schema = {
       email: joi.string().email().required()
-        .label('Please enter a valid email address'),
+        .label('Please Enter A Valid Email Address'),
       password: new passwordComplexity(complexityOptions).required()
         .label('Password is required. \n It should be more than 8 characters, and should include at least a capital letter, and a number'),
       admin: joi.bool(),
@@ -44,7 +44,7 @@ const AuthValidation = {
   validateSupplierSignup(payload) {
     const schema = {
       vendorId: joi.string().required()
-        .label('Please enter a valid vendor id'),
+        .label('Please enter a valid Vendor Code'),
       password: new passwordComplexity(complexityOptions).required()
         .label('Password is required. \n It should be more than 8 characters, and should include at least a capital letter, and a number'),
     };

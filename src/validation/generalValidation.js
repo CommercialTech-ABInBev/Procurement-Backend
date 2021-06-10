@@ -100,7 +100,7 @@ const GeneralValidation = {
   validateVendorId(payload) {
     const schema = {
       vendorId: joi.string().required()
-        .label('Please enter a valid vendor id'),
+        .label('Please enter a valid Vendor Code'),
     };
     const { error } = joi.validate({ ...payload }, schema);
     if (error) throw error.details[0].context.label;

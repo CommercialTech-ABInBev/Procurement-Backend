@@ -15,7 +15,7 @@ const production = env.NODE_ENV === 'production';
 const app = express();
 
 // app.use(passport.initialize());
-app.use(cors());
+
 app.use(cookieParser());
 
 // Normal express config defaults

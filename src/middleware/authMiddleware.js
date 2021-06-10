@@ -65,14 +65,14 @@ const AuthMiddleware = {
       if (req.path === '/signup/supplier/check') {
         validateVendorId(req.body);
         const vendor = await findByKey(Vendor, { vendorId });
-        if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID already exist, kindly review the ID' });
+        if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID has not been onboarded, Contact Admin' });
         user = await findByKey(User, { vendorId });
         if (user) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID already exist, kindly review the ID' });
         return successResponse(res, { message: 'Vendor Id Valid for signup' });
       }
       validateSupplierSignup(req.body);
       const vendor = await findByKey(Vendor, { vendorId });
-      if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID already exist, kindly review the ID' });
+      if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID has not been onboarded, Contact Admin' });
       user = await findByKey(User, { vendorId });
       if (user) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID already exist, kindly review the ID' });
       next();
@@ -122,12 +122,12 @@ const AuthMiddleware = {
   async authenticate(req, res, next) {
     try {
       const token = checkToken(req);
-      if (!token) return errorResponse(res, { code: 401, message: 'Access denied, Token required' });
+      if (!token) return errorResponse(res, { code: 401, message: 'Access denied, Please Login' });
       req.tokenData = verifyToken(token);
       next();
     } catch (error) {
       if (error.message === 'Invalid Token') {
-        return errorResponse(res, { code: 400, message: 'The token provided was invalid' });
+        return errorResponse(res, { code: 400, message: 'Access denied, Please Login' });
       }
     }
   },
@@ -165,7 +165,7 @@ const AuthMiddleware = {
       try {
         const { id } = req.tokenData;
         const user = await findByKey(User, { id });
-        if (!user) return errorResponse(res, { code: 404, message: 'user in token does not exist' });
+        if (!user) return errorResponse(res, { code: 404, message: 'User does not exist' });
         const permitted = permissions.includes(user.role);
         if (!permitted) return errorResponse(res, { code: 403, message: 'Halt! You\'re not authorised' });
         next();

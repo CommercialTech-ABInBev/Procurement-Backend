@@ -34,11 +34,11 @@ if (!production) {
 app.use('/v1.0/api', routes);
 
 // / catch 404 and forward to error handler
-app.use((req, res, next) => {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+// app.use((req, res, next) => {
+//   const err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
 
 // development error handler
 if (!production) {

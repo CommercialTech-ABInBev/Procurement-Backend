@@ -63,7 +63,7 @@ const AuthMiddleware = {
       let user;
       const { vendorId } = req.body;
       if (req.path === '/signup/supplier/check') {
-        validateVendorId(req.body);
+        validateVendorLogin(req.body);
         const vendor = await findByKey(Vendor, { vendorId });
         if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID already exist, kindly review the ID' });
         user = await findByKey(User, { vendorId });

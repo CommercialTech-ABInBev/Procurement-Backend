@@ -3,7 +3,7 @@ import passwordComplexity from 'joi-password-complexity';
 
 // password complexity object
 const complexityOptions = {
-  min: 8,
+  min: 7,
   max: 250,
   lowerCase: 1,
   upperCase: 1,

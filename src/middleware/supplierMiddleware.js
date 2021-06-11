@@ -38,7 +38,7 @@ const SupplierMiddleware = {
       validateProfile(req.body);
       if (req.body.companyEmail) {
         const user = await findByKey(VendorDetail, { companyEmail: req.body.companyEmail });
-        if (user.userId !== id) return errorResponse(res, { code: 409, message: 'Email is already used by another company.' });
+        if (user && user.userId !== id) return errorResponse(res, { code: 409, message: 'Email is already used by another company.' });
       }
       if (req.files) validateImages(req.file);
       if (req.body.locations) {

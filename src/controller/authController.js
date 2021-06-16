@@ -47,7 +47,7 @@ const AuthController = {
       let body, user, vendorDetails, emailSent, subject;
       if (req.body.vendorId) {
         body = {
-          vendorId: req.body.vendorId,
+          vendorId: req.body.vendorId.toUpperCase(),
           password: hashPassword(req.body.password),
           role: 'supplier',
           verified: true
@@ -55,16 +55,16 @@ const AuthController = {
         user = await addEntity(User, { ...body });
         vendorDetails = await addEntity(VendorDetail, {
           userId: user.id,
-          vendorId: req.body.vendorId
+          vendorId: req.body.vendorId.toUpperCase()
         });
         if (vendorDetails) {
           subject = await addEntity(Subject, {
             subject: 'Welcome to IB Vendor Central',
-            vendor: vendorDetails.companyName || req.body.vendorId,
+            vendor: vendorDetails.companyName || req.body.vendorId.toUpperCase(),
             vendorRead: false
           });
           await addEntity(Notification, {
-            to: vendorDetails.companyName || req.body.vendorId,
+            to: vendorDetails.companyName || req.body.vendorId.toUpperCase(),
             from: 'admin',
             userId: user.id,
             subjectId: subject.id,
@@ -74,7 +74,7 @@ const AuthController = {
         }
       } else if (req.body.role === 'super_admin') {
         body = {
-          email: req.body.email,
+          email: req.body.email.toLowerCase(),
           password: hashPassword(req.body.password),
           role: 'super_admin',
           verified: true
@@ -82,7 +82,7 @@ const AuthController = {
         user = await addEntity(User, { ...body });
       } else {
         body = {
-          email: req.body.email,
+          email: req.body.email.toLowerCase(),
           password: hashPassword(req.body.password),
           role: req.body.admin ? 'admin' : 'staff',
           verified: true
@@ -187,7 +187,7 @@ const AuthController = {
   async resendEmailVerificationLink(req, res) {
     try {
       const { email } = req.body;
-      const user = await findByKey(User, { email });
+      const user = await findByKey(User, { email: email.toLowerCase() });
       if (!user) return errorResponse(res, { code: 404, message: `User with email ${email} does not exist` });
       if (user.role !== 'staff') return errorResponse(res, { code: 409, message: 'This user is not a staff and does not need to be verified to access the platform' });
       // TODO: uncomment for production
@@ -250,9 +250,9 @@ const AuthController = {
     try {
       const { vendorIdOrEmail } = req.body;
       let vendor;
-      let user = await findByKey(User, { email: vendorIdOrEmail });
+      let user = await findByKey(User, { email: vendorIdOrEmail.toLowerCase() });
       if (!user) {
-        user = await findByKey(User, { vendorId: vendorIdOrEmail });
+        user = await findByKey(User, { vendorId: vendorIdOrEmail.toUpperCase() });
         vendor = await findByKey(VendorDetail, { vendorId: vendorIdOrEmail });
       }
       if (!user) return errorResponse(res, { code: 404, message: 'Email or VendorId does not match anything in our database' });
@@ -341,8 +341,8 @@ const AuthController = {
       const { id, email, vendorId } = req.query;
       let user;
       if (id) user = await deleteByKey(User, { id });
-      if (email) user = await deleteByKey(User, { email });
-      if (vendorId) user = await deleteByKey(User, { vendorId });
+      if (email) user = await deleteByKey(User, { email: email.toLowerCase() });
+      if (vendorId) user = await deleteByKey(User, { vendorId: vendorId.toUpperCase() });
       return successResponse(res, { message: 'User Deleted Successfully', user });
     } catch (error) {
       errorResponse(res, {});

@@ -36,12 +36,13 @@ const AuthMiddleware = {
       const { email } = req.body;
       if (req.path === '/signup/check') {
         validateEmail(req.body);
-        user = await findByKey(User, { email });
+        // console.log(error);
+        user = await findByKey(User, { email: email.toLowerCase() });
         if (!user) return successResponse(res, { message: 'User Valid for signup' });
         return errorResponse(res, { code: 409, message: 'Sorry, Email already exist, kindly review the address' });
       }
       validateSignup(req.body);
-      user = await findByKey(User, { email });
+      user = await findByKey(User, { email: email.toLowerCase() });
       if (user) return errorResponse(res, { code: 409, message: 'Sorry, Email already exist, kindly review the address' });
       next();
     } catch (error) {
@@ -64,16 +65,16 @@ const AuthMiddleware = {
       const { vendorId } = req.body;
       if (req.path === '/signup/supplier/check') {
         validateVendorId(req.body);
-        const vendor = await findByKey(Vendor, { vendorId });
+        const vendor = await findByKey(Vendor, { vendorId: vendorId.toUpperCase() });
         if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID has not been onboarded, Contact Admin' });
-        user = await findByKey(User, { vendorId });
-        if (user) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID already exist, kindly review the ID' });
+        user = await findByKey(User, { vendorId: vendorId.toUpperCase() });
+        if (user) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID already in use by another vendor, kindly review the ID' });
         return successResponse(res, { message: 'Vendor Id Valid for signup' });
       }
       validateSupplierSignup(req.body);
-      const vendor = await findByKey(Vendor, { vendorId });
+      const vendor = await findByKey(Vendor, { vendorId: vendorId.toUpperCase() });
       if (!vendor) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID has not been onboarded, Contact Admin' });
-      user = await findByKey(User, { vendorId });
+      user = await findByKey(User, { vendorId: vendorId.toUpperCase() });
       if (user) return errorResponse(res, { code: 409, message: 'Sorry, Vendor ID already exist, kindly review the ID' });
       next();
     } catch (error) {
@@ -96,12 +97,12 @@ const AuthMiddleware = {
       if (req.body.email) {
         validateLogin(req.body);
         const { email } = req.body;
-        user = await findByKey(User, { email });
+        user = await findByKey(User, { email: email.toLowerCase() });
         if (!user) return errorResponse(res, { code: 404, message: 'Email does not match anything in our database' });
       } else {
         validateVendorLogin(req.body);
         const { vendorId } = req.body;
-        user = await findByKey(User, { vendorId });
+        user = await findByKey(User, { vendorId: vendorId.toUpperCase() });
         if (!user) return errorResponse(res, { code: 404, message: 'Vendor ID does not match anything in our database' });
       }
       req.userData = user;
@@ -229,8 +230,8 @@ const AuthMiddleware = {
       const { id, email, vendorId } = req.query;
       let user;
       if (id) user = await findByKey(User, { id });
-      if (email) user = await findByKey(User, { email });
-      if (vendorId) user = await findByKey(User, { vendorId });
+      if (email) user = await findByKey(User, { email: email.toLowerCase() });
+      if (vendorId) user = await findByKey(User, { vendorId: vendorId.toUpperCase() });
       if (!user) return errorResponse(res, { code: 404, message: 'User does not exists. Please check your details' });
       next();
     } catch (error) {

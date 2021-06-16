@@ -83,8 +83,8 @@ const GeneralValidation = {
    */
   validateEmail(payload) {
     const schema = {
-      email: joi.string().email().required()
-        .label('Please enter a valid email address'),
+      email: joi.string().regex("/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.ab-inbev.[a-zA-Z0-9-]+)*$/").required()
+        .label('Please enter a valid ABI email address'),
     };
     const { error } = joi.validate({ ...payload }, schema);
     if (error) throw error.details[0].context.label;

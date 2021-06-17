@@ -36,7 +36,6 @@ const AuthMiddleware = {
       const { email } = req.body;
       if (req.path === '/signup/check') {
         validateEmail(req.body);
-        // console.log(error);
         user = await findByKey(User, { email: email.toLowerCase() });
         if (!user) return successResponse(res, { message: 'User Valid for signup' });
         return errorResponse(res, { code: 409, message: 'Sorry, Email already exist, kindly review the address' });

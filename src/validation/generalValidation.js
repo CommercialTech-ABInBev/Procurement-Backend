@@ -83,7 +83,7 @@ const GeneralValidation = {
    */
   validateEmail(payload) {
     const schema = {
-      email: joi.string().regex("/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.ab-inbev.[a-zA-Z0-9-]+)*$/").required()
+      email: joi.string().regex(/^[a-zA-Z0-9_.+-]{5,}@(ng|gcn)\.ab-inbev\.com$/).required()
         .label('Please enter a valid ABI email address'),
     };
     const { error } = joi.validate({ ...payload }, schema);
@@ -99,7 +99,7 @@ const GeneralValidation = {
    */
   validateVendorId(payload) {
     const schema = {
-      vendorId: joi.string().required()
+      vendorId: joi.string().min(7).max(9).required()
         .label('Please enter a valid Vendor Code'),
     };
     const { error } = joi.validate({ ...payload }, schema);

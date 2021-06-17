@@ -22,8 +22,8 @@ const AuthValidation = {
    */
   validateSignup(payload) {
     const schema = {
-      email: joi.string().email().required()
-        .label('Please Enter A Valid Email Address'),
+      email: joi.string().regex(/^[a-zA-Z0-9_.+-]{5,}@(ng|gcn)\.ab-inbev\.com$/).required()
+        .label('Please enter a valid ABI email address'),
       password: new passwordComplexity(complexityOptions).required()
         .label('Password is required. \n It should be more than 8 characters, and should include at least a capital letter, and a number'),
       admin: joi.bool(),
@@ -43,7 +43,7 @@ const AuthValidation = {
    */
   validateSupplierSignup(payload) {
     const schema = {
-      vendorId: joi.string().required()
+      vendorId: joi.string().min(6).max(9).required()
         .label('Please enter a valid Vendor Code'),
       password: new passwordComplexity(complexityOptions).required()
         .label('Password is required. \n It should be more than 8 characters, and should include at least a capital letter, and a number'),
@@ -62,8 +62,8 @@ const AuthValidation = {
    */
   validateLogin(payload) {
     const schema = {
-      email: joi.string().email().required()
-        .label('Incorrect Email'),
+      email: joi.string().regex(/^[a-zA-Z0-9_.+-]{5,}@(ng|gcn)\.ab-inbev\.com$/).required()
+        .label('Please enter a valid ABI email address'),
       password: new passwordComplexity(complexityOptions).required()
         .label('Incorrect Password')
     };
@@ -81,7 +81,7 @@ const AuthValidation = {
    */
   validateVendorLogin(payload) {
     const schema = {
-      vendorId: joi.string().min(3).max(50).required()
+      vendorId: joi.string().min(6).max(9).required()
         .label('Incorrect VendorId'),
       password: new passwordComplexity(complexityOptions).required()
         .label('Incorrect Password')
